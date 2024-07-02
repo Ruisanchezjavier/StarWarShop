@@ -1,22 +1,39 @@
 """
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
-from flask import Flask, request, jsonify, url_for, Blueprint
+from flask import Flask, request, jsonify, Blueprint
 from api.models import db, User
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
+from flask_jwt_extended import JWTManager, create_access_token
 
 api = Blueprint('api', __name__)
 
 # Allow CORS requests to this API
 CORS(api)
 
+# Initialize Flask-JWT-Extended
+app = Flask(__name__)
+app.config['JWT_SECRET_KEY'] = 'your_jwt_secret_key'  # Change this to a secure key
+jwt = JWTManager(app)
 
-@api.route('/hello', methods=['POST', 'GET'])
-def handle_hello():
+@app.route('/signin', methods=['POST'])
+def signin():
+    if not request.is_json:
+       return jsonify({"msg": "Missing JSON in request"}), 400
+    
+    email = request.json.get('email', None)
+    password = request.json.get('password', None)
 
-    response_body = {
-        "message": "Hello! I'm a message that came from the backend, check the network tab on the google inspector and you will see the GET request"
-    }
+    if not email or not password:
+        return jsonify({"msg": "Missing email or password"}), 400
+    
+    user = User.query.filter_by(email=email).first()
+    
+    if not user or not user.check_password(password):
+        return jsonify({"msg": "Bad email or password"}), 401
 
-    return jsonify(response_body), 200
+    access_token = create_access_token(identity=email)
+    return jsonify(access_token=access_token), 200
+        
+
