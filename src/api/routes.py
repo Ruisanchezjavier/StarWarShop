@@ -5,7 +5,7 @@ from flask import Flask, request, jsonify, Blueprint
 from api.models import db, User
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
-from flask_jwt_extended import JWTManager, create_access_token
+# from flask_jwt_extended import JWTManager, create_access_token
 
 api = Blueprint('api', __name__)
 
@@ -13,11 +13,10 @@ api = Blueprint('api', __name__)
 CORS(api)
 
 # Initialize Flask-JWT-Extended
-app = Flask(__name__)
-app.config['JWT_SECRET_KEY'] = 'your_jwt_secret_key'  # Change this to a secure key
-jwt = JWTManager(app)
 
-@app.route('/signin', methods=['POST'])
+
+
+@api.route('/signin', methods=['POST'])
 def signin():
     if not request.is_json:
        return jsonify({"msg": "Missing JSON in request"}), 400
