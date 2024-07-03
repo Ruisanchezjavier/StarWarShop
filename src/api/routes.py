@@ -64,7 +64,7 @@ def register_user():
     db.session.commit()
 
     response = {
-        "msg": f"Congratulations {user.username}. You have successfully sign up!"
+        "msg": f"Congratulations {user.email}. You have successfully sign up!"
     }
     return jsonify(response), 200
 
