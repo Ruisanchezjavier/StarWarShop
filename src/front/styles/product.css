@@ -1,0 +1,24 @@
+.product-page img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .product-page h1 {
+    font-size: 2.5em;
+    margin-top: 20px;
+  }
+  
+  .product-page p {
+    font-size: 1.2em;
+    margin-top: 20px;
+  }
+  
+  .product-page h2 {
+    font-size: 2em;
+    margin-top: 20px;
+  }
+  
+  .product-page button {
+    margin-top: 20px;
+  }
+  
