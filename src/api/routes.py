@@ -29,7 +29,7 @@ def generate_token():
 
     if user is None:
         response = {
-            "msg": "Email or Password does not match."
+            "msg": "Username or Password does not match."
         }
         return jsonify(response), 401
     
@@ -44,6 +44,7 @@ def generate_token():
 @api.route('/signup', methods=['POST'])
 def register_user():
     username = request.json.get('username', None)
+    email = request.json.get('email', None)
     password = request.json.get("password", None)
 
     username = username.lower()
@@ -57,12 +58,13 @@ def register_user():
     
     user = User()
     user.username = username
+    user.email = email
     user.password = password
     db.session.add(user)
     db.session.commit()
 
     response = {
-        "msg": f"Congratulations {user.id}. You have successfully sign up!"
+        "msg": f"Congratulations {user.username}. You have successfully sign up!"
     }
     return jsonify(response), 200
 
@@ -77,16 +79,16 @@ def get_user_profile():
 
     user = User.query.filter_by(id = user_id).first()
     # query and retrieve any invoices that are i the DB
-    user_invoices = User_Profiles.query.filter_by(user_id=user_id).all()
+    user_profile_information = User_Profiles.query.filter_by(user_id=user_id).all()
 
     # use a list comprehension (for loop) that will:
-    # 1. Get each invoice object and serialize() it
-    # 2. Put them in the processed_invoices array
-    processed_invoices = [each_invoice.serialize() for each_invoice in user_invoices]
+    # 1. Get each user profile object and serialize() it
+    # 2. Put them in the processed_user_profile array
+    processed_user_profile_info = [each_profile_information.serialize() for each_profile_information in user_profile_information]
 
     response = {
-        "msg": f"Hello {user.email}, here are your invoices.",
-        "invoices": processed_invoices
+        "msg": f"Hello {user.username}, here are your profile information.",
+        "profile_info":  processed_user_profile_info
     }
     return jsonify(response), 200
 

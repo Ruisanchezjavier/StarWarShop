@@ -41,7 +41,6 @@ class User_Profiles(db.Model):
             "last_name": self.last_name,
             "user_email": self.user_email,
             "user_address": self.user_address,
-            "user_address": self.user_address,
             "profile_picture": self.profile_picture,
         }
     
