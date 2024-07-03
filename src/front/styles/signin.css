@@ -1,0 +1,30 @@
+.sign-in {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.sign-in h2 {
+    margin-bottom: 20px;
+}
+.sign-in form div {
+    margin-bottom: 10px;
+}
+.sign-in form label {
+    display: block;
+    margin-bottom: 5px;
+}
+ .sign-in form input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+ }
+ .sign-in form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+ }
+ .sign-in form button:hover {
+    background-color: #0056b3;
+ }
