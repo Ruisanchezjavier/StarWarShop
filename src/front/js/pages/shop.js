@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import newHope from "../../img/A-New-Hope.jpg";
 import "../../styles/home.css";
+import "../../styles/shop.css";
+
 
 const ProductCard = ({ product }) => {
   return (
@@ -69,7 +71,8 @@ export const Shop = () => {
 
   return (
     <>
-      <header className="bg-dark py-5">
+	<div className="shop-brackgound">
+      <header className="bg-negro py-2">
         <div className="container px-4 px-lg-5 my-5">
           <div className="text-center text-white">
             <h1 className="display-4 fw-bolder">Star Wars Catalog</h1>
@@ -78,9 +81,9 @@ export const Shop = () => {
         </div>
       </header>
 	  <div className="text-center mt-5">
-	  <button type="button" className="btn btn-warning mx-5">category</button>
-	  <button type="button" className="btn btn-warning mx-5">category</button>
-	  <button type="button" className="btn btn-warning mx-5">category</button>
+	  <button type="button" className="btn btn-rosado mx-5">category</button>
+	  <button type="button" className="btn btn-verde-claro mx-5">category</button>
+	  <button type="button" className="btn btn-azul-claro mx-5">category</button>
 	  </div>
       <section className="py-5">
         <div className="container px-4 px-lg-5 mt-5">
@@ -91,6 +94,7 @@ export const Shop = () => {
           </div>
         </div>
       </section>
+	  </div>
     </>
   );
 };

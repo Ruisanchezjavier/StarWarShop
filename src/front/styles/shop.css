@@ -1,0 +1,25 @@
+.shop-brackgound{
+   background-image: url(https://trello.com/1/cards/667f56e7076d4f7b73d0453c/attachments/667f5bdb782468a28470d45c/download/Banner_bG.jpg);
+}
+
+.btn-rosado {
+    background-color: #ff69b4; /* Color rosado */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+  }
+
+  .btn-verde-claro {
+    background-color: #90ee90; /* Color verde claro */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+  }
+
+  .btn-azul-claro {
+    background-color: #add8e6; /* Color azul claro */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+  }
+
+  .bg-negro {
+    background-image: url(https://cdn.mos.cms.futurecdn.net/HuGGeENt6kGyixe3hT9tnY-1200-80.jpg.webp);
+  }
