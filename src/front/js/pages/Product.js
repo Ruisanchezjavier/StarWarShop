@@ -1,5 +1,5 @@
 import React from 'react';
-import { ground } from '../component/Cards/card.js';
+import { ProductGrid } from '../component/ProductGrid.js';
 import '../../styles/ProductGrid.css';
 import '../../styles/ProductCard.css';
 
@@ -7,7 +7,7 @@ import '../../styles/ProductCard.css';
 export function Product() {
   return (
     <div className="Product">
-      <card />
+      <ProductGrid />
       <>
       sdsdsd
       </>
@@ -17,5 +17,4 @@ export function Product() {
 
   );
 }
-
-
+ 
