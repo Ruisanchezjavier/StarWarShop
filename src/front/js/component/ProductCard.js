@@ -1,10 +1,12 @@
 import React from 'react';
 import { StarRating } from '../component/StarRating.js';
 
+
+
 export const ProductCard = ({ product }) => {
   return (
-    <div className="card mb-4">
-      <img src={product.imageUrl} alt={product.name} className="card-img-top" />
+    <div className="card text-center mt-2 mb-2">
+      <img src={product.imageUrl} alt={product.name} style={{ width: '300px', height: 'auto' }} className="card-img-top mx-auto d-block mt-3 mb-3 rounded" />
       <div className="card-body">
         <h5 className="card-title">{product.name}</h5>
         <p className="card-text">{product.description}</p>

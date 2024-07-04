@@ -8,7 +8,13 @@ export function Product() {
   return (
     <div className="Product">
       <ProductGrid />
+      <>
+      sdsdsd
+      </>
     </div>
+
+ 
+
   );
 }
 
