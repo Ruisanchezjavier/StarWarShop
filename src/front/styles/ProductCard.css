@@ -1,4 +1,3 @@
-
 .card img {
     height: 150px;
     object-fit: cover;
@@ -25,5 +24,13 @@
   
   .card button {
     margin-top: 10px;
+  }
+  
+  .reviews {
+    text-align: left;
+  }
+  
+  .review {
+    margin-top: 5px;
   }
   
