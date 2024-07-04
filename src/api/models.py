@@ -2,6 +2,14 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
+class Chapters(db.Model):      
+    id = db.Column(db.Integer,primary_key=True)      
+    title = db.Column(db.String(100), primary_key=True, nullable=False)      
+    image_file = db.Column(db.String(20),nullable=False) 
+
+    def __repr__(self): 
+        return f"Chapters('{self.title}','{self.image_file}')"
+
 
 class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)

@@ -6,7 +6,7 @@ from flask import Flask, request, jsonify, url_for, send_from_directory
 from flask_migrate import Migrate
 from flask_swagger import swagger
 from api.utils import APIException, generate_sitemap
-from api.models import db
+from api.models import Category, Product, db
 from api.routes import api
 from api.admin import setup_admin
 from api.commands import setup_commands
@@ -49,6 +49,72 @@ def handle_invalid_usage(error):
 
 # generate sitemap with all your endpoints
 
+@app.route('/add_category', methods=['POST'])
+def add_category():
+    data = request.json
+    name = data['name']
+
+    if Category.query.filter_by(name=name).first():
+        return jsonify({'message': 'Category already exists'}), 400
+
+    new_category = Category(name=name)
+    db.session.add(new_category)
+    db.session.commit()
+
+    return jsonify({'message': 'Category added successfully'})
+
+# Endpoint to get all categories
+@app.route('/categories', methods=['GET'])
+def get_categories():
+    categories = Category.query.all()
+    categories_list = [{'id': category.id, 'name': category.name} for category in categories]
+    return jsonify(categories_list)
+
+# Endpoint to add a product
+@app.route('/add_product', methods=['POST'])
+def add_product():
+    data = request.form
+    name = data['name']
+    description = data['description']
+    price = data['price']
+    category_id = data['category_id']
+    images = request.files.getlist('images')
+
+    category = Category.query.get(category_id)
+    if not category:
+        return jsonify({'message': 'Category not found'}), 404
+
+    new_product = Product(name=name, description=description, price=price, category_id=category_id)
+    db.session.add(new_product)
+    db.session.commit()
+
+    for image in images:
+        image_filename = image.filename
+        image.save(os.path.join(app.config['UPLOAD_FOLDER'], image_filename))
+        new_image = Image(image_file=image_filename, product_id=new_product.id)
+        db.session.add(new_image)
+
+    db.session.commit()
+
+    return jsonify({'message': 'Product added successfully'})
+
+# Endpoint to get all products
+@app.route('/products', methods=['GET'])
+def get_products():
+    products = Product.query.all()
+    products_list = []
+    for product in products:
+        product_data = {
+            'id': product.id,
+            'name': product.name,
+            'description': product.description,
+            'price': product.price,
+            'category': product.category.name,
+            'images': [image.image_file for image in product.images]
+        }
+        products_list.append(product_data)
+    return jsonify(products_list)
+
 
 @app.route('/')
 def sitemap():
@@ -66,6 +132,8 @@ def serve_any_other_file(path):
     response = send_from_directory(static_file_dir, path)
     response.cache_control.max_age = 0  # avoid cache memory
     return response
+
+
 
 
 # this only runs if `$ python src/main.py` is executed
