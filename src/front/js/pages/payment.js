@@ -59,6 +59,21 @@ export const Payment= () => {
       }
     }
   };
+// 6h and enough coffee!!! 
+  const [cvv, setCvv] = useState('');
+  const [cvvError, setCvvError] = useState('');
+
+  const handleCvvChange = (e) => {
+    const value = e.target.value;
+    const formattedCvv = value.replace(/[^0-9]/g, '').slice(0, 4);
+    setCvv(formattedCvv);
+
+    if (formattedCvv.length !== 3 && formattedCvv.length !== 4) {
+      setCvvError('...must be 3 or 4 digits long');
+    } else {
+      setCvvError('');
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
