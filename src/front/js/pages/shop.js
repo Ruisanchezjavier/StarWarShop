@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import newHope from "../../img/A-New-Hope.jpg";
 import "../../styles/home.css";
 import "../../styles/shop.css";
+import { Link } from "react-router-dom";
 
 
 const ProductCard = ({ product }) => {
@@ -31,9 +32,11 @@ const ProductCard = ({ product }) => {
         </div>
         <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
           <div className="text-center">
-            <button className="btn btn-outline-dark mt-auto" href="#">
-              {product.isViewOption ? "View options" : "View options"}
-            </button>
+            <Link to={'/product/:id/'}>
+              <button className="btn btn-outline-dark mt-auto" href="#">
+                view
+              </button>
+            </Link>
           </div>
         </div>
       </div>
