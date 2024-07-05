@@ -7,6 +7,10 @@ import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import { Shop } from "./pages/shop";
+import { Battlefront } from "./pages/battlefront";
+import { Battle_of_yavin } from "./pages/battleofyavin";
+import { Attack_of_the_clones } from "./pages/attackoftheclones";
+import { New_hope } from "./pages/newhope";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -30,6 +34,10 @@ const Layout = () => {
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<Shop />} path="/shop" />
+                        <Route element={<Battlefront />} path="/battlefront" />
+                        <Route element={<Battle_of_yavin />} path="/battleofyavin" />
+                        <Route element={<Attack_of_the_clones />} path="/attackoftheclones" />
+                        <Route element={<New_hope />} path="/newhope" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />

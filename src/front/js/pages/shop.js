@@ -31,9 +31,9 @@ const ProductCard = ({ product }) => {
         </div>
         <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
           <div className="text-center">
-            <a className="btn btn-outline-dark mt-auto" href="#">
+            <button className="btn btn-outline-dark mt-auto" href="#">
               {product.isViewOption ? "View options" : "View options"}
-            </a>
+            </button>
           </div>
         </div>
       </div>
