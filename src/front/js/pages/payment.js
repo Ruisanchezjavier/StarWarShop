@@ -30,7 +30,35 @@ export const Payment= () => {
     const value = e.target.value.replace(/\D/g, ''); 
     setCardNumber(formatCardNumber(value));
   };
+// 4h
+  const [expiryDate, setExpiryDate] = useState('');
+  const [expiryError, setExpiryError] = useState('');
+ 
 
+
+  const handleExpiryChange = (e) => {
+    const value = e.target.value;
+    const monthYear = value.replace(/[^0-9]/g, '').slice(0, 4);
+
+    let formattedInput = '';
+    if (monthYear.length > 2) {
+      formattedInput = `${monthYear.slice(0, 2)}/${monthYear.slice(2, 4)}`;
+    } else {
+      formattedInput = monthYear;
+    }
+    setExpiryDate(formattedInput);
+
+    if (formattedInput.length === 5) {
+      const [month, year] = formattedInput.split('/');
+    if (parseInt(month) > 12 || parseInt(month) === 0) {
+        setExpiryError('Invalid month');
+      } else if (parseInt(`20${year}`) < new Date().getFullYear()) {
+        setExpiryError('Year past');
+      } else {
+        setExpiryError('');
+      }
+    }
+  };
 // 6h and enough coffee!!! 
   const [cvv, setCvv] = useState('');
   const [cvvError, setCvvError] = useState('');
