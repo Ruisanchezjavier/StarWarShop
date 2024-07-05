@@ -59,7 +59,7 @@ export const Payment= () => {
       }
     }
   };
-6h
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setPaymentStatus('Processing...');
