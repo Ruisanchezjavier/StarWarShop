@@ -25,6 +25,7 @@ export const Payment = () => {
     };
 
     //2h-card number
+    //more coffe
     const formatCardNumber = (value) => {
         value = value.replace(/\D/g, '').slice(0, 16);
         return value.replace(/(.{4})/g, '$1 ').trim();
