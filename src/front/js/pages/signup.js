@@ -14,7 +14,14 @@ export const Signup = () => {
 
     const handleClick = () => {
       actions.signUp(email, password, username);
-  }
+    }
+
+    useEffect(() => {
+      if(store.isSignUpSuccessful) {
+          navigate("/signin")
+      }
+
+    }, [store.isSignUpSuccessful])
     
     return (
         <>

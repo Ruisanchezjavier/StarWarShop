@@ -21,11 +21,12 @@ def generate_token():
 
     # recieving the request and converting the body of the request into json format
     username = request.json.get("username", None)
+    email = request.json.get("email", None)
     password = request.json.get("password", None)
 
     # query the user table to check if the user exists
     username = username.lower()
-    user = User.query.filter_by(username=username, password=password).first()
+    user = User.query.filter_by(username=username, email=email, password=password).first()
 
     if user is None:
         response = {

@@ -18,6 +18,7 @@ class User(db.Model):
         return {
             "id": self.id,
             "email": self.email,
+            "username": self.username
             # do not serialize the password, its a security breach
         }
     
@@ -25,10 +26,10 @@ class User_Profiles(db.Model):
     __tablename__ = "userprofiles_table"
     profile_id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.ForeignKey('user_table.id'))
-    first_name = db.Column(db.String(120), unique=False, nullable=False)
-    last_name = db.Column(db.String(120), unique=False, nullable=False)
+    first_name = db.Column(db.String(120), unique=False, nullable=True)
+    last_name = db.Column(db.String(120), unique=False, nullable=True)
     user_email = db.Column(db.String(120), unique=True, nullable=False)
-    user_address = db.Column(db.String(120), unique=False, nullable=False)
+    user_address = db.Column(db.String(120), unique=False, nullable=True)
     profile_picture = db.Column(db.String(80), unique=False, nullable=True)
     user = db.relationship("User", back_populates="user_profile")
 
