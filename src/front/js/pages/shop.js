@@ -86,9 +86,27 @@ export const Shop = () => {
         </div>
       </header>
 	  <div className="text-center mt-5">
-	  <button type="button" className="btn btn-rosado mx-5">category</button>
-	  <button type="button" className="btn btn-verde-claro mx-5">category</button>
-	  <button type="button" className="btn btn-azul-claro mx-5">category</button>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle bg-dark bg-gradient" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+       Categories
+      </button>
+      <ul class="dropdown-menu bg-dark">
+        <li>
+        <button type="button" className="btn btn-rosado mx-5">category</button>
+        </li>
+        <li class="dropdown-divider"></li>
+        <li>
+        <button type="button" className="btn btn-verde-claro mx-5">category</button>
+        </li>
+        <li class="dropdown-divider"></li>
+        <li>
+        <button type="button" className="btn btn-azul-claro mx-5" href="#">category</button>
+        </li>
+      </ul>
+    </div>
+	 
+	 
+	  
 	  </div>
       <section className="py-5">
         <div className="container px-4 px-lg-5 mt-5">
