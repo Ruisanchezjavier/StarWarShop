@@ -1,14 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import  logo  from "../../img/logo_swcs.jpg";
+import  logo from "../../img/logo_swcs.jpg";
+import "../../styles/navbar.css";
+
 
 export const Navbar = () => {
   return (
     
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg pb-4 navbar-light " style={{ backgroundColor: "black" }}>
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-        <img src="logo_swcs.jpg" alt="Logo" />
+        <img src={logo} width="50" height="50"/>
         </Link>
         <button
           className="navbar-toggler"
@@ -22,15 +24,15 @@ export const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul className="navbar-nav  ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link" to="/">Home</Link>
+              <Link className="nav-link text-white" to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/shop">Shop</Link>
+              <Link className="nav-link text-white" to="/shop">Shop</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/shop-cart">Shop Cart</Link>
+              <Link className="nav-link text-white" to="/shop-cart">Shop Cart</Link>
             </li>
           </ul>
           <div className="dropdown">

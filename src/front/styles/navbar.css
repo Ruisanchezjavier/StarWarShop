@@ -1,0 +1,20 @@
+.logo {
+    height: 40px;
+    max-width: 100%; 
+  }
+  
+  .navbar-nav .nav-item .nav-link {
+    margin-left: 20px; 
+    
+    
+  
+  }
+  
+  .dropdown-menu {
+    right: 0; 
+    left: auto;
+  }
+  
+  .btn-secondary.dropdown-toggle {
+    margin-right: 10px; 
+  }

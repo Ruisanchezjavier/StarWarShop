@@ -1,15 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext } from "react"
 import { Context } from "../store/appContext";
-
 import "../../styles/home.css";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 
+
 	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!!</h1>
-			
+		<div className="background">
+			<div className="banner">
+				<button className="shop-now">Shop Now</button>
+			</div>
+
 		</div>
 	);
 };
