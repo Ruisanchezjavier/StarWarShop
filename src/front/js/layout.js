@@ -34,10 +34,10 @@ const Layout = () => {
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<Shop />} path="/shop" />
-                        <Route element={<Battlefront />} path="/product/:id/battlefront" />
-                        <Route element={<Battle_of_yavin />} path="/product/:id/battleofyavin" />
-                        <Route element={<Attack_of_the_clones />} path="/product/:id/attackoftheclones" />
-                        <Route element={<New_hope />} path="/product/:id/newhope" />
+                        <Route element={<Battlefront />} path="/battlefront" />
+                        <Route element={<Battle_of_yavin />} path="/battle_of_yavin" />
+                        <Route element={<Attack_of_the_clones />} path="/attack_of_the_clones" />
+                        <Route element={<New_hope />} path="/new_hope" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />
