@@ -36,7 +36,7 @@ export const Signup = () => {
               <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
               <div className="signup-page">
-                <div className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4-5">
+                <div className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4-5 text-warning">
                     <h1>Sign Up</h1>
                 </div>
                 {/* pause here to set up in layout.js */}
@@ -62,7 +62,7 @@ export const Signup = () => {
                   </div> */}
 
                   <div className="d-flex flex-row align-items-center mb-4">
-                    <i className="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <i className="fas fa-user fa-lg me-3 fa-fw text-warning"></i>
                     <div data-mdb-input-init className="form-outline flex-fill mb-0">
                       <input   
                         type="text" 
@@ -77,7 +77,7 @@ export const Signup = () => {
                   </div>
 
                   <div className="d-flex flex-row align-items-center mb-4">
-                    <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <i className="fas fa-envelope fa-lg me-3 fa-fw text-warning"></i>
                     <div data-mdb-input-init className="form-outline flex-fill mb-0">
                       <input 
                         type="email" 
@@ -93,7 +93,7 @@ export const Signup = () => {
 
 
                   <div className="d-flex flex-row align-items-center mb-4">
-                    <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <i className="fas fa-lock fa-lg me-3 fa-fw text-warning"></i>
                     <div data-mdb-input-init className="form-outline flex-fill mb-0">
                       <input type="password" 
                         placeholder="Enter password"
@@ -106,13 +106,18 @@ export const Signup = () => {
                     </div>
                   </div>
 
-                  {/* <div className="d-flex flex-row align-items-center mb-4">
-                    <i className="fas fa-key fa-lg me-3 fa-fw"></i>
+                   {/* <div className="d-flex flex-row align-items-center mb-4">
+                    <i className="fas fa-key fa-lg me-3 fa-fw text-warning"></i>
                     <div data-mdb-input-init className="form-outline flex-fill mb-0">
-                      <input type="password" id="form3Example4cd" className="form-control" />
+                      <input
+                       type="password" 
+                       id="form3Example4cd" 
+                       className="form-control" 
+                       placeholder="Repeat your password"
+                       />
                       <label className="form-label" htmlFor="form3Example4cd">Repeat your password</label>
                     </div>
-                  </div> */}
+                  </div>  */}
 
                   <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                   <button
