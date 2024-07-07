@@ -34,34 +34,46 @@ export const Shipping = () => {
 	<div className="space">
 		<div className="container">
 			<div className="row mt-1">
-				<div class="col-md-3 order-md-3 mb-4 ">
+				<div className="col-md-3 order-md-3 mb-4 ">
 					<h4 class="d-flex justify-content-between align-items-center mb-3">
-						<span class="">Your cart</span>
-						<span class="badge badge-secondary badge-pill">3</span>
+						<span className="">Your cart</span>
+						<span className="badge badge-secondary badge-pill">3</span>
 					</h4>
-					<ul class="list-group mb-3">
-						<li class="list-group-item d-flex justify-content-between lh-condensed">
-						<div>
-							<h6 class="my-0">Product name</h6>
-							<small class="text-muted">Brief description</small>
+					<ul className="list-group mb-3">
+					<li className="list-group-item d-flex justify-content-between lh-condensed">
+						<div className="row">
+							<div className="col-6">
+							<img className="product_photo" src="https://www.cardboardconnection.com/wp-content/uploads/2019/06/2019-Topps-Star-Wars-Masterwork-trading-cards-base-Kylo-Ren.jpg"/>
+							</div>
+							<div className="col-6">
+							<h6 className="my-0">Second product</h6>
+							</div>
 						</div>
-						<span class="text-muted">$12</span>
+						<span className="text-muted">$8</span>
 						</li>
-						<li class="list-group-item d-flex justify-content-between lh-condensed">
-						<div>
-							<h6 class="my-0">Second product</h6>
-							<small class="text-muted">Brief description</small>
+						<li className="list-group-item d-flex justify-content-between lh-condensed">
+						<div className="row">
+							<div className="col-6">
+							<img className="product_photo" src="https://www.cardboardconnection.com/wp-content/uploads/2019/06/2019-Topps-Star-Wars-Masterwork-trading-cards-base-Kylo-Ren.jpg"/>
+							</div>
+							<div className="col-6">
+							<h6 className="my-0">Second product</h6>
+							</div>
 						</div>
-						<span class="text-muted">$8</span>
+						<span className="text-muted">$8</span>
 						</li>
-						<li class="list-group-item d-flex justify-content-between lh-condensed">
-						<div>
-							<h6 class="my-0">Third item</h6>
-							<small class="text-muted">Brief description</small>
+						<li className="list-group-item d-flex justify-content-between lh-condensed">
+						<div className="row">
+							<div className="col-6">
+							<img className="product_photo" src="https://www.cardboardconnection.com/wp-content/uploads/2019/06/2019-Topps-Star-Wars-Masterwork-trading-cards-base-Kylo-Ren.jpg"/>
+							</div>
+							<div className="col-6">
+							<h6 className="my-0">Second product</h6>
+							</div>
 						</div>
-						<span class="text-muted">$5</span>
+						<span className="text-muted">$8</span>
 						</li>
-						<li class="list-group-item d-flex justify-content-between">
+						<li className="list-group-item d-flex justify-content-between">
 						<span>Total (USD)</span>
 						<strong>$20</strong>
 						</li>

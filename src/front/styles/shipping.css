@@ -14,3 +14,10 @@
 /* .container{
     background-color: rgb(109, 109, 109);
 } */
+
+.product_photo{
+    width: 100px; /* Ajusta el ancho máximo de la imagen */
+    height: 100px; /* Ajusta la altura máxima de la imagen */
+    ; /* Hace que la imagen cubra el área, manteniendo la proporción */
+   
+}
