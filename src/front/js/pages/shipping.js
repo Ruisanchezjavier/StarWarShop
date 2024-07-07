@@ -37,7 +37,7 @@ export const Shipping = () => {
 				<div className="col-md-3 order-md-3 mb-4 ">
 					<h4 class="d-flex justify-content-between align-items-center mb-3">
 						<span className="">Your cart</span>
-						<span className="badge badge-secondary badge-pill">3</span>
+						<span className="badge text-warning badge-pill">3</span>
 					</h4>
 					<ul className="list-group mb-3">
 					<li className="list-group-item d-flex justify-content-between lh-condensed">
@@ -156,7 +156,8 @@ export const Shipping = () => {
 						<input type="checkbox" className="custom-control-input" id="save-info"/>
 						<label className="custom-control-label" htmlFor="save-info">Save this information for next time</label>
 						</div>    
-						<button className="btn btn-primary btn-lg btn-block" type="submit">Continue to payment</button>
+						<button className="btn btn-warning btn-lg btn-block mt-5" type="submit">Continue to payment</button>
+						<button className="btn btn-secondary btn-lg btn-block mt-5 mx-4" type="submit">Cancel</button>
 					</form>
 					</div>
 			</div>
