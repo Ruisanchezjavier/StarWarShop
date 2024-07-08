@@ -1,0 +1,36 @@
+.card img {
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .card-body {
+    text-align: center;
+  }
+  
+  .card-title {
+    font-size: 1.25em;
+  }
+  
+  .card-text {
+    font-size: 1em;
+    margin-top: 10px;
+  }
+  
+  .card h6 {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #555;
+  }
+  
+  .card button {
+    margin-top: 10px;
+  }
+  
+  .reviews {
+    text-align: left;
+  }
+  
+  .review {
+    margin-top: 5px;
+  }
+  

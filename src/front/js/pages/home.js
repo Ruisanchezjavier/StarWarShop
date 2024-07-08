@@ -1,5 +1,6 @@
 import React, { useContext } from "react"
 import { Context } from "../store/appContext";
+
 import "../../styles/home.css";
 
 import { Banner } from '../component/banner';
@@ -14,7 +15,7 @@ export const Home = () => {
 		<div className="background">
 			
 			<Banner />
-		 
+
 		</div>
 	);
 };
