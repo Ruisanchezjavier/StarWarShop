@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import "../../styles/signin.css"
 
-
  export const SignIn = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("")
@@ -48,6 +47,3 @@ import "../../styles/signin.css"
             </form>
         </div>
     );
-
-
-};
