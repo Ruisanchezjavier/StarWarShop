@@ -3,13 +3,13 @@ import { Context } from "../store/appContext";
 import { useParams } from 'react-router-dom';
 import "../../styles/home.css";
 
-export const Battle_of_yavin = () => {
+export const Space = () => {
 	const { store, actions } = useContext(Context);
 	const { id } = useParams();
 
 	return (
 		<>
-        <h1>Battle of Yavin</h1>
+        <h1>Space</h1>
         </>
 	);
 };

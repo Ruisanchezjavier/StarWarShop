@@ -23,3 +23,26 @@
   .bg-negro {
     background-image: url(https://cdn.mos.cms.futurecdn.net/HuGGeENt6kGyixe3hT9tnY-1200-80.jpg.webp);
   }
+
+  .card-link {
+    display: block;
+    position: relative;
+  }
+  
+  .card-link img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .card-link::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0); /* Puedes agregar un fondo transparente si lo deseas */
+    z-index: 1;
+  }

@@ -6,11 +6,12 @@ import { BackendURL } from "./component/backendURL";
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
-import { Shop } from "./pages/shop";
-import { Battlefront } from "./pages/battlefront";
-import { Battle_of_yavin } from "./pages/battleofyavin";
-import { Attack_of_the_clones } from "./pages/attackoftheclones";
-import { New_hope } from "./pages/newhope";
+import { CardSet, Shop } from "./pages/CardSet";
+import { Space } from "./pages/space";
+import { Character } from "./pages/character";
+import { Ground } from "./pages/ground";
+import { Battle } from "./pages/battle";
+import { Mission } from "./pages/mission"
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -33,11 +34,12 @@ const Layout = () => {
                         <Route element={<Home />} path="/" />
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single/:theid" />
-                        <Route element={<Shop />} path="/shop" />
-                        <Route element={<Battlefront />} path="/battlefront" />
-                        <Route element={<Battle_of_yavin />} path="/battle_of_yavin" />
-                        <Route element={<Attack_of_the_clones />} path="/attack_of_the_clones" />
-                        <Route element={<New_hope />} path="/new_hope" />
+                        <Route element={<CardSet />} path="/CardSet" />
+                        <Route element={<Space />} path="/space" />
+                        <Route element={<Character />} path="/character" />
+                        <Route element={<Ground />} path="/ground" />
+                        <Route element={<Battle />} path="/battle" />
+                        <Route element={<Mission />} path="/mission"/>
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />
