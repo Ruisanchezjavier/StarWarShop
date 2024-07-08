@@ -2,6 +2,8 @@ import React, { useContext } from "react"
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 
+import { Banner } from '../component/banner';
+
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -9,9 +11,8 @@ export const Home = () => {
 
 	return (
 		<div className="background">
-			<div className="banner">
-				<button className="shop-now">Shop Now</button>
-			</div>
+			
+			<Banner />
 		 
 
 		</div>
