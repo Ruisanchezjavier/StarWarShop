@@ -71,6 +71,9 @@ export const Ground = () => {
 
   return (
 	<div className="x">
+		<div>
+			<h1 className="text-warning">GROUND</h1>
+		</div>
     <div className="row mx-5">
       {products.map(product => (
         <div className="col-2 mt-2 mx-5 card" key={product.id}>
