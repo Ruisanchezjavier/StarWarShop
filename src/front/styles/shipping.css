@@ -1,0 +1,23 @@
+.space{
+    background-image: url(https://trello.com/1/cards/667f56e7076d4f7b73d0453c/attachments/6686087dea91b36c71c3ccde/download/space.webp);
+    background-size: cover; /* Hace que la imagen de fondo cubra todo el elemento */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+    height: 100vh; /* Asegura que el contenedor abarque toda la altura del viewport */
+    width: 100vw; /* Asegura que el contenedor abarque todo el ancho del viewport */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* .container{
+    background-color: rgb(109, 109, 109);
+} */
+
+.product_photo{
+    width: 100px; /* Ajusta el ancho máximo de la imagen */
+    height: 100px; /* Ajusta la altura máxima de la imagen */
+    ; /* Hace que la imagen cubra el área, manteniendo la proporción */
+   
+}

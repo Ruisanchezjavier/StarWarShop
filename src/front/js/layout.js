@@ -6,6 +6,7 @@ import { Home } from "./pages/home";
 import { Profile } from "./pages/Profile";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
+import { Shipping } from "./pages/shipping";
 import { Payment } from "./pages/payment.js";
 import { CardSet, Shop } from "./pages/CardSet";
 import { Space } from "./pages/space";
@@ -38,6 +39,7 @@ const Layout = () => {
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Payment />} path="/payment" />
                         <Route element={<Single />} path="/single/:theid" />
+                        <Route element={<Shipping />} path="/shipping" />
                         <Route element={<CardSet />} path="/CardSet" />
                         <Route element={<Space />} path="/space" />
                         <Route element={<Character />} path="/character" />
