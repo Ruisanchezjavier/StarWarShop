@@ -1,7 +1,44 @@
-/*
-    home.css: This website contains selectors only used in home.css
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
 
-    All pages share the styles on index.css but you should create 
-    one more css for each page that will contain the selected used 
-    on that page only (the ones not reused in other pages).
-*/
+.background {
+    background-image: url("https://th.bing.com/th/id/OIP.DUnwna6xMXwWs8hbmhlDiwAAAA?rs=1&pid=ImgDetMain");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .banner {
+    background: rgba(0, 0, 0, 0.5); 
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.shop-now {
+    background-color: #ff0000;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; 
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.shop-now:hover {
+    background-color: #cc7a00;
+} */
