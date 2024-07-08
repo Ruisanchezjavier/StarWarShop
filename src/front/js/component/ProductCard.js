@@ -1,6 +1,6 @@
 import React from 'react';
-import { StarRating } from '../component/StarRating.js';
 
+import { StarRating } from '../component/StarRating.js';
 
 
 export const ProductCard = ({ product }) => {
@@ -27,5 +27,3 @@ export const ProductCard = ({ product }) => {
     </div>
   );
 };
-
- 
