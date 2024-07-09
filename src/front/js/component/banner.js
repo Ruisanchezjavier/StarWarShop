@@ -1,20 +1,17 @@
 import React from "react";
-import banner from "../../img/banner_bG.jpg";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../../styles/banner.css';
 
-
-export const Banner = () => (
-<div className="my-5">
-  <div className="p-5 text-center bg-body-tertiary">
-    <div className="container py-5">
-      <div className="banner">
-     
-      <p className="col-lg-8 mx-auto lead">
-      <button className="shop-now">Shop Now</button>
-        <img src={banner} />
-      </p>
-
+export const Banner = () => {
+  return (
+    <div className="p-5 text-center bg-image rounded-3 jumbotron-bg">
+      <div className="mask">
+        <div className="d-flex justify-content-center align-items-center h-100">
+          <div className="text-white">
+           <a data-mdb-ripple-init className="btn btn-outline-light btn-lg" href="#!" role="button">Shop now</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-</div>
-)
+  );
+};

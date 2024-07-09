@@ -15,30 +15,3 @@ body, html {
     justify-content: center;
     align-items: center;
 }
-
-/* .banner {
-    background: rgba(0, 0, 0, 0.5); 
-    color: white;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-}
-
-.shop-now {
-    background-color: #ff0000;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px; 
-    margin-top: 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.shop-now:hover {
-    background-color: #cc7a00;
-} */

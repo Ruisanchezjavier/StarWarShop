@@ -1,0 +1,13 @@
+.jumbotron-bg {
+    background-image: url('https://trello.com/1/cards/667f56e7076d4f7b73d0453c/attachments/6688834db62f14fc0c3d235f/previews/6688834eb62f14fc0c3d23a1/download/banner.jpg');
+    height: 400px;
+  }
+  
+  .mask {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .text-white {
+    color: #fff;
+  }
+  

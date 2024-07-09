@@ -37,11 +37,11 @@ const Layout = () => {
                     <Navbar />
                     <Routes>
                         <Route element={<Home />} path="/" />
+                        <Route element={<SignIn />} path="/signin" />
+                        <Route element={<Signup />} path="/signup" />
                         <Route element={<Product/>} path="/Product" />
                         <Route element={<Profile />} path="/Profile" />
-                        <Route element={<Demo />} path="/demo" />
                         <Route element={<Payment />} path="/payment" />
-                        <Route element={<Single />} path="/single/:theid" />
                         <Route element={<Shipping />} path="/shipping" />
                         <Route element={<CardSet />} path="/CardSet" />
                         <Route element={<Space />} path="/space" />
@@ -49,9 +49,11 @@ const Layout = () => {
                         <Route element={<Ground />} path="/ground" />
                         <Route element={<Battle />} path="/battle" />
                         <Route element={<Mission />} path="/mission"/>
-                        <Route element={<Signup />} path="/signup" />
-                        <Route element={<SignIn />} path="/signin" />
+                        
+                        
                         <Route element={<h1>Not found!</h1>} />
+                        <Route element={<Demo />} path="/demo" />
+                        <Route element={<Single />} path="/single/:theid" />
                     </Routes>
                     <Footer />
                 </ScrollToTop>
