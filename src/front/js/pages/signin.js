@@ -5,9 +5,6 @@ import "../../styles/signin.css"
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("")
     const [error, setError] = useState("");
-
-
-
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -47,3 +44,4 @@ import "../../styles/signin.css"
             </form>
         </div>
     );
+};

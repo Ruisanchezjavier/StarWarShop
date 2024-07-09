@@ -5,9 +5,7 @@ import { BackendURL } from "./component/backendURL";
 import { Home } from "./pages/home";
 
 import { Product } from "./pages/Product";
-
 import { Profile } from "./pages/Profile";
-
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import { Shipping } from "./pages/shipping";

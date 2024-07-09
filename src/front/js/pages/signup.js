@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
-import logoImg from "../../img/logo_swcs.jpg";
 import "../../styles/signup.css";
 
 
@@ -39,28 +38,11 @@ export const Signup = () => {
                 <div className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4-5 text-warning">
                     <h1>Sign Up</h1>
                 </div>
-                {/* pause here to set up in layout.js */}
+           
                 <div>
                     {store.signupMessage  || ""}
                 </div>
-                
-
-                  {/* <div className="d-flex flex-row align-items-center mb-4">
-                    <i className="fas fa-user fa-lg me-3 fa-fw"></i>
-                    <div data-mdb-input-init className="form-outline flex-fill mb-0">
-                      <input type="text" id="form3Example1c" className="form-control" />
-                      <label className="form-label" htmlFor="form3Example1c">First Name</label>
-                    </div>
-                  </div> */}
-
-                  {/* <div className="d-flex flex-row align-items-center mb-4">
-                    <i className="fas fa-user fa-lg me-3 fa-fw"></i>
-                    <div data-mdb-input-init className="form-outline flex-fill mb-0">
-                      <input type="text" id="form3Example1c" className="form-control" />
-                      <label className="form-label" htmlFor="form3Example1c">Last Name</label>
-                    </div>
-                  </div> */}
-
+                              
                   <div className="d-flex flex-row align-items-center mb-4">
                     <i className="fas fa-user fa-lg me-3 fa-fw text-warning"></i>
                     <div data-mdb-input-init className="form-outline flex-fill mb-0">
