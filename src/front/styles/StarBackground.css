@@ -5,7 +5,7 @@
   width: 200%;
   height: 200%;
   overflow: hidden;
-  z-index: -1; /* Asegúrate de que el fondo esté detrás de otros elementos */
+  z-index: 1; 
   pointer-events: none;
 }
 
@@ -13,8 +13,8 @@
   position: absolute;
   width: 2px;
   height: 2px;
-  background: white;
-  box-shadow: 0 0 5px white;
+  background: rgb(235, 6, 6);
+  box-shadow: 0 0 5px rgb(241, 7, 7);
   animation: twinkling 5s infinite;
 }
 
@@ -23,8 +23,7 @@
   50% { opacity: 0.5; }
 }
 
-/* Generar estrellas aleatoriamente */
+
 .star-background .star:nth-child(1)  { top: 10%; left: 20%; }
 .star-background .star:nth-child(2)  { top: 30%; left: 70%; }
 .star-background .star:nth-child(3)  { top: 50%; left: 40%; }
-/* Continúa hasta 200 estrellas con diferentes posiciones */
