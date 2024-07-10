@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import '../../styles/StarPositions.css';
 import '../../styles/StarBackground.css';
 
 export const StarBackground = () => {
@@ -24,7 +25,7 @@ export const StarBackground = () => {
 
   return (
     <div className="star-background" style={backgroundStyle}>
-      {[...Array(200)].map((_, i) => (
+      {[...Array(500)].map((_, i) => (
         <div key={i} className="star"></div>
       ))}
     </div>

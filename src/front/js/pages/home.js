@@ -13,7 +13,7 @@ export const Home = () => {
 	    return (
 			<div>
 			  <StarBackground />
-			  <div style={{ position: 'relative', zIndex: 1 }}>
+			  <div style={{ position: 'relative', zIndex: -1 }}>
 				<h1>aaaaaaaaaaaaaaaaaa</h1>
 				
 			  </div>
