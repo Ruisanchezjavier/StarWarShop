@@ -5,7 +5,7 @@
   width: 200%;
   height: 200%;
   overflow: hidden;
-  z-index: 1; /* Asegúrate de que el fondo esté detrás de otros elementos */
+  z-index: 1; 
   pointer-events: none;
 }
 
