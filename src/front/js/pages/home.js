@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { StarBackground } from '../component/StarBackground';
 import "../../styles/home.css";
 
-// import { Banner } from '../component/banner';
+import { Banner } from '../component/banner';
 
 
 export const Home = () => {
@@ -12,8 +12,9 @@ export const Home = () => {
 
 	    return (
 			<div>
+			  <Banner />
 			  <StarBackground />
-			  <div style={{ position: 'relative', zIndex: -1 }}>
+			  <div style={{ position: 'relative', zIndex: 1 }}>
 				<h1>aaaaaaaaaaaaaaaaaa</h1>
 				
 			  </div>
