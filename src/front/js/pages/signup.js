@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
-import "../../styles/signup.css";
+import { StarBackground } from '../component/StarBackground';
+// import "../../styles/signup.css";
 
 
 export const Signup = () => {
@@ -24,7 +25,7 @@ export const Signup = () => {
     
     return (
         <>
-       
+       <StarBackground />
        <section className="vh-100 bg-negro" style={{ backgroundColor: '#eeee' }}>
        <div className="container h-100">
     <div className="row d-flex justify-content-center align-items-center h-100">
