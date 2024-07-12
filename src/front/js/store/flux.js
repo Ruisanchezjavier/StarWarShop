@@ -23,22 +23,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 						password: user_password
 					})
 				}
-			
+
 				const response = await fetch(`${process.env.BACKEND_URL}api/signup`, options)
-					
+
 				if (!response.ok) {
 					const data = await response.json();
-					setStore({signupMessage: data.msg});
-					// console.log('error: ', response.status, response.statusText);
-					return {error: {status: response.status, statusText: response.statusText}};
+					setStore({ signupMessage: data.msg });
+
+					return false
 				}
-				
+
 				const data = await response.json();
 				setStore({
 					signupMessage: data.msg,
 					isSignUpSuccessful: response.ok
 				})
-				return data;
+				return true;
 			},
 
 		

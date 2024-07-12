@@ -67,8 +67,7 @@ def register_user():
     email = request.json.get('email', None)
     password = request.json.get("password", None)
 
-    username = username.lower()
-    user = User.query.filter_by(username=username).first()
+    user = User.query.filter_by(email=email).first()
 
     if user is not None and user.username == username:
         response = {
@@ -76,12 +75,10 @@ def register_user():
         }
         return jsonify(response), 403
     
-    user = User()
-    user.username = username
-    user.email = email
-    user.password = password
+    user = User(email=email,password=password,username=username)
     db.session.add(user)
     db.session.commit()
+   
 
     response = {
         "msg": f"Congratulations {user.email}. You have successfully sign up!"

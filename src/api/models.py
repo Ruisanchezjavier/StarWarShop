@@ -47,9 +47,8 @@ class User(db.Model):
     password = db.Column(db.String(80), unique=False, nullable=False)
     user_profile = db.relationship("User_Profiles", back_populates="user")
     
-    def __init__(self, email, password):
-        self.email = email
-        self.password = password
+    def __repr__(self):
+        return f'<User {self.username}>'
 
     def serialize(self):
         return {
