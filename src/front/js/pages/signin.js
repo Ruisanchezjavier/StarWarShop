@@ -1,26 +1,30 @@
-import React, { useState } from 'react'
-import "../../styles/signin.css"
+import React, { useContext, useState, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
  export const SignIn = () => {
+    const navigate = useNavigate()
+	const { store, actions } = useContext(Context);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("")
-    const [error, setError] = useState("");
-    const handleSubmit = (e) => {
-        e.preventDefault();
 
-        if (!email || !password) {
-            setError('Both fields are required');
-            return;
+    const [error, setError] = useState("");
+
+  	const handleClick = async () => {
+			actions.login(email, password)
+		}
+
+    useEffect(() => {
+        if(store.isLoginSuccessful) {
+            navigate("/Profile")
         }
 
-        console.log('Email:',  email);
-        console.log('Password:', password)
-    };
+    }, [store.isLoginSuccessful])
 
     return (
         <div className="sign-in">
             <h2>Sign In</h2>
-            <form onSubmit={handleSubmit}>
+            <form>
 
             <div>
           <label>Email:</label>
@@ -40,7 +44,7 @@ import "../../styles/signin.css"
         />
         </div>
         {error && <p style={{ color: 'red' }}>{error}</p>}
-        <button type="submit">Log In</button>
+        <button onClick={handleClick}>Login</button>
             </form>
         </div>
     );

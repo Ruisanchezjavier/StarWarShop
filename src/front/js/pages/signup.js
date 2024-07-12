@@ -88,36 +88,13 @@ export const Signup = () => {
                       <label className="form-label" htmlFor="form3Example4c"></label>
                     </div>
                   </div>
-
-                   {/* <div className="d-flex flex-row align-items-center mb-4">
-                    <i className="fas fa-key fa-lg me-3 fa-fw text-warning"></i>
-                    <div data-mdb-input-init className="form-outline flex-fill mb-0">
-                      <input
-                       type="password" 
-                       id="form3Example4cd" 
-                       className="form-control" 
-                       placeholder="Repeat your password"
-                       />
-                      <label className="form-label" htmlFor="form3Example4cd">Repeat your password</label>
-                    </div>
-                  </div>  */}
-
                   <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                   <button
                         onClick={() => {handleClick()}}
                         className="btn btn-primary btn-lg"
                     >Sign Up</button>
                   </div>
-
-                
-
               </div>
-              
-              {/* <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                <img src={logoImg} 
-                  className="img-fluid" alt="Sample image"/>
-              </div> */}
-
               </div>
             </div>
           </div>

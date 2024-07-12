@@ -29,21 +29,16 @@ def signin():
     
     user = User.query.filter_by(email=email).first()
     
-    # if not user or not user.check_password(password):
-    #     return jsonify({"msg": "Bad email or password"}), 401
-
     access_token = create_access_token(identity=email)
     return jsonify(access_token=access_token), 200
         
 @api.route('/token', methods=['POST'])
 def generate_token():
 
-    # recieving the request and converting the body of the request into json format
     username = request.json.get("username", None)
     email = request.json.get("email", None)
     password = request.json.get("password", None)
 
-    # query the user table to check if the user exists
     username = username.lower()
     user = User.query.filter_by(username=username, email=email, password=password).first()
 
@@ -88,19 +83,10 @@ def register_user():
 @api.route("/user_profile", methods=['GET'])
 @jwt_required()
 def get_user_profile():
-
-    # retreive the user_id of the current user from the access_token
-    # you do tha with get_jwt_identity
     user_id = get_jwt_identity()
-    # return jsonify(logged_in_as=user_id), 200
-
     user = User.query.filter_by(id = user_id).first()
-    # query and retrieve any invoices that are i the DB
     user_profile_information = User_Profiles.query.filter_by(user_id=user_id).all()
 
-    # use a list comprehension (for loop) that will:
-    # 1. Get each user profile object and serialize() it
-    # 2. Put them in the processed_user_profile array
     processed_user_profile_info = [each_profile_information.serialize() for each_profile_information in user_profile_information]
 
     response = {
