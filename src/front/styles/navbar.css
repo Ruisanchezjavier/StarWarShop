@@ -1,15 +1,15 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items:baseline;
   border-color: #fff;
-  border-radius: 10px;
+  border-radius: 1px;
   color: #fff;
   padding: 1rem;
   background: rgba(83, 83, 83, 0.169);
-  
-  opacity: .7;
-  background-size: cover;
+  margin-left: 2rem;
+  margin-right: 10rem;
+    
   
 }
 
@@ -25,10 +25,11 @@
   display: flex;
   margin: 0;
   padding: 0;
+  margin-left: 1100px;
 }
 
 .navbar-center .nav-links li {
-  margin-right: 1rem;
+  margin-right: 4rem;
 }
 
 .navbar-center .nav-links a {

@@ -4,7 +4,7 @@ import logo from "../../img/webLogo.png";
 import "../../styles/navbar.css";
 
 
-export const Navbar = () => {
+export const Navbar = ({ cart }) => {
   return (
 
 <nav className="navbar">
@@ -26,10 +26,14 @@ export const Navbar = () => {
       </li>
     </ul>
   </div>
+    
+  
   <div className="navbar-right">
-  <a href="/cart" className="cart-icon" aria-label="Shopping Cart">
+   <a href="/cart" className="cart-icon" aria-label="Shopping Cart">
      <i className="fas fa-shopping-cart"></i>
      <span className="cart-count">0</span>
+  
+  
   </a>
   <a href="/" className="user-icon" aria-label="User Account">
   
