@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
 import { Home } from "./pages/home";
-
 import { Checkout_process } from "./pages/checkout_process.js";
 import { Profile } from "./pages/Profile";
 import { Demo } from "./pages/demo";

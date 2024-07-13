@@ -3,6 +3,27 @@
   
 } 
 
+#basic-navbar-nav {
+
+font-style: normal;
+font-size: large;
+text-align: center;
+align-items: center;
+padding: 1px;
+margin: 1px;
+
+}
+
+#navB {
+  background: transparent;
+  border-radius: 16px;
+  text-align: center;
+ 
+  padding: 1px;
+  margin: 1px;
+  
+  }
+
 .container h2 {
 
   color: rgb(179, 189, 109);

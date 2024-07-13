@@ -20,12 +20,16 @@ const SignInIcon = () => (
   </svg>
 );
 
-export const Navbar = () => {
+export const Navbar = ({ cart }) => {
   return (
+      
+
     <nav className="navbar navbar-expand-lg pb-4 navbar-light" style={{ backgroundColor: "black" }}>
+    
+
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          <img src={logo} width="50" height="50" alt="Logo" />
+          <img src={logo} width="100" height="100" alt="Logo" />
         </Link>
         <button
           className="navbar-toggler"
@@ -72,6 +76,7 @@ export const Navbar = () => {
         </div>
       </div>
     </nav>
+   
   );
 
 };
