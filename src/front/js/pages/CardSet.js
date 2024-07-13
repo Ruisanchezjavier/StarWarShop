@@ -1,14 +1,28 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import "../../styles/home.css";
 import { StarBackground } from '../component/StarBackground';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Character } from "../component/Cards/character";
 import { GroundCardList } from "../component/Cards/groundCardList";
 import { gCards } from "../component/Cards/gCards";
+import { Modal, Button } from 'react-bootstrap';
+
+console.log(Modal);
 
 
 export const CardSet = () => {
-  
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const showDetails = (pcard) => {
+    setSelectedProduct(pcard);
+    setModalIsOpen(true);
+
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+    setSelectedProduct(null);
+  };
   return (
 
     <div>
@@ -18,9 +32,9 @@ export const CardSet = () => {
         </div>
       </div>
       <div className="text-center mt-5">
-      <StarBackground />
+        <StarBackground />
         <Navbar bg="light" expand="lg">
-        
+
           <Container>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -37,14 +51,39 @@ export const CardSet = () => {
 
       </div>
       <div>
-      
+
         <div className="container mt-5">
+        <Modal show={modalIsOpen} onHide={closeModal}>
+          {/* <Modal.Header closeButton>
+            <Modal.Title>Product Details</Modal.Title>
+          </Modal.Header> */}
+          <Modal.Body>
+        {selectedProduct && (
+           <div className="card-details">
+              <img src={selectedProduct.image} alt={selectedProduct.name} />
+              <h3>{selectedProduct.name}</h3>
+              <p>Rating: {selectedProduct.rating}</p>
+              <p>Side: {selectedProduct.side}</p>
+              <p>Rarity: {selectedProduct.rarity}</p>
+              <p>Type: {selectedProduct.type}</p>
+              <p>Points: {selectedProduct.points}</p>
+              <p>Price: ${selectedProduct.price}</p>
+            </div>
+          )}
+ </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={closeModal}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>  
+        
           <section id="ground">
+
             <h2>Ground Cards</h2>
-            <GroundCardList gCards={gCards} />
-         
+            <GroundCardList gCards={gCards} showDetails={showDetails} />
           </section>
-          
+        
           <section id="space">
             <h2>Space Cards</h2>
 

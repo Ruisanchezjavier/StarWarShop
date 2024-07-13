@@ -1,7 +1,7 @@
 {
 	"name": "react-hello-webapp",
 	"engines": {
-		"node": "16.x"
+		"node": ">=16.0.0 <=20.15.1"
 	},
 	"version": "1.0.1",
 	"description": "",
@@ -78,6 +78,7 @@
 		"react": "^16.8.4",
 		"react-bootstrap": "^2.10.4",
 		"react-dom": "^16.8.4",
+		"react-modal": "^3.16.1",
 		"react-polyfills": "0.0.1",
 		"react-router-dom": "^6.3.0",
 		"react-star-rating-component": "^1.4.1"
