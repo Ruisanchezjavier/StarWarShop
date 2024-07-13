@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../img/logo_swcs.jpg";
+
 import "../../styles/navbar.css";
 
 const SignInIcon = () => (
@@ -44,7 +45,10 @@ export const Navbar = () => {
               <Link className="nav-link text-white" to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link text-white" to="/cardset">Sets</Link>
+              <Link className="nav-link text-white" to="/cartset">Sets</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link text-white" to="/aboutus">About Us</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link text-white" to="/shop-cart"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-cart4" viewBox="0 0 16 16">

@@ -1,7 +1,7 @@
 import React from 'react';
 import "../../styles/footer.css";
 
- export const Footer = () => {
+export const Footer = () => {
   return (
     <footer className="footer text-center">
       <div className="container">

@@ -21,3 +21,12 @@ body {
   font-size: 24px;
   margin: 0 10px;
 }
+footer {
+  margin-top: 0px;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  
+}
