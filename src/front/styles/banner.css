@@ -1,8 +1,20 @@
 .jumbotron-bg {
+   
+   
+    
+    background-repeat: no-repeat;
+    margin: 10 auto; 
+    display: flex;
+    height: 90vh; 
+    border-radius: 100px;
+    background: #00000016;
+    opacity: .7;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
     background-image: url('https://trello.com/1/cards/667f56e7076d4f7b73d0453c/attachments/6688834db62f14fc0c3d235f/previews/6688834eb62f14fc0c3d23a1/download/banner.jpg');
-    height: 600px;
-    width: 600px;
-    z-index: -2;
+   
+  
   }
   
   .mask {
