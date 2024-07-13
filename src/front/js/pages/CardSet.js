@@ -40,7 +40,6 @@ export const CardSet = () => {
       </div>
       <div className="text-center mt-5">
         <StarBackground />
-
         <Navbar id="navB" bg="light" expand="lg">
           <Container>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -59,7 +58,7 @@ export const CardSet = () => {
       </div>
       <div>
 
-        <div className="container mt-5">
+        <div className="container mt-3">
           <Modal show={modalIsOpen} onHide={closeModal} dialogClassName="custom-modal">
 
             <Modal.Body>
