@@ -13,7 +13,18 @@ export const GroundCard = ({ pcard }) => {
       <p>Type: {pcard.type}</p>
       <p>Points: {pcard.points}</p>
       <p>Price: ${pcard.price}</p>
+    
+    <div className="btn-card d-grid">
+    
+    <button className="btn btn-secondary" onClick={() => addToCart(product)}>Card Details</button>
+    
+    
     </div>
+     
+    
+    </div>
+    
+    
     
   );
 };

@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import "../../styles/home.css";
-import "../../styles/groundCard.css"
 import { StarBackground } from '../component/StarBackground';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Character } from "../component/Cards/character";

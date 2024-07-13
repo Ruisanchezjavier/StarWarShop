@@ -5,13 +5,15 @@
     border-radius: 8px;
     text-align: center;
     width: 280px;
-  }
+   }
   
   .ground-card img {
     max-width: 100%;
     height: auto;
     
   }
+
+  
   
   .ground-card h2 {
     font-size: 1.0em;
