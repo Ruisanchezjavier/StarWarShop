@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import "../../styles/home.css";
 import { StarBackground } from '../component/StarBackground';
 import { Navbar, Nav, Container } from 'react-bootstrap';
@@ -7,7 +7,6 @@ import { GroundCardList } from "../component/Cards/groundCardList";
 import { gCards } from "../component/Cards/gCards";
 import { Modal, Button } from 'react-bootstrap';
 
-console.log(Modal);
 
 
 export const CardSet = () => {
@@ -33,8 +32,8 @@ export const CardSet = () => {
       </div>
       <div className="text-center mt-5">
         <StarBackground />
+       
         <Navbar bg="light" expand="lg">
-
           <Container>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -53,16 +52,15 @@ export const CardSet = () => {
       <div>
 
         <div className="container mt-5">
-        <Modal show={modalIsOpen} onHide={closeModal}>
-          {/* <Modal.Header closeButton>
-            <Modal.Title>Product Details</Modal.Title>
-          </Modal.Header> */}
+        <Modal show={modalIsOpen} onHide={closeModal} dialogClassName="custom-modal">
+          
           <Modal.Body>
         {selectedProduct && (
+           
            <div className="card-details">
-              <img src={selectedProduct.image} alt={selectedProduct.name} />
               <h3>{selectedProduct.name}</h3>
               <p>Rating: {selectedProduct.rating}</p>
+              <img src={selectedProduct.image} alt={selectedProduct.name} className="img-fluid"  />
               <p>Side: {selectedProduct.side}</p>
               <p>Rarity: {selectedProduct.rarity}</p>
               <p>Type: {selectedProduct.type}</p>
@@ -72,9 +70,12 @@ export const CardSet = () => {
           )}
  </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={closeModal}>
-              Close
-            </Button>
+          <Button variant="secondary" onClick={closeModal}>
+            X
+          </Button>
+
+
+
           </Modal.Footer>
         </Modal>  
         
