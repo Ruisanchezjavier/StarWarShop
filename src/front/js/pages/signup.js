@@ -27,7 +27,8 @@ export const Signup = () => {
   return (
     <>
       <StarBackground />
-      <section className="vh-100 bg-negro" style={{ backgroundColor: '#eeee' }}>
+      <form>
+      <div className="vh-100 bg-negro" style={{ backgroundColor: '#eeee' }}>
         <div className="container h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-lg-12 col-xl-11">
@@ -49,13 +50,12 @@ export const Signup = () => {
                           <i className="fas fa-user fa-lg me-3 fa-fw text-warning"></i>
                           <div data-mdb-input-init className="form-outline flex-fill mb-0">
                             <input
-                              required
                               type="text"
                               placeholder="Enter username"
                               size="30"
                               value={username}
                               onChange={e => setUsername(e.target.value)}
-                              
+                              required
                             />
                             <label className="form-label" htmlFor="form3Example1c"></label>
                           </div>
@@ -85,7 +85,6 @@ export const Signup = () => {
                               minLength="6"
                               value={password}
                               onChange={e => setPassword(e.target.value)}
-                              
                               required
                             />
                             <label className="form-label" htmlFor="form3Example4c"></label>
@@ -105,7 +104,8 @@ export const Signup = () => {
             </div>
           </div>
         </div>
-      </section>
+      </div>
+      </form>
 
     </>
   )

@@ -16,21 +16,6 @@ CORS(api)
 
 # Initialize Flask-JWT-Extended
 
-@api.route('/signin', methods=['POST'])
-def signin():
-    if not request.is_json:
-       return jsonify({"msg": "Missing JSON in request"}), 400
-    
-    email = request.json.get('email', None)
-    password = request.json.get('password', None)
-
-    if not email or not password:
-        return jsonify({"msg": "Missing email or password"}), 400
-    
-    user = User.query.filter_by(email=email).first()
-    
-    access_token = create_access_token(identity=email)
-    return jsonify(access_token=access_token), 200
         
 @api.route('/token', methods=['POST'])
 def generate_token():

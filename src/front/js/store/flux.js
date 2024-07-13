@@ -51,7 +51,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				return true;
 			},
 
-			login: async (user_Email, user_Password) => {
+			login: async (userEmail, userPassword,) => {
 				const options = {
 					method: 'POST',
 					mode: 'cors',
@@ -59,8 +59,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 						'Content-Type': 'application/json'
 					},
 					body: JSON.stringify({
-						email: user_Email,
-						password: user_Password
+						email: userEmail,
+						password: userPassword
 					}),
 				}
 		

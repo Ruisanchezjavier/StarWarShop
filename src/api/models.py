@@ -48,7 +48,7 @@ class User(db.Model):
     user_profile = db.relationship("User_Profiles", back_populates="user")
     
     def __repr__(self):
-        return f'<User {self.username}, {self.email}>'
+        return f'<User {self.username}>'
 
     def serialize(self):
         return {
