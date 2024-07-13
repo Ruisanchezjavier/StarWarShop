@@ -4,12 +4,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 			token: null,
 			signupMessage: null,
 			isSignUpSuccessful: false,
+			isLoginSuccessful: false,
+			loginMessage: null,
 			profileInfoMessage: null,
 			profileInfo: [],
 			message: null			
 		
 		},
 		actions: {
+			syncTokenFromSessionStore: () => {
+				const sessionToken =sessionStorage.getItem('token');
+				console.log("Application just loaded. Syncing the sessionStorage token.")
+				if (sessionToken && sessionToken !== "" && sessionToken !== undefined) {
+					setStore({token: sessionToken})
+				}
+			},
+			
 			signUp: async (user_email, user_password, user_username) => {
 				const options = {
 					method: 'POST',
@@ -41,7 +51,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				return true;
 			},
 
-			login: async (userEmail, userPassword) => {
+			login: async (user_Email, user_Password) => {
 				const options = {
 					method: 'POST',
 					mode: 'cors',
@@ -49,8 +59,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 						'Content-Type': 'application/json'
 					},
 					body: JSON.stringify({
-						email: userEmail,
-						password: userPassword
+						email: user_Email,
+						password: user_Password
 					}),
 				}
 		
@@ -81,8 +91,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					isSignUpSuccessful: false,
 					isLoginSuccessful: false,
 					loginMessage: null,
-					invoiceMessage: null,
-					invoices: [],
+					profileInfoMessage: null,
+					profileInfo: [],
 				})
 				console.log("You've logged out.")
 			},
