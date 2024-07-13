@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import "../../styles/home.css";
+import "../../styles/groundCard.css"
 import { StarBackground } from '../component/StarBackground';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Character } from "../component/Cards/character";
@@ -8,7 +9,7 @@ import { gCards } from "../component/Cards/gCards";
 
 
 export const CardSet = () => {
-  return (
+    return (
 
     <div>
       <div className="container">
@@ -17,9 +18,9 @@ export const CardSet = () => {
         </div>
       </div>
       <div className="text-center mt-5">
-
+      <StarBackground />
         <Navbar bg="light" expand="lg">
-          <StarBackground />
+        
           <Container>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -36,6 +37,7 @@ export const CardSet = () => {
 
       </div>
       <div>
+      
         <div className="container mt-5">
           <section id="ground">
             <h2>Ground Cards</h2>
