@@ -2,7 +2,7 @@ import React from 'react';
 import '../../../styles/groundCard.css'; 
 
 export const GroundCard = ({ card }) => {
-  return (
+  return ( 
     <div className="ground-card">
       <img src={card.image} alt={card.name} />
       <h2>{card.name}</h2>
