@@ -2,8 +2,7 @@ import React from 'react';
 import { GroundCard } from '../Cards/groundCard';
 
 export const GroundCardList = ({ gCards }) => {
-  console.log(gCards);
- 
+    
   return (
     <div className="pcard-list">
       {gCards.map((pcard) => (
@@ -12,7 +11,3 @@ export const GroundCardList = ({ gCards }) => {
     </div>
   );
 };
-
-
-
-

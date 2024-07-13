@@ -9,7 +9,8 @@ import { gCards } from "../component/Cards/gCards";
 
 
 export const CardSet = () => {
-    return (
+  
+  return (
 
     <div>
       <div className="container">
@@ -42,8 +43,9 @@ export const CardSet = () => {
           <section id="ground">
             <h2>Ground Cards</h2>
             <GroundCardList gCards={gCards} />
-                           
+         
           </section>
+          
           <section id="space">
             <h2>Space Cards</h2>
 
