@@ -1,0 +1,58 @@
+.ground-card {
+    border: 2px solid #ddd;
+    padding: 16px;
+    margin: 16px;
+    border-radius: 8px;
+    text-align: center;
+    width: 280px;
+   }
+  
+  .ground-card img {
+    max-width: 100%;
+    height: auto;
+    
+  }
+
+  
+  
+  .ground-card h2 {
+    font-size: 1.0em;
+    color: rgb(105, 128, 64);
+    background-color: rgb(36, 40, 37);
+    border-radius: 2px;
+  }
+  
+  .ground-card p {
+    margin: 8px 0;
+    color: rgb(144, 177, 112);
+    text-align: left;    
+  }
+
+  .pcard-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .Modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    outline: none;
+  }
+  
+  .Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
