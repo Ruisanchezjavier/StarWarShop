@@ -10,8 +10,6 @@ import { sCards } from "../component/Cards/sCards";
 import { Modal, Button } from 'react-bootstrap';
 
 
-
-
 export const CardSet = () => {
 
   const [cart, setCart] = useState([]);
