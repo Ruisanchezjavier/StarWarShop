@@ -1,0 +1,21 @@
+.rating {
+    display: flex;
+    direction: row;
+  }
+  
+  .rating button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0 2px;
+  }
+  
+  .rating .on .rstar {
+    color: gold;
+  }
+  
+  .rating .off .rstar {
+    color: grey;
+  }
+  
