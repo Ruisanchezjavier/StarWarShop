@@ -39,15 +39,6 @@ const Layout = () => {
                         <Route element={<Payment />} path="/payment" />
                         <Route element={<Shipping />} path="/shipping" />
                         <Route element={<CardSet />} path="/CardSet" />
-                        <Route element={<Space />} path="/space" />
-                        <Route element={<Character />} path="/character" />
-                        <Route element={<Ground />} path="/ground" />
-                        <Route element={<Battle />} path="/battle" />
-                        <Route element={<Mission />} path="/mission"/>
-                        <Route element={<AboutUs />} path="/aboutus" />
-                        
-                        
-
                         <Route element={<h1>Not found!</h1>} />
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single/:theid" />
