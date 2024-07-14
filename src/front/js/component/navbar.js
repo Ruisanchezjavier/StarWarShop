@@ -49,6 +49,7 @@ export const Navbar = ({ cart }) => {
             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <li><Link className="dropdown-item" to="/signin">Sign In</Link></li>
               <li><Link className="dropdown-item" to="/signup">Sign Up</Link></li>
+              <li><Link className="dropdown-item" to="/profile">User profile</Link></li>
             </ul>
           </div>
     

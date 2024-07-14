@@ -4,7 +4,7 @@ import "../../styles/footer.css";
 export const Footer = () => {
   return (
     <footer className="footer text-center">
-      <div className="container">
+      {/* <div className="container">
         <div className="row">
           <div className="col-md-6 mb-4">
             <h5>Contact Information</h5>
@@ -22,7 +22,7 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </footer>
   );
 }
