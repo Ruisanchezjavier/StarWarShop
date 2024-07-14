@@ -7,6 +7,7 @@ import { Banner } from '../component/banner';
 import { GroundCardList } from "../component/Cards/groundCardList";
 import { gCards } from "../component/Cards/gCards";
 
+
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 	const [cart, setCart] = useState([]);
@@ -20,9 +21,9 @@ export const Home = () => {
 			  <Banner />
 			  <StarBackground />
 			  <div style={{ position: 'relative', zIndex: 1 }}>
-							
 			  </div>
 			</div>
+			
 		  );
 		};
 

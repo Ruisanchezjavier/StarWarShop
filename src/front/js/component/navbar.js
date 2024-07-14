@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../img/webLogo.png";
-import "../../styles/navbar.css";
 
+import logo from "../../img/webLogo.png";
 
 export const Navbar = ({ cart }) => {
   return (
@@ -74,6 +73,7 @@ const SignInIcon = () => (
     />
   </svg>
 );
+
 
 
 
