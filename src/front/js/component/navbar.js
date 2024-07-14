@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../img/logo_swcs.jpg";
+
 import "../../styles/navbar.css";
 
 const SignInIcon = () => (
@@ -44,7 +45,10 @@ export const Navbar = () => {
               <Link className="nav-link text-white" to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link text-white" to="/cardset">Sets</Link>
+              <Link className="nav-link text-white" to="/cartset">Sets</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link text-white" to="/aboutus">About Us</Link>
             </li>
                 
            <li className="nav-item">
