@@ -1,47 +1,62 @@
-import React, { useState } from 'react'
-import "../../styles/signin.css"
+import React, { useContext, useState, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { Context } from "../store/appContext";
+import "../../styles/home.css";
 
- export const SignIn = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("")
-    const [error, setError] = useState("");
-    const handleSubmit = (e) => {
-        e.preventDefault();
+export const SignIn = () => {
+	const navigate = useNavigate()
+	const { store, actions } = useContext(Context);
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	let token = sessionStorage.getItem("token");
 
-        if (!email || !password) {
-            setError('Both fields are required');
-            return;
-        }
+	const handleClick = async () => {
+			actions.login(email, password)
+		}
 
-        console.log('Email:',  email);
-        console.log('Password:', password)
-    };
+	useEffect(() => {
+		if(store.isLoginSuccessful) {
+			navigate("/profile")
+		}
 
-    return (
-        <div className="sign-in">
-            <h2>Sign In</h2>
-            <form onSubmit={handleSubmit}>
+	}, [store.isLoginSuccessful])
 
-            <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div>
-        <label>Password:</label>
-        <input 
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-
-        />
-        </div>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-        <button type="submit">Log In</button>
-            </form>
-        </div>
-    );
+	return (
+		<div className="text-center mt-5">
+			{(store.token && store.token !== "" && store.token !== undefined) ? (
+			  <>
+			    <h1>You are logged in</h1>
+				<Link to="/profile">
+				<button>Go to your invoices</button>
+				</Link>
+			  </>
+			):(
+			<>
+			<h1>Sign in</h1>
+			<div>
+                {store.signupMessage  || ""}
+            </div>
+			<div>
+				<input 
+					type="text" 
+					placeholder="email"
+					value={email}
+					onChange={(e) => setEmail(e.target.value)}
+				/>
+			</div>
+			<div>
+				<input 
+					type="password" 
+					placeholder="password"
+					value={password}
+					onChange={(e) => setPassword(e.target.value)}
+				/>
+			</div>
+			<div>
+				<button onClick={handleClick}>Sign in</button>
+			</div>
+			</>
+             )}
+		</div>
+	);
 };
