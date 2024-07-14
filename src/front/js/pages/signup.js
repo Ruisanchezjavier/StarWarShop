@@ -14,6 +14,10 @@ export const Signup = () => {
   
 
   const handleClick = () => {
+    if(!username || !email || !password) {
+      setErrorMessage('All fields are required');
+      return;
+    }
     actions.signUp(email, password, username);
   }
 
