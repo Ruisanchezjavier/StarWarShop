@@ -2,14 +2,20 @@ import React, { useState } from "react";
 import "../../styles/home.css";
 import { StarBackground } from '../component/StarBackground';
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import { Character } from "../component/Cards/character";
+import { Character } from "../component/Cards/characterCard";
 import { GroundCardList } from "../component/Cards/groundCardList";
 import { gCards } from "../component/Cards/gCards";
+import { SpaceCardList } from "../component/Cards/spaceCardList";
+import { sCards } from "../component/Cards/sCards";
 import { Modal, Button } from 'react-bootstrap';
 
 
-
 export const CardSet = () => {
+
+  const [cart, setCart] = useState([]);
+  const addToCart = (pcard) => {
+    setCart([...cart, pcard]);
+  };
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const showDetails = (pcard) => {
@@ -32,8 +38,7 @@ export const CardSet = () => {
       </div>
       <div className="text-center mt-5">
         <StarBackground />
-       
-        <Navbar bg="light" expand="lg">
+        <Navbar id="navB" bg="light" expand="lg">
           <Container>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -51,44 +56,52 @@ export const CardSet = () => {
       </div>
       <div>
 
-        <div className="container mt-5">
-        <Modal show={modalIsOpen} onHide={closeModal} dialogClassName="custom-modal">
-          
-          <Modal.Body>
-        {selectedProduct && (
-           
-           <div className="card-details">
-              <h3>{selectedProduct.name}</h3>
-              <p>Rating: {selectedProduct.rating}</p>
-              <img src={selectedProduct.image} alt={selectedProduct.name} className="img-fluid"  />
-              <p>Side: {selectedProduct.side}</p>
-              <p>Rarity: {selectedProduct.rarity}</p>
-              <p>Type: {selectedProduct.type}</p>
-              <p>Points: {selectedProduct.points}</p>
-              <p>Price: ${selectedProduct.price}</p>
-            </div>
-          )}
- </Modal.Body>
-          <Modal.Footer>
-          <Button variant="secondary" onClick={closeModal}>
-            X
-          </Button>
+        <div className="container mt-3">
+          <Modal show={modalIsOpen} onHide={closeModal} dialogClassName="custom-modal">
 
+            <Modal.Body>
+              {selectedProduct && (
 
+                <div className="card-details">
+                  <h3>{selectedProduct.name}</h3>
+                  <p>Rating: {selectedProduct.rating}</p>
+                  <img src={selectedProduct.image} alt={selectedProduct.name} className="img-fluid" />
+                  <p>Side: {selectedProduct.side}</p>
+                  <p>Rarity: {selectedProduct.rarity}</p>
+                  <p>Type: {selectedProduct.type}</p>
+                  <p>Points: {selectedProduct.points}</p>
+                  <p>Price: ${selectedProduct.price}</p>
+                </div>
+              )}
+            </Modal.Body>
+            <Modal.Footer>
+            <Button onClick={() => addToCart(pcard)}>
+              add to cart
+              </Button>
+              <Button variant="secondary" onClick={closeModal}>
+                X
+              </Button>
 
-          </Modal.Footer>
-        </Modal>  
-        
+             
+
+            </Modal.Footer>
+          </Modal>
+
           <section id="ground">
 
             <h2>Ground Cards</h2>
             <GroundCardList gCards={gCards} showDetails={showDetails} />
           </section>
-        
+
           <section id="space">
             <h2>Space Cards</h2>
+            <SpaceCardList sCards={sCards} showDetails={showDetails} />
+
+
+
 
           </section>
+
           <section id="character">
             <h2>Character Cards</h2>
             <Character />

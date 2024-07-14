@@ -3,9 +3,24 @@
   
 } 
 
+#basic-navbar-nav {
+font-style: normal;
+font-size: large;
+text-align:justify;
+  
+}
+
+#navB {
+  
+  border-radius: 20px;
+  padding: 1px;
+  margin: 1px;
+  
+  }
+
 .container h2 {
 
-  color: rgb(179, 189, 109);
+  color: rgb(228, 228, 222);
 
 }
 .card-details {

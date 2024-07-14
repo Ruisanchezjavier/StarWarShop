@@ -1,11 +1,11 @@
 import React from 'react';
-import '../../../styles/groundCard.css'; 
+import '../../../styles/spaceCard.css'; 
 
-export const GroundCard = ({ pcard, addToCart, showDetails }) => {
+export const SpaceCard = ({ pcard, addToCart, showDetails }) => {
  
 
   return (    
-    <div className="ground-card">
+    <div className="space-card">
       <img src={pcard.image} alt={pcard.name} />
       <h2>{pcard.name}</h2>
       <p>Rating: {pcard.rating}</p>

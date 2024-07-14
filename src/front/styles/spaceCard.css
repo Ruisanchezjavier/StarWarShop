@@ -1,4 +1,4 @@
-.ground-card {
+.space-card {
     border: 2px solid #ddd;
     padding: 16px;
     margin: 16px;
@@ -7,22 +7,23 @@
     width: 280px;
    }
   
-  .ground-card img {
+  .space-card img {
     max-width: 100%;
     height: auto;
     
   }
+
   
-  .ground-card h2 {
+  .space-card h2 {
     font-size: 1.0em;
-    color: rgb(105, 128, 64);
-    background-color: rgb(36, 40, 37);
+    color: rgb(170, 207, 253);
+    background-color: rgb(28, 71, 132);
     border-radius: 2px;
   }
   
-  .ground-card p {
+  .space-card p {
     margin: 8px 0;
-    color: rgb(144, 177, 112);
+    color: rgb(55, 134, 165);
     text-align: left;    
   }
 
