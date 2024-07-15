@@ -7,8 +7,11 @@
   color: #fff;
   padding: 1rem;
   background: rgba(83, 83, 83, 0.169);
-  margin-left: 2rem;
-  margin-right: 10rem;
+  margin-left: 0rem;
+  margin-right: 0rem;
+ 
+  
+  
     
   
 }
@@ -26,6 +29,7 @@
   margin: 0;
   padding: 0;
   margin-left: 1100px;
+
 }
 
 .navbar-center .nav-links li {

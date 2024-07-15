@@ -12,6 +12,12 @@ import { Modal, Button } from 'react-bootstrap';
 
 export const CardSet = () => {
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
   const [cart, setCart] = useState([]);
   const addToCart = (pcard) => {
     setCart([...cart, pcard]);
@@ -36,6 +42,9 @@ export const CardSet = () => {
           <h1 className="display-4 fw-bolder">A New Hope</h1>
         </div>
       </div>
+
+
+
       <div className="text-center mt-5">
         <StarBackground />
         <Navbar id="navB" bg="light" expand="lg">
@@ -75,14 +84,14 @@ export const CardSet = () => {
               )}
             </Modal.Body>
             <Modal.Footer>
-            <Button onClick={() => addToCart(pcard)}>
-              add to cart
+              <Button onClick={() => addToCart(pcard)}>
+                add to cart
               </Button>
               <Button variant="secondary" onClick={closeModal}>
                 X
               </Button>
 
-             
+
 
             </Modal.Footer>
           </Modal>
@@ -92,12 +101,22 @@ export const CardSet = () => {
             <h2>Ground Cards</h2>
             <GroundCardList gCards={gCards} showDetails={showDetails} />
           </section>
-
+         
+          <div className="d-flex justify-content-center mt-4">
+            <button className="btn-dark btn btn-primary" onClick={scrollToTop}>
+            <i className="fas fa-arrow-up"></i>
+            </button>
+          </div>
+         
           <section id="space">
             <h2>Space Cards</h2>
             <SpaceCardList sCards={sCards} showDetails={showDetails} />
 
-
+            <div className="d-flex justify-content-center mt-4">
+            <button className="btn-dark btn btn-primary" onClick={scrollToTop}>
+            <i className="fas fa-arrow-up"></i>
+            </button>
+          </div>
 
 
           </section>

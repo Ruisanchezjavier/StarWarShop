@@ -28,7 +28,7 @@ export const Navbar = ({ cart }) => {
     
   
   <div className="navbar-right">
-   <a href="/cart" className="cart-icon" aria-label="Shopping Cart">
+   <a href="/checkout_process" className="cart-icon" aria-label="Shopping Cart">
      <i className="fas fa-shopping-cart"></i>
      <span className="cart-count">0</span>
   
