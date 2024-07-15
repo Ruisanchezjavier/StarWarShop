@@ -11,15 +11,11 @@ export const SignIn = () => {
 	let token = sessionStorage.getItem("token");
 
 	const handleClick = async () => {
-			actions.login(email, password)
+			let result = await actions.login(email, password) 
+			if (result) {
+				navigate("/profile")
+			}
 		}
-
-	useEffect(() => {
-		if(store.isLoginSuccessful) {
-			navigate("/profile")
-		}
-
-	}, [store.isLoginSuccessful])
 
 	return (
 		<div className="text-center mt-5">

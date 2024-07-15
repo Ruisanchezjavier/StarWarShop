@@ -33,11 +33,12 @@ export const Signup = () => {
     actions.signUp(email, password, username);
   };
 
-  useEffect(() => {
-    if (store.isSignUpSuccessful) {
-      navigate("/signin");
+  useEffect(() => { 
+    actions.authenticate()
+    if (store.userProfile) {
+      navigate("/profile");
     }
-  }, [store.isSignUpSuccessful, navigate]);
+  }, [store.userProfile]);
 
   return (
     <>

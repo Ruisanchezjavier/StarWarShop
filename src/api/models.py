@@ -42,10 +42,13 @@ class Category(db.Model):
 class User(db.Model):
     __tablename__ = "user_table"
     id = db.Column(db.Integer, primary_key=True)
+    first_name = db.Column(db.String(120), unique=False, nullable=True)
+    last_name = db.Column(db.String(120), unique=False, nullable=True)
+    address = db.Column(db.String(120), unique=False, nullable=True)
+    profile_picture = db.Column(db.String(80), unique=False, nullable=True)
     username = db.Column(db.String(120), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
-    user_profile = db.relationship("User_Profiles", back_populates="user")
     
     def __repr__(self):
         return f'<User {self.username}>'
@@ -54,32 +57,37 @@ class User(db.Model):
         return {
             "id": self.id,
             "email": self.email,
-            "username": self.username
+            "username": self.username,
+            "first_name": self.first_name,
+            "last_name": self.last_name,
+            "address": self.address,
+            "profile_picture": self.profile_picture
+            
             # do not serialize the password, its a security breach
         }
     
-class User_Profiles(db.Model):
-    __tablename__ = "userprofiles_table"
-    profile_id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.ForeignKey('user_table.id'))
-    first_name = db.Column(db.String(120), unique=False, nullable=True)
-    last_name = db.Column(db.String(120), unique=False, nullable=True)
-    user_email = db.Column(db.String(120), unique=True, nullable=False)
-    user_address = db.Column(db.String(120), unique=False, nullable=True)
-    profile_picture = db.Column(db.String(80), unique=False, nullable=True)
-    user = db.relationship("User", back_populates="user_profile")
+# class User_Profiles(db.Model):
+#     __tablename__ = "userprofiles_table"
+#     profile_id = db.Column(db.Integer, primary_key=True)
+#     user_id = db.Column(db.ForeignKey('user_table.id'))
+#     first_name = db.Column(db.String(120), unique=False, nullable=True)
+#     last_name = db.Column(db.String(120), unique=False, nullable=True)
+#     user_email = db.Column(db.String(120), unique=True, nullable=False)
+#     user_address = db.Column(db.String(120), unique=False, nullable=True)
+#     profile_picture = db.Column(db.String(80), unique=False, nullable=True)
+#     user = db.relationship("User", back_populates="user_profile")
 
-    def __repr__(self):
-        return f'<User_Profiles {self.user_email}>'
+#     def __repr__(self):
+#         return f'<User_Profiles {self.user_email}>'
     
-    def serialize(self):
-        return {
-            "first_name": self.first_name,
-            "last_name": self.last_name,
-            "user_email": self.user_email,
-            "user_address": self.user_address,
-            "profile_picture": self.profile_picture,
-        }
+#     def serialize(self):
+#         return {
+#             "first_name": self.first_name,
+#             "last_name": self.last_name,
+#             "user_email": self.user_email,
+#             "user_address": self.user_address,
+#             "profile_picture": self.profile_picture,
+#         }
     
 class User_Sessions(db.Model):
     __tablename__ = "usersessions_table"
