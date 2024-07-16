@@ -100,6 +100,7 @@ export const CardSet = () => {
 
             <h2>Ground Cards</h2>
             <GroundCardList gCards={gCards} showDetails={showDetails} />
+
           </section>
          
           <div className="d-flex justify-content-center mt-4">
