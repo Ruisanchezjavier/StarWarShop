@@ -17,14 +17,16 @@ export const Home = () => {
   };
 
 	    return (
-			<div>
+			<div className="content">
+			 <section>
 			  <Banner />
 			  <StarBackground />
 			  <div style={{ position: 'relative', zIndex: 1 }}>
 			  </div>
+		</section>
+			
 			</div>
 			
 		  );
 		};
-
 

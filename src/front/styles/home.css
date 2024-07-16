@@ -3,6 +3,7 @@
   
 } 
 
+
 #basic-navbar-nav {
 font-style: normal;
 font-size: large;
@@ -16,7 +17,14 @@ text-align:justify;
   padding: 1px;
   margin: 1px;
   
+  
   }
+
+  .content {
+    padding: 1rem;
+  }
+  
+
 
 .container h2 {
 
@@ -36,7 +44,7 @@ text-align:justify;
   padding: 1px;
   margin: 1px;
   border-radius: 8px;
-  width: 435px;
+  width: 100%;
  
 }
 

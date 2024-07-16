@@ -4,7 +4,9 @@ import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
 import { Home } from "./pages/home";
 import { Checkout_process } from "./pages/checkout_process.js";
-import { Profile } from "./pages/Profile";
+import { Profile } from "./pages/userProfile/Profile.js";
+import { Billing } from "./pages/userProfile/Billing.js";
+import { Security } from "./pages/userProfile/Security.js";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import { Shipping } from "./pages/shipping";
@@ -36,6 +38,8 @@ const Layout = () => {
                         <Route element={<Signup />} path="/signup" />
                         <Route element={<Checkout_process />} path="/checkout_process" />
                         <Route element={<Profile />} path="/Profile" />
+                        <Route element={<Billing />} path="/Billing" />
+                        <Route element={<Security />} path="/Security" />
                         <Route element={<Payment />} path="/payment" />
                         <Route element={<Shipping />} path="/shipping" />
                         <Route element={<CardSet />} path="/CardSet" />

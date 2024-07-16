@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../../styles/Profile.css';
+import { StarBackground } from '../component/StarBackground';
 
 export const Profile = () => {
   const [profile, setProfile] = useState({
@@ -27,7 +28,9 @@ export const Profile = () => {
   };
  
   return (
+    
     <div className="profile-container">
+    <StarBackground />
       <form onSubmit={handleSubmit} className="profile-form">
         <div className="profile-photo">
           <img src={profile.profilePhoto} alt="Profile" />
