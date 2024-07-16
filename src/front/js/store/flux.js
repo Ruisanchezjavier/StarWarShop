@@ -99,7 +99,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			authenticate: async () => {
-				let response = await fetch(process.env.BACKEND_URL+"api/user-profile", {
+				let response = await fetch(process.env.BACKEND_URL+"api/user", {
 					headers:{
 						Authorization:"Bearer " + sessionStorage.getItem("token")
 					}
@@ -112,6 +112,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					let data = await response.json()
 					console.log(data)
 					setStore({userProfile: data.user})
+					return true
 				}
 			},
 

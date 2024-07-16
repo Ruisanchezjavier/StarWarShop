@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { StarBackground } from '../component/StarBackground';
+import { useParams } from "react-router-dom";
 // import "../../styles/signup.css";
 
 
@@ -10,10 +11,11 @@ export const Signup = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState('');
+  const params = useParams()
   const navigate = useNavigate();
   const { store, actions } = useContext(Context);
 
-  const handleClick = () => {
+  const handleClick = async () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!username || !email || !password) {
@@ -30,15 +32,26 @@ export const Signup = () => {
     }
 
     setErrorMessage('');
-    actions.signUp(email, password, username);
+
+    let result = await actions.signUp(email, password, username);
+    if (result) {
+      navigate("/signin")
+    } else {
+      alert("There's been an error while attempting to signup, please try agin later...")
+    }
   };
 
-  useEffect(() => { 
-    actions.authenticate()
-    if (store.userProfile) {
-      navigate("/profile");
+  useEffect(() => {
+    let authenticate = async () => {
+      
+      let result = await actions.authenticate()
+      if (result) {
+        navigate("/profile")
+      }
     }
-  }, [store.userProfile]);
+    authenticate()
+
+  }, [params]);
 
   return (
     <>

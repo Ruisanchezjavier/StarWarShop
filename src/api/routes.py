@@ -23,12 +23,18 @@ def generate_token():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
 
-    email = email.lower()
-    user = User.query.filter_by(email=email, password=password).first()
+    
+    user = User.query.filter_by(email=email).first()
 
     if user is None:
         response = {
-            "msg": "Username or Password does not match."
+            "msg": "user not found"
+        }
+        return jsonify(response), 404
+    
+    if user.password != password:
+        response = {
+            "msg": "invalid password"
         }
         return jsonify(response), 401
     
@@ -48,11 +54,11 @@ def register_user():
 
     user = User.query.filter_by(email=email).first()
 
-    if user is not None and user.username == username:
+    if user:
         response = {
             "msg": "User already exists."
         }
-        return jsonify(response), 403
+        return jsonify(response), 409
     
     user = User(email=email,password=password,username=username)
     db.session.add(user)

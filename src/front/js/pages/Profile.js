@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { Context } from '../store/appContext';
 import '../../styles/Profile.css';
 
 export const Profile = () => {
+  const { store, actions } = useContext(Context)
   const [profile, setProfile] = useState({
     username: '',
     firstName: '',
@@ -25,7 +27,16 @@ export const Profile = () => {
 
     console.log('Profile updated:', profile);
   };
- 
+
+  useEffect(() => {
+    let authenticate = async () => {
+      let result = await actions.authenticate()
+      if (result) {
+        navigate("/signin")
+      }
+    }
+    authenticate()
+  }, []);
   return (
     <div className="profile-container">
       <form onSubmit={handleSubmit} className="profile-form">
