@@ -81,3 +81,22 @@ def get_user_profile():
         "user": user.serialize()
     }
     return jsonify(response), 200
+
+@api.route("/user", methods=['PUT'])
+@jwt_required()
+def update_user_profile():
+    user_id = get_jwt_identity()
+    user = User.query.filter_by(id=user_id).first()
+    
+    if not user:
+        return jsonify({"msg": "User not found"}), 404
+    
+    username = request.json.get('username', user.username)
+    user.username = username
+    db.session.commit()
+
+    response = {
+        "msg": f"Profile updated for {user.username}.",
+        "user": user.serialize()
+    }
+    return jsonify(response), 200
