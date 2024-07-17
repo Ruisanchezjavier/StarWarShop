@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../../../styles/Profile.css';
 import { StarBackground } from '../../component/StarBackground';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -8,9 +9,9 @@ return (
 <div className="container-xl px-4 mt-4">
 <StarBackground />
 <nav className="nav nav-borders">
-<a className="nav-link" href="/Profile" target="__blank">Profile</a>
-<a className="nav-link" href="/billing" target="__blank">Billing</a>
-<a className="nav-link active" href="/security" target="__blank">Security</a>
+<Link className="nav-link" href="/Profile" target="__blank">Profile</Link>
+<Link className="nav-link" href="/billing" target="__blank">Billing</Link>
+<Link className="nav-link active" href="/security" target="__blank">Security</Link>
 </nav>
 <hr className="mt-0 mb-4"/>
 <div className="row">

@@ -94,6 +94,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					loginMessage: null,
 					profileInfoMessage: null,
 					profileInfo: [],
+					userProfile: null,
+					message: null	
 				})
 				console.log("You've logged out.")
 			},

@@ -1,58 +1,50 @@
-import React, { useState, useEffect }  from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../img/webLogo.png";
 import "../../styles/navbar.css";
 import { Cart } from '../component/Checkout/Cart';
 
-
-
 export const Navbar = () => {
   const [cartItems, setCartItems] = useState([]);
-  
   const [scroll, setScroll] = useState(false);
+
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setScroll(window.scrollY > 7);
-    });
-  });
-     
+    const handleScroll = () => setScroll(window.scrollY > 7);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <header className={`headerMain ${scroll ? "sticky" : ""}`}>
-   
-    <nav className="navbar" >
-  <div className="navbar-left">
-    <a href="/" className="logo">
-      <img src={logo} width="80" height="80" alt="Logo" />
-    </a>
-  </div>
-  <div className="navbar-center">
-    <ul className="nav-links">
-      <li>
-        <a href="/">Home</a>
-      </li>
-      <li>
-        <a href="/about">About Us</a>
-      </li>
-      <li>
-        <a href="/CardSet">Card Set</a>
-      </li>
-    </ul>
-  </div>
-    
-  
-  <div className="navbar-right">
-   <a href="/checkout_process" className="cart-icon" aria-label="Shopping Cart">
-     <i className="fas fa-shopping-cart"></i>
-     <span className="cart-count">
-      <Cart cartItems={cartItems} />
-      </span>
-      
-  </a>
-  <a href="/" className="user-icon" aria-label="User Account">
-  
-  <div className="btn-group dropstart">
-  <button
-  className="btn btn-secondary dropdown-toggle"
+      <nav className="navbar">
+        <div className="navbar-left">
+          <Link to="/" className="logo">
+            <img src={logo} width="80" height="80" alt="Logo" />
+          </Link>
+        </div>
+        <div className="navbar-center">
+          <ul className="nav-links">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About Us</Link>
+            </li>
+            <li>
+              <Link to="/CardSet">Card Set</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="navbar-right">
+          <Link to="/checkout_process" className="cart-icon" aria-label="Shopping Cart">
+            <i className="fas fa-shopping-cart"></i>
+            <span className="cart-count">
+              <Cart cartItems={cartItems} />
+            </span>
+          </Link>
+          <div className="btn-group dropstart">
+            <button
+              className="btn btn-secondary dropdown-toggle"
               type="button"
               id="dropdownMenuButton"
               data-bs-toggle="dropdown"
@@ -66,12 +58,10 @@ export const Navbar = () => {
               <li><Link className="dropdown-item" to="/profile">User profile</Link></li>
             </ul>
           </div>
-    
-  </a> </div>
-</nav>
-  </header>
-
-);
+        </div>
+      </nav>
+    </header>
+  );
 };
 
 const SignInIcon = () => (
