@@ -2,13 +2,12 @@ import React, { useState, useEffect }  from "react";
 import { Link } from "react-router-dom";
 import logo from "../../img/webLogo.png";
 import "../../styles/navbar.css";
-import { Cart } from '../component/Checkout/Cart';
 
 
-
-export const Navbar = () => {
-  const [cartItems, setCartItems] = useState([]);
+export const Navbar = ({ cartCount }) => {
   
+  console.log(cartCount)
+
   const [scroll, setScroll] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -44,7 +43,7 @@ export const Navbar = () => {
    <a href="/checkout_process" className="cart-icon" aria-label="Shopping Cart">
      <i className="fas fa-shopping-cart"></i>
      <span className="cart-count">
-      <Cart cartItems={cartItems} />
+     <span>{cartCount}</span>
       </span>
       
   </a>

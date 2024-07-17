@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../styles/home.css";
 import { StarBackground } from '../component/StarBackground';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar,Nav, Container } from 'react-bootstrap';
 import { Character } from "../component/Cards/characterCard";
 import { GroundCardList } from "../component/Cards/groundCardList";
 import { gCards } from "../component/Cards/gCards";
@@ -10,7 +10,19 @@ import { sCards } from "../component/Cards/sCards";
 import { Modal, Button } from 'react-bootstrap';
 
 
+
+
 export const CardSet = () => {
+ 
+  const [cartCount, setCartCount] = useState(0);
+	
+  const addToCart = () => {
+  setCartCount(cartCount + 1);
+  }; 
+ 
+	// console.log(cartCount)
+
+
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -18,10 +30,8 @@ export const CardSet = () => {
       behavior: 'smooth'
     });
   };
-  const [cart, setCart] = useState([]);
-  const addToCart = (pcard) => {
-    setCart([...cart, pcard]);
-  };
+ 
+ 
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const showDetails = (pcard) => {
@@ -84,14 +94,18 @@ export const CardSet = () => {
               )}
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={() => addToCart(pcard)}>
-                add to cart
-              </Button>
+            
+             {/* <Button onClick={() => addToCart()}> 
+             add to cart
+             </Button> */}
+              <Button onClick={addToCart}>add to cart</Button> 
+              
+              
               <Button variant="secondary" onClick={closeModal}>
                 X
               </Button>
 
-
+              
 
             </Modal.Footer>
           </Modal>
