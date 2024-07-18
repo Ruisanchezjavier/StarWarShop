@@ -3,6 +3,7 @@ from api.models import db, User, User_Sessions, Category, Product, Image
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
 from flask_jwt_extended import get_jwt_identity, create_access_token, jwt_required
+from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import timedelta
 
 api = Blueprint('api', __name__)
@@ -104,3 +105,24 @@ def update_user_profile():
         "user": user.serialize()
     }
     return jsonify(response), 200
+
+@api.route("/change_password", methods=['PUT'])
+@jwt_required()
+def change_password():
+    user_id = get_jwt_identity()
+    user = User.query.filter_by(id=user_id).first()
+
+    if not user:
+        return jsonify({"msg": "User not found"}), 404
+
+    data = request.get_json()
+    current_password = data.get('current_password')
+    new_password = data.get('new_password')
+
+    if not check_password_hash(user.password, current_password):
+        return jsonify({"msg": "Wrong current password"}), 400
+
+    user.password = generate_password_hash(new_password)
+    db.session.commit()
+
+    return jsonify({"msg": "Password updated successfully"}), 200
