@@ -54,6 +54,9 @@ export const SignIn = () => {
 					</div>
 					<div>
 						<button onClick={handleClick}>Sign in</button>
+						<Link to="/signup">
+							<button>Sign Up</button>
+						</Link>
 					</div>
 				</>
 		</div>

@@ -69,7 +69,7 @@ export const Signup = () => {
                     <div className="row justify-content-center">
                       <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                        <div className="signup-page">
+                        <div className="signup-page text-center">
                           <div className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4-5 text-warning">
                             <h1>Sign Up</h1>
                           </div>
@@ -165,6 +165,7 @@ export const Signup = () => {
                               <input
                                 type="password"
                                 placeholder="Enter password"
+                                size="30"
                                 minLength="6"
                                 value={password}
                                 onChange={e => setPassword(e.target.value)}
@@ -173,7 +174,7 @@ export const Signup = () => {
                               <label className="form-label" htmlFor="form3Example4c"></label>
                             </div>
                           </div>
-                          <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                          <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4 mt-4">
                             <button
                               onClick={handleClick}
                               className="btn btn-primary btn-lg"
