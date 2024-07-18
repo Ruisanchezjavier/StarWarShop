@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { StarBackground } from '../component/StarBackground';
 import "../../styles/home.css";
 
 export const SignIn = () => {
@@ -27,8 +28,10 @@ export const SignIn = () => {
 		authenticate()
 	}, []);
 	return (
+		
 		<div className="text-center mt-5">
 				<>
+				<StarBackground />
 					<h1>Sign in</h1>
 					<div>
 						{store.signupMessage || ""}

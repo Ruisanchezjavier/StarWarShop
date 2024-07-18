@@ -60,7 +60,7 @@ export const Signup = () => {
     <>
       <StarBackground />
       <form onSubmit={e => e.preventDefault()}>
-        <div className="vh-100 bg-negro" style={{ backgroundColor: '#eeee' }}>
+        <div className="vh-100 bg-negro">
           <div className="container h-100">
             <div className="row d-flex justify-content-center align-items-center h-100">
               <div className="col-lg-12 col-xl-11">
