@@ -15,9 +15,8 @@ export const GroundCard = ({ pcard, addToCart, showDetails }) => {
       <p>Price: ${pcard.price}</p>
     
     <div className="btn-card d-grid">
-    <button className="btn btn-secondary" onClick={() => showDetails(pcard)}>Card Details</button>
-    
-    
+    <button className="btn btn-secondary" onClick={() => showDetails(pcard)} >Card Details</button>
+       
     
     </div>
      

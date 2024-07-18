@@ -1,27 +1,22 @@
 import React, { useState } from "react";
 import "../../styles/home.css";
 import { StarBackground } from '../component/StarBackground';
-import { Navbar,Nav, Container } from 'react-bootstrap';
+import { Nav, Container } from 'react-bootstrap';
 import { Character } from "../component/Cards/characterCard";
 import { GroundCardList } from "../component/Cards/groundCardList";
 import { gCards } from "../component/Cards/gCards";
 import { SpaceCardList } from "../component/Cards/spaceCardList";
 import { sCards } from "../component/Cards/sCards";
 import { Modal, Button } from 'react-bootstrap';
+import { addToCart } from '../component/ShoppingCart/actions/CartActions';
+
+
 
 
 
 
 export const CardSet = () => {
  
-  const [cartCount, setCartCount] = useState(0);
-	
-  const addToCart = () => {
-  setCartCount(cartCount + 1);
-  }; 
- 
-	// console.log(cartCount)
-
 
 
   const scrollToTop = () => {
@@ -53,14 +48,14 @@ export const CardSet = () => {
         </div>
       </div>
 
-
+      
 
       <div className="text-center mt-5">
         <StarBackground />
-        <Navbar id="navB" bg="light" expand="lg">
+        {/* <Navbar id="navB" bg="light" expand="lg"> */}
           <Container>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
+            {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav"> */}
               <Nav className="me-auto">
                 <Nav.Link href="#ground">Ground</Nav.Link>
                 <Nav.Link href="#space">Space</Nav.Link>
@@ -68,9 +63,9 @@ export const CardSet = () => {
                 <Nav.Link href="#battle">Battle</Nav.Link>
                 <Nav.Link href="#mission">Mission</Nav.Link>
               </Nav>
-            </Navbar.Collapse>
+            {/* </Navbar.Collapse> */}
           </Container>
-        </Navbar>
+        {/* </Navbar> */}
 
       </div>
       <div>
@@ -95,10 +90,13 @@ export const CardSet = () => {
             </Modal.Body>
             <Modal.Footer>
             
+            <Button onClick={() => addToCart()}>Add to Cart</Button>
+            
              {/* <Button onClick={() => addToCart()}> 
              add to cart
              </Button> */}
-              <Button onClick={addToCart}>add to cart</Button> 
+            
+              {/* <Button onClick={addToCart}>add to cart</Button>  */}
               
               
               <Button variant="secondary" onClick={closeModal}>

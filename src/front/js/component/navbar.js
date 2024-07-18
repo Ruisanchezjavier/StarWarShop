@@ -2,11 +2,24 @@ import React, { useState, useEffect }  from "react";
 import { Link } from "react-router-dom";
 import logo from "../../img/webLogo.png";
 import "../../styles/navbar.css";
+import { CartStore } from './ShoppingCart/stores/CartStore';
 
-
-export const Navbar = ({ cartCount }) => {
+export const Navbar = () => {
   
-  console.log(cartCount)
+  const [cartCount, setCartCount] = useState(CartStore.getCart().reduce((count, item) => count + item.quantity, 0));
+
+  useEffect(() => {
+    const onChange = () => {
+      setCartCount(CartStore.getCart().reduce((count, item) => count + item.quantity, 0));
+    };
+
+    CartStore.addChangeListener(onChange);
+    return () => {
+      CartStore.removeChangeListener(onChange);
+    };
+  }, []);
+
+
 
   const [scroll, setScroll] = useState(false);
   useEffect(() => {
@@ -40,13 +53,13 @@ export const Navbar = ({ cartCount }) => {
     
   
   <div className="navbar-right">
-   <a href="/checkout_process" className="cart-icon" aria-label="Shopping Cart">
+   <a href="/Cart" className="cart-icon" aria-label="Shopping Cart">
      <i className="fas fa-shopping-cart"></i>
      <span className="cart-count">
      <span>{cartCount}</span>
-      </span>
-      
+      </span>      
   </a>
+  
   <a href="/" className="user-icon" aria-label="User Account">
   
   <div className="btn-group dropstart">

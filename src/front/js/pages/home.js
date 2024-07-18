@@ -14,6 +14,7 @@ export const Home = () => {
 			 <section>
 			  <Banner />
 			  <StarBackground />
+			  
 			  <div style={{ position: 'relative', zIndex: 1 }}>
 			  </div>
 		</section>
