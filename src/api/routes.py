@@ -41,6 +41,9 @@ def generate_token():
 
 @api.route('/signup', methods=['POST'])
 def register_user():
+    first_name = request.json.get('first_name', None)
+    last_name = request.json.get('last_name', None)
+    address = request.json.get('address', None)
     username = request.json.get('username', None)
     email = request.json.get('email', None)
     password = request.json.get("password", None)
@@ -50,7 +53,7 @@ def register_user():
             "msg": "User already exists."
         }
         return jsonify(response), 409
-    user = User(email=email,password=password,username=username)
+    user = User(email=email,password=password,username=username,first_name=first_name,last_name=last_name,address=address)
     db.session.add(user)
     db.session.commit()
     response = {
@@ -94,7 +97,7 @@ def update_user_profile():
     user.address = address
     user.profile_picture = profile_picture
 
-    db.session.commit()  # Commit changes to the database
+    db.session.commit()
 
     response = {
         "msg": f"Profile updated for {user.username}.",

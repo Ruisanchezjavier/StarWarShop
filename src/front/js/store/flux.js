@@ -22,7 +22,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           }
         },
   
-        signUp: async (user_email, user_password, user_username) => {
+        signUp: async (user_email, user_password, user_username, first_name, last_name, address) => {
           const options = {
             method: "POST",
             mode: "cors",
@@ -33,6 +33,9 @@ const getState = ({ getStore, getActions, setStore }) => {
               username: user_username,
               email: user_email,
               password: user_password,
+              first_name: first_name,
+              last_name: last_name,
+              address:address
             }),
           };
   

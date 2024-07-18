@@ -10,6 +10,9 @@ export const Signup = () => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [first_name, setFirst_name] = useState("");
+  const [last_name, setLast_name] = useState("");
+  const [address, setAddress] = useState("");
   const [errorMessage, setErrorMessage] = useState('');
   const params = useParams()
   const navigate = useNavigate();
@@ -18,7 +21,7 @@ export const Signup = () => {
   const handleClick = async () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!username || !email || !password) {
+    if (!username || !email || !password || !first_name || !last_name || !address) {
       setErrorMessage('All fields are required');
       return;
     }
@@ -33,7 +36,7 @@ export const Signup = () => {
 
     setErrorMessage('');
 
-    let result = await actions.signUp(email, password, username);
+    let result = await actions.signUp(email, password, username, first_name, last_name, address);
     if (result) {
       navigate("/signin")
     } else {
@@ -85,10 +88,56 @@ export const Signup = () => {
                             <div data-mdb-input-init className="form-outline flex-fill mb-0">
                               <input
                                 type="text"
+                                placeholder="Enter first name"
+                                size="30"
+                                value={first_name}
+                                onChange={e => setFirst_name(e.target.value)}
+                                required
+                              />
+                              <label className="form-label" htmlFor="form3Example1c"></label>
+                            </div>
+                          </div>
+
+                          <div className="d-flex flex-row align-items-center mb-4">
+                            <i className="fas fa-user fa-lg me-3 fa-fw text-warning"></i>
+                            <div data-mdb-input-init className="form-outline flex-fill mb-0">
+                              <input
+                                type="text"
+                                placeholder="Enter last name"
+                                size="30"
+                                value={last_name}
+                                onChange={e => setLast_name(e.target.value)}
+                                required
+                              />
+                              <label className="form-label" htmlFor="form3Example1c"></label>
+                            </div>
+                          </div>
+
+
+                          <div className="d-flex flex-row align-items-center mb-4">
+                            <i className="fas fa-user fa-lg me-3 fa-fw text-warning"></i>
+                            <div data-mdb-input-init className="form-outline flex-fill mb-0">
+                              <input
+                                type="text"
                                 placeholder="Enter username"
                                 size="30"
                                 value={username}
                                 onChange={e => setUsername(e.target.value)}
+                                required
+                              />
+                              <label className="form-label" htmlFor="form3Example1c"></label>
+                            </div>
+                          </div>
+                          
+                          <div className="d-flex flex-row align-items-center mb-4">
+                            <i className="fas fa-map fa-lg me-3 fa-fw text-warning"></i>
+                            <div data-mdb-input-init className="form-outline flex-fill mb-0">
+                              <input
+                                type="address"
+                                placeholder="Enter your address"
+                                size="30"
+                                value={address}
+                                onChange={e => setAddress(e.target.value)}
                                 required
                               />
                               <label className="form-label" htmlFor="form3Example1c"></label>
