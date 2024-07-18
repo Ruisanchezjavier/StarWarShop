@@ -9,9 +9,9 @@ return (
 <div className="container-xl px-4 mt-4">
 <StarBackground />
 <nav className="nav nav-borders">
-<Link className="nav-link" href="/Profile" target="__blank">Profile</Link>
-<Link className="nav-link" href="/billing" target="__blank">Billing</Link>
-<Link className="nav-link active" href="/security" target="__blank">Security</Link>
+<Link className="nav-link" to="/Profile" target="__blank">Profile</Link>
+<Link className="nav-link" to="/billing" target="__blank">Billing</Link>
+<Link className="nav-link active" to="/security" target="__blank">Security</Link>
 </nav>
 <hr className="mt-0 mb-4"/>
 <div className="row">

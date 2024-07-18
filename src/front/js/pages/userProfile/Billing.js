@@ -12,12 +12,12 @@ return (
 
 <div className="container-xl px-4 mt-4">
 <nav className="nav nav-borders">
-<Link className="nav-link" href="/Profile" target="__blank">Profile</Link>
-<Link className="nav-link active" href="/billing" target="__blank">Billing</Link>
-<Link className="nav-link" href="/security" target="__blank">Security</Link>
+<Link className="nav-link" to="/Profile" target="__blank">Profile</Link>
+<Link className="nav-link active" to="/billing" target="__blank">Billing</Link>
+<Link className="nav-link" to="/security" target="__blank">Security</Link>
 </nav>
-<hr class="mt-0 mb-4"/>
-<div class="row">
+<hr className="mt-0 mb-4"/>
+<div className="row">
 <div className="card card-header-actions mb-4">
 <div className="card-header">
 Payment Methods
