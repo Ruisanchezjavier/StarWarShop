@@ -1,13 +1,8 @@
-"""
-This module takes care of starting the API Server, Loading the DB and Adding the endpoints
-"""
-from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User,User_Sessions, Category, Product, Image
+from flask import Flask, request, jsonify, Blueprint
+from api.models import db, User, User_Sessions, Category, Product, Image
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
-from flask_jwt_extended import get_jwt_identity
-from flask_jwt_extended import create_access_token
-from flask_jwt_extended import jwt_required
+from flask_jwt_extended import get_jwt_identity, create_access_token, jwt_required
 
 api = Blueprint('api', __name__)
 
@@ -16,14 +11,11 @@ CORS(api)
 
 # Initialize Flask-JWT-Extended
 
-        
 @api.route('/token', methods=['POST'])
 def generate_token():
-
     email = request.json.get("email", None)
     password = request.json.get("password", None)
 
-    
     user = User.query.filter_by(email=email).first()
 
     if user is None:
@@ -46,43 +38,7 @@ def generate_token():
     }
     return jsonify(response), 200
 
-@api.route('/signup', methods=['POST'])
-def register_user():
-    username = request.json.get('username', None)
-    email = request.json.get('email', None)
-    password = request.json.get("password", None)
-
-    user = User.query.filter_by(email=email).first()
-
-    if user:
-        response = {
-            "msg": "User already exists."
-        }
-        return jsonify(response), 409
-    
-    user = User(email=email,password=password,username=username)
-    db.session.add(user)
-    db.session.commit()
-   
-
-    response = {
-        "msg": f"Congratulations {user.email}. You have successfully sign up!"
-    }
-    return jsonify(response), 200
-
-@api.route("/user", methods=['GET'])
-@jwt_required()
-def get_user_profile():
-    user_id = get_jwt_identity()
-    user = User.query.filter_by(id = user_id).first()
-    
-    response = {
-        "msg": f"Hello {user.username}, here are your profile information.",
-        "user": user.serialize()
-    }
-    return jsonify(response), 200
-
-@api.route("/user", methods=['PUT'])
+@api.route("/profile", methods=['PUT'])
 @jwt_required()
 def update_user_profile():
     user_id = get_jwt_identity()
@@ -90,10 +46,24 @@ def update_user_profile():
     
     if not user:
         return jsonify({"msg": "User not found"}), 404
-    
+
     username = request.json.get('username', user.username)
+    first_name = request.json.get('firstName', user.first_name)
+    last_name = request.json.get('lastName', user.last_name)
+    email = request.json.get('email', user.email)
+    password = request.json.get('password', user.password)
+    address = request.json.get('address', user.address)
+    profile_picture = request.json.get('profilePhoto', user.profile_photo)
+
     user.username = username
-    db.session.commit()
+    user.first_name = first_name
+    user.last_name = last_name
+    user.email = email
+    user.password = password
+    user.address = address
+    user.profile_picture = profile_picture
+
+    db.session.commit()  # Commit changes to the database
 
     response = {
         "msg": f"Profile updated for {user.username}.",

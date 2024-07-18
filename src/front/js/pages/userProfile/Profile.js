@@ -26,21 +26,44 @@ export const Profile = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-    
-        console.log('Profile updated:', profile);
-      };
+        try {
+            const token = store.token; // Obtén el token del store
+            if (!token) {
+                console.error('Token not found');
+                return;
+            }
+            const response = await fetch(`${process.env.BACKEND_URL}/api/profile`, {
+                method: 'PUT', // Método para actualizar
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}` // Añade el token al header de autorización
+                },
+                body: JSON.stringify(profile), // Enviar perfil actualizado como JSON
+            });
+            if (response.ok) {
+                console.log('Perfil actualizado correctamente');
+                // Puedes manejar una respuesta exitosa aquí, como mostrar un mensaje al usuario
+            } else {
+                console.error('Error al actualizar perfil', response.status);
+                // Manejar errores de respuesta del servidor
+            }
+        } catch (error) {
+            console.error('Error de red:', error);
+            // Manejar errores de red, como problemas de conexión
+        }
+    };
 
     useEffect(() => {
         let authenticate = async () => {
-          let result = await actions.authenticate()
-          if (result) {
-            // navigate("/signin")
-          }
+            let result = await actions.authenticate();
+            if (!result) {
+                // navigate("/signin");
+            }
         }
-        authenticate()
-      }, []);
+        authenticate();
+    }, [actions, navigate]);
 
     return (
         <div>
@@ -89,6 +112,10 @@ export const Profile = () => {
                                     <div className="mb-3">
                                         <label className="small mb-1" htmlFor="email">Email address</label>
                                         <input className="form-control" id="email" name="email" type="email" placeholder="Enter your email address" value={profile.email} onChange={handleChange} />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label className="small mb-1" htmlFor="password">Password</label>
+                                        <input className="form-control" id="password" name="password" type="password" placeholder="Enter a new password" value={profile.password} onChange={handleChange} />
                                     </div>
                                     <button className="btn btn-primary" type="submit">Save changes</button>
                                 </form>
