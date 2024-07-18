@@ -1,10 +1,52 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState, useContext } from "react";
+import { Context } from "../../store/appContext";
+import { Link, useNavigate } from "react-router-dom";
 import '../../../styles/Profile.css';
 import { StarBackground } from '../../component/StarBackground';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export function Security() {
+const { store, actions } = useContext(Context);
+const navigate = useNavigate();
+const [profile, setProfile] = useState({
+    current_password: "",
+    new_password: "",
+    confirm_password: "",
+});
+
+const handleChange = (e) => {
+    const { name, value } = e.target;
+    setProfile({
+      ...profile,
+      [name]: value,
+    });
+  };
+
+const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const token = store.token; 
+      if (!token) {
+        console.error("Token not found");
+        return;
+      }
+      const response = await fetch(`${process.env.BACKEND_URL}api/profile`, {
+        method: "PUT", 
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`, 
+        },
+        body: JSON.stringify(profile), 
+      });
+      if (response.ok) {
+        console.log("Perfil actualizado correctamente");
+      } else {
+        console.error("Error al actualizar perfil", response.status);
+      }
+    } catch (error) {
+      console.error("Error de red:", error);
+    }
+  };
 return (
 <div className="container-xl px-4 mt-4">
 <StarBackground />
@@ -19,20 +61,40 @@ return (
 <div className="card mb-4">
 <div className="card-header">Change Password</div>
 <div className="card-body">
-<form>
+<form onSubmit={handleSubmit}>
 <div className="mb-3">
 <label className="small mb-1" htmlFor="currentPassword">Current Password</label>
-<input className="form-control" id="currentPassword" type="password" placeholder="Enter current password"/>
+<input 
+className="form-control" 
+id="currentPassword" 
+name="current_password" 
+type="password" 
+placeholder="Enter current password"  
+value={profile.current_password}
+onChange={handleChange}
+/>
 </div>
 <div className="mb-3">
 <label className="small mb-1" htmlFor="newPassword">New Password</label>
-<input className="form-control" id="newPassword" type="password" placeholder="Enter new password"/>
+<input 
+className="form-control" 
+id="newPassword"
+name="confirm_password" 
+type="password" 
+placeholder="Enter new password"
+value={profile.confirm_password}
+onChange={handleChange}
+/>
 </div>
 <div className="mb-3">
 <label className="small mb-1" htmlFor="confirmPassword">Confirm Password</label>
-<input className="form-control" id="confirmPassword" type="password" placeholder="Confirm new password"/>
+<input 
+className="form-control" 
+id="confirmPassword" 
+type="password" 
+placeholder="Confirm new password"/>
 </div>
-<button className="btn btn-primary" type="button">Save</button>
+<button className="btn btn-primary" type="submit">Save</button>
 </form>
 </div>
 </div>

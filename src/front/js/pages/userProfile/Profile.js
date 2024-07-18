@@ -29,29 +29,26 @@ export const Profile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const token = store.token; // Obtén el token del store
+      const token = store.token; 
       if (!token) {
         console.error("Token not found");
         return;
       }
       const response = await fetch(`${process.env.BACKEND_URL}api/profile`, {
-        method: "PUT", // Método para actualizar
+        method: "PUT", 
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`, // Añade el token al header de autorización
+          Authorization: `Bearer ${token}`, 
         },
-        body: JSON.stringify(profile), // Enviar perfil actualizado como JSON
+        body: JSON.stringify(profile), 
       });
       if (response.ok) {
         console.log("Perfil actualizado correctamente");
-        // Puedes manejar una respuesta exitosa aquí, como mostrar un mensaje al usuario
       } else {
         console.error("Error al actualizar perfil", response.status);
-        // Manejar errores de respuesta del servidor
       }
     } catch (error) {
       console.error("Error de red:", error);
-      // Manejar errores de red, como problemas de conexión
     }
   };
 
