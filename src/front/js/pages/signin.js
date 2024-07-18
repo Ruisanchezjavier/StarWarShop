@@ -28,14 +28,6 @@ export const SignIn = () => {
 	}, []);
 	return (
 		<div className="text-center mt-5">
-			{(store.token && store.token !== "" && store.token !== undefined) ? (
-				<>
-					<h1>You are logged in</h1>
-					<Link to="/profile">
-						<button>Go to your invoices</button>
-					</Link>
-				</>
-			) : (
 				<>
 					<h1>Sign in</h1>
 					<div>
@@ -61,7 +53,6 @@ export const SignIn = () => {
 						<button onClick={handleClick}>Sign in</button>
 					</div>
 				</>
-			)}
 		</div>
 	);
 };

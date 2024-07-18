@@ -3,6 +3,7 @@ from api.models import db, User, User_Sessions, Category, Product, Image
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
 from flask_jwt_extended import get_jwt_identity, create_access_token, jwt_required
+from datetime import timedelta
 
 api = Blueprint('api', __name__)
 
@@ -30,11 +31,41 @@ def generate_token():
         }
         return jsonify(response), 401
     
-    access_token = create_access_token(identity=user.id)
+    access_token = create_access_token(identity=user.id, expires_delta=timedelta(hours=1))
     response = {
         "access_token": access_token,
         "user_id": user.id,
         "msg": f'Welcome {user.email}! This worked!'
+    }
+    return jsonify(response), 200
+
+@api.route('/signup', methods=['POST'])
+def register_user():
+    username = request.json.get('username', None)
+    email = request.json.get('email', None)
+    password = request.json.get("password", None)
+    user = User.query.filter_by(email=email).first()
+    if user:
+        response = {
+            "msg": "User already exists."
+        }
+        return jsonify(response), 409
+    user = User(email=email,password=password,username=username)
+    db.session.add(user)
+    db.session.commit()
+    response = {
+        "msg": f"Congratulations {user.email}. You have successfully sign up!"
+    }
+    return jsonify(response), 200
+
+@api.route("/user", methods=['GET'])
+@jwt_required()
+def get_user_profile():
+    user_id = get_jwt_identity()
+    user = User.query.filter_by(id = user_id).first()
+    response = {
+        "msg": f"Hello {user.username}, here are your profile information.",
+        "user": user.serialize()
     }
     return jsonify(response), 200
 
@@ -48,12 +79,12 @@ def update_user_profile():
         return jsonify({"msg": "User not found"}), 404
 
     username = request.json.get('username', user.username)
-    first_name = request.json.get('firstName', user.first_name)
-    last_name = request.json.get('lastName', user.last_name)
+    first_name = request.json.get('first_name', user.first_name)
+    last_name = request.json.get('last_name', user.last_name)
     email = request.json.get('email', user.email)
     password = request.json.get('password', user.password)
     address = request.json.get('address', user.address)
-    profile_picture = request.json.get('profilePhoto', user.profile_photo)
+    profile_picture = request.json.get('profile_picture', user.profile_picture)
 
     user.username = username
     user.first_name = first_name
