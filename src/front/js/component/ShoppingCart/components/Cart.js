@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { CartStore } from '../component/Shopping Cart/stores/CartStore';
+import { CartStore } from '../stores/CartStore';
 import { removeFromCart, clearCart } from '../actions/CartActions';
 
 export const Cart = () => {
@@ -18,8 +18,8 @@ export const Cart = () => {
 
   return (
     <div>
-      <h2>Cart</h2>
-      {cart.length === 0 && <p>No items in cart.</p>}
+      <h2>Cart11</h2>
+      {cart.length === 0 && <p></p>}
       {cart.map((item) => (
         <div key={item.id}>
           <h4>{item.name}</h4>

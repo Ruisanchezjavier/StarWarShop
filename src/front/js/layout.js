@@ -4,7 +4,6 @@ import ScrollToTop from "./component/scrollToTop";
 import injectContext from "./store/appContext";
 import { BackendURL } from "./component/backendURL";
 import { Home } from "./pages/home";
-
 import { Profile } from "./pages/userProfile/Profile.js";
 import { Billing } from "./pages/userProfile/Billing.js";
 import { Security } from "./pages/userProfile/Security.js";
@@ -18,6 +17,7 @@ import { SignIn } from "./pages/signin";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { AboutUs } from "./pages/aboutus.js";
+import { Cart } from "./component/ShoppingCart/components/Cart.js";
 
 
 
@@ -38,7 +38,6 @@ const Layout = () => {
                         <Route element={<Home />} path="/" />
                         <Route element={<SignIn />} path="/signin" />
                         <Route element={<Signup />} path="/signup" />
-                       
                         <Route element={<Profile />} path="/Profile" />
                         <Route element={<Billing />} path="/Billing" />
                         <Route element={<Security />} path="/Security" />
@@ -46,6 +45,7 @@ const Layout = () => {
                         <Route element={<Shipping />} path="/shipping" />
                         <Route element={<CardSet />} path="/CardSet" />
                         <Route element={<AboutUs />} path="/aboutus" />
+                        <Route element={<Cart />} path="/Cart" />
                         <Route element={<h1>Not found!</h1>} />
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single/:theid" />

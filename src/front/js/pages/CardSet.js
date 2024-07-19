@@ -15,7 +15,7 @@ import { addToCart } from '../component/ShoppingCart/actions/CartActions';
 
 
 
-export const CardSet = () => {
+export const CardSet = (pcard) => {
  
 
 
@@ -90,7 +90,7 @@ export const CardSet = () => {
             </Modal.Body>
             <Modal.Footer>
             
-            <Button onClick={() => addToCart()}>Add to Cart</Button>
+            <Button onClick={() => addToCart(pcard)}>Add to Cart</Button>
             
              {/* <Button onClick={() => addToCart()}> 
              add to cart

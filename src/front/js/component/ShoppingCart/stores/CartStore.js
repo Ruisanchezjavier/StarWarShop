@@ -7,6 +7,8 @@ const CHANGE_EVENT = 'change';
 let _cart = [];
 
 export const CartStore = Object.assign({}, EventEmitter.prototype, {
+ 
+
   getCart() {
     return _cart;
   },
@@ -47,7 +49,7 @@ AppDispatcher.register((action) => {
       break;
 
     default:
-    // no op
+   
   }
 });
 

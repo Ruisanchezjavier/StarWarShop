@@ -5,21 +5,16 @@ import "../../styles/navbar.css";
 import { CartStore } from './ShoppingCart/stores/CartStore';
 
 export const Navbar = () => {
-  
-  const [cartCount, setCartCount] = useState(CartStore.getCart().reduce((count, item) => count + item.quantity, 0));
-
+    const [cartCount, setCartCount] = useState(CartStore.getCart().reduce((count, item) => count + item.quantity, 0));
   useEffect(() => {
     const onChange = () => {
       setCartCount(CartStore.getCart().reduce((count, item) => count + item.quantity, 0));
     };
-
     CartStore.addChangeListener(onChange);
     return () => {
       CartStore.removeChangeListener(onChange);
     };
   }, []);
-
-
 
   const [scroll, setScroll] = useState(false);
   useEffect(() => {
@@ -28,6 +23,8 @@ export const Navbar = () => {
     });
   });
      
+  
+
   return (
     <header className={`headerMain ${scroll ? "sticky" : ""}`}>
    
