@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { Context } from "../store/appContext";
+import { useNavigate } from "react-router-dom";
 import "../../styles/home.css";
 import { StarBackground } from '../component/StarBackground';
 import { Navbar, Nav, Container } from 'react-bootstrap';
@@ -11,6 +13,9 @@ import { Modal, Button } from 'react-bootstrap';
 
 
 export const CardSet = () => {
+  const { store, actions } = useContext(Context);
+  const navigate = useNavigate();
+  const [profile, setProfile] = useState("");
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -34,6 +39,17 @@ export const CardSet = () => {
     setModalIsOpen(false);
     setSelectedProduct(null);
   };
+
+  useEffect(() => {
+    let authenticate = async () => {
+      let result = await actions.authenticate();
+      if (result) {
+        setProfile(store.userProfile);
+      }else{navigate("/signin")}
+    };
+    authenticate();
+  }, []);
+
   return (
 
     <div>

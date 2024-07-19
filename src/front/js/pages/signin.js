@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { StarBackground } from '../component/StarBackground';
 import "../../styles/home.css";
 
 export const SignIn = () => {
@@ -27,16 +28,10 @@ export const SignIn = () => {
 		authenticate()
 	}, []);
 	return (
+		
 		<div className="text-center mt-5">
-			{(store.token && store.token !== "" && store.token !== undefined) ? (
 				<>
-					<h1>You are logged in</h1>
-					<Link to="/profile">
-						<button>Go to your invoices</button>
-					</Link>
-				</>
-			) : (
-				<>
+				<StarBackground />
 					<h1>Sign in</h1>
 					<div>
 						{store.signupMessage || ""}
@@ -59,9 +54,11 @@ export const SignIn = () => {
 					</div>
 					<div>
 						<button onClick={handleClick}>Sign in</button>
+						<Link to="/signup">
+							<button>Sign Up</button>
+						</Link>
 					</div>
 				</>
-			)}
 		</div>
 	);
 };
