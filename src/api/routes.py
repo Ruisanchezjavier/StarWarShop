@@ -116,13 +116,23 @@ def change_password():
         return jsonify({"msg": "User not found"}), 404
 
     data = request.get_json()
-    current_password = data.get('current_password')
     new_password = data.get('new_password')
 
-    if not check_password_hash(user.password, current_password):
-        return jsonify({"msg": "Wrong current password"}), 400
-
-    user.password = generate_password_hash(new_password)
+    user.password = new_password
     db.session.commit()
 
     return jsonify({"msg": "Password updated successfully"}), 200
+
+@api.route("/verify-password", methods=['POST'])
+@jwt_required()
+def verify_password():
+    user_id = get_jwt_identity()
+    user = User.query.filter_by(id=user_id).first()
+    if not user:
+        return jsonify({"msg": "User not found"}), 404
+    data = request.get_json()
+    password = data.get('password')
+    if user.password!= password:
+        return jsonify({"msg": "Wrong password"}), 401
+
+    return jsonify({"msg": "Password is correct"}), 200
