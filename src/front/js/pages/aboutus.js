@@ -5,10 +5,10 @@ import { StarBackground } from '../component/StarBackground';
 export const AboutUs = () => {
   return (     
      
-        <div className="about-container">
+        <div className="about-container1">
             <StarBackground />
-          <div className="background-zoom"></div>
-          <div className="content">
+          <div className="background-zoom1"></div>
+          <div className="content1">
             <h1>About Us</h1>
             <p>
             Ali, Javier and Tony came together with a shared vision: "to create a revolutionary website that would transform the way people interact with technology".
