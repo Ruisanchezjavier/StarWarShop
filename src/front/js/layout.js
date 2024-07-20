@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
+import injectContext from "./store/appContext";
 import { BackendURL } from "./component/backendURL";
 import { Home } from "./pages/home";
-import { Checkout_process } from "./pages/checkout_process.js";
 import { Profile } from "./pages/userProfile/Profile.js";
 import { Billing } from "./pages/userProfile/Billing.js";
 import { Security } from "./pages/userProfile/Security.js";
@@ -14,10 +14,12 @@ import { Payment } from "./pages/payment.js";
 import { CardSet } from "./pages/CardSet";
 import { Signup } from "./pages/signup";
 import { SignIn } from "./pages/signin";
-import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { AboutUs } from "./pages/aboutus.js";
+import { Cart } from "./component/ShoppingCart/Cart.js";
+
+
 
 //create your first component
 const Layout = () => {
@@ -36,7 +38,6 @@ const Layout = () => {
                         <Route element={<Home />} path="/" />
                         <Route element={<SignIn />} path="/signin" />
                         <Route element={<Signup />} path="/signup" />
-                        <Route element={<Checkout_process />} path="/checkout_process" />
                         <Route element={<Profile />} path="/Profile" />
                         <Route element={<Billing />} path="/Billing" />
                         <Route element={<Security />} path="/Security" />
@@ -44,6 +45,7 @@ const Layout = () => {
                         <Route element={<Shipping />} path="/shipping" />
                         <Route element={<CardSet />} path="/CardSet" />
                         <Route element={<AboutUs />} path="/aboutus" />
+                        <Route element={<Cart />} path="/Cart" />
                         <Route element={<h1>Not found!</h1>} />
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single/:theid" />

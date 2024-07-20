@@ -1,21 +1,22 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Context } from "../store/appContext";
-import { useNavigate } from "react-router-dom";
+import React, { useContext, useEffect, useState } from 'react';
+import { Context } from "../store/appContext"
 import "../../styles/home.css";
 import { StarBackground } from '../component/StarBackground';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Nav, Container } from 'react-bootstrap';
 import { Character } from "../component/Cards/characterCard";
 import { GroundCardList } from "../component/Cards/groundCardList";
-import { gCards } from "../component/Cards/gCards";
 import { SpaceCardList } from "../component/Cards/spaceCardList";
-import { sCards } from "../component/Cards/sCards";
 import { Modal, Button } from 'react-bootstrap';
 
 
+
+
+
+
+
 export const CardSet = () => {
-  const { store, actions } = useContext(Context);
-  const navigate = useNavigate();
-  const [profile, setProfile] = useState("");
+  const { store, actions } = useContext(Context)
+
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -23,14 +24,12 @@ export const CardSet = () => {
       behavior: 'smooth'
     });
   };
-  const [cart, setCart] = useState([]);
-  const addToCart = (pcard) => {
-    setCart([...cart, pcard]);
-  };
+
+
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const showDetails = () => {
-    setSelectedProduct();
+  const showDetails = (pcard) => {
+    setSelectedProduct(pcard);
     setModalIsOpen(true);
 
   };
@@ -39,17 +38,6 @@ export const CardSet = () => {
     setModalIsOpen(false);
     setSelectedProduct(null);
   };
-
-  // useEffect(() => {
-  //   let authenticate = async () => {
-  //     let result = await actions.authenticate();
-  //     if (result) {
-  //       setProfile(store.userProfile);
-  //     }else{navigate("/signin")}
-  //   };
-  //   authenticate();
-  // }, []);
-
   return (
 
     <div>
@@ -63,20 +51,20 @@ export const CardSet = () => {
 
       <div className="text-center mt-5">
         <StarBackground />
-        <Navbar id="navB" bg="light" expand="lg">
-          <Container>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="me-auto">
-                <Nav.Link href="#ground">Ground</Nav.Link>
-                <Nav.Link href="#space">Space</Nav.Link>
-                <Nav.Link href="#character">Character</Nav.Link>
-                <Nav.Link href="#battle">Battle</Nav.Link>
-                <Nav.Link href="#mission">Mission</Nav.Link>
-              </Nav>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
+        {/* <Navbar id="navB" bg="light" expand="lg"> */}
+        <Container>
+          {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav"> */}
+          <Nav className="me-auto">
+            <Nav.Link href="#ground">Ground</Nav.Link>
+            <Nav.Link href="#space">Space</Nav.Link>
+            <Nav.Link href="#character">Character</Nav.Link>
+            <Nav.Link href="#battle">Battle</Nav.Link>
+            <Nav.Link href="#mission">Mission</Nav.Link>
+          </Nav>
+          {/* </Navbar.Collapse> */}
+        </Container>
+        {/* </Navbar> */}
 
       </div>
       <div>
@@ -100,9 +88,16 @@ export const CardSet = () => {
               )}
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={() => addToCart(pcard)}>
-                add to cart
-              </Button>
+
+              <Button onClick={() => actions.addToCart(selectedProduct)}>Add to Cart</Button>
+
+              {/* <Button onClick={() => addToCart()}> 
+             add to cart
+             </Button> */}
+
+              {/* <Button onClick={addToCart}>add to cart</Button>  */}
+
+
               <Button variant="secondary" onClick={closeModal}>
                 X
               </Button>
@@ -115,25 +110,25 @@ export const CardSet = () => {
           <section id="ground">
 
             <h2>Ground Cards</h2>
-            <GroundCardList gCards={gCards} showDetails={showDetails} />
+            <GroundCardList showDetails={showDetails} />
 
           </section>
-         
+
           <div className="d-flex justify-content-center mt-4">
             <button className="btn-dark btn btn-primary" onClick={scrollToTop}>
-            <i className="fas fa-arrow-up"></i>
+              <i className="fas fa-arrow-up"></i>
             </button>
           </div>
-         
+
           <section id="space">
             <h2>Space Cards</h2>
-            <SpaceCardList sCards={sCards} showDetails={showDetails} />
+            <SpaceCardList showDetails={showDetails} />
 
             <div className="d-flex justify-content-center mt-4">
-            <button className="btn-dark btn btn-primary" onClick={scrollToTop}>
-            <i className="fas fa-arrow-up"></i>
-            </button>
-          </div>
+              <button className="btn-dark btn btn-primary" onClick={scrollToTop}>
+                <i className="fas fa-arrow-up"></i>
+              </button>
+            </div>
 
 
           </section>

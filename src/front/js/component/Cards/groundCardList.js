@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {useContext, useEffect, useState } from 'react';
+import{Context}from"../../store/appContext"
+
 import { GroundCard } from '../Cards/groundCard';
 
-export const GroundCardList = ({ gCards, showDetails, addToCart }) => {
-    
+export const GroundCardList = ({ showDetails}) => {
+  const {store,actions}=useContext(Context)
   return (
     <div className="pcard-list">
-      {gCards.map((pcard) => (
-        <GroundCard key={pcard.id} pcard={pcard} showDetails={showDetails} addToCart={addToCart}/>
+      {store.cards.filter((item)=>item.type=="Ground").map((pcard) => (
+        <GroundCard key={pcard.id} pcard={pcard} showDetails={showDetails} />
       ))}
     </div>
   );
