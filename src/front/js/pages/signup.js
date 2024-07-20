@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { StarBackground } from '../component/StarBackground';
 import { useParams } from "react-router-dom";
-// import "../../styles/signup.css";
+
 
 
 export const Signup = () => {

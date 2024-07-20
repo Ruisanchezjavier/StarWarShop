@@ -7,39 +7,44 @@ import { Character } from "../component/Cards/characterCard";
 import { GroundCardList } from "../component/Cards/groundCardList";
 import { SpaceCardList } from "../component/Cards/spaceCardList";
 import { Modal, Button } from 'react-bootstrap';
-
-
-
-
-
-
+import { useNavigate } from "react-router-dom";
 
 export const CardSet = () => {
   const { store, actions } = useContext(Context)
-
-
+  const navigate = useNavigate();
+  const [profile, setProfile] = useState("");
+ 
+ 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
   };
-
-
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const showDetails = (pcard) => {
     setSelectedProduct(pcard);
     setModalIsOpen(true);
-
   };
-
   const closeModal = () => {
     setModalIsOpen(false);
     setSelectedProduct(null);
   };
-  return (
 
+  useEffect(() => {
+    let authenticate = async () => {
+      let result = await actions.authenticate();
+      if (result) {
+        setProfile(store.userProfile);
+      }else{navigate("/signin")}
+    };
+    authenticate();
+  }, []);
+
+
+  return (
+    
     <div>
       <div className="container">
         <div className="text-center text-white">
@@ -47,14 +52,11 @@ export const CardSet = () => {
         </div>
       </div>
 
-
-
       <div className="text-center mt-5">
         <StarBackground />
-        {/* <Navbar id="navB" bg="light" expand="lg"> */}
+        
         <Container>
-          {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav"> */}
+        
           <Nav className="me-auto">
             <Nav.Link href="#ground">Ground</Nav.Link>
             <Nav.Link href="#space">Space</Nav.Link>
@@ -62,10 +64,9 @@ export const CardSet = () => {
             <Nav.Link href="#battle">Battle</Nav.Link>
             <Nav.Link href="#mission">Mission</Nav.Link>
           </Nav>
-          {/* </Navbar.Collapse> */}
+          
         </Container>
-        {/* </Navbar> */}
-
+       
       </div>
       <div>
 
@@ -91,18 +92,9 @@ export const CardSet = () => {
 
               <Button onClick={() => actions.addToCart(selectedProduct)}>Add to Cart</Button>
 
-              {/* <Button onClick={() => addToCart()}> 
-             add to cart
-             </Button> */}
-
-              {/* <Button onClick={addToCart}>add to cart</Button>  */}
-
-
               <Button variant="secondary" onClick={closeModal}>
                 X
               </Button>
-
-
 
             </Modal.Footer>
           </Modal>
@@ -129,7 +121,6 @@ export const CardSet = () => {
                 <i className="fas fa-arrow-up"></i>
               </button>
             </div>
-
 
           </section>
 
