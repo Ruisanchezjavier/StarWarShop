@@ -29,8 +29,8 @@ export const CardSet = () => {
   };
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const showDetails = (pcard) => {
-    setSelectedProduct(pcard);
+  const showDetails = () => {
+    setSelectedProduct();
     setModalIsOpen(true);
 
   };
@@ -40,15 +40,15 @@ export const CardSet = () => {
     setSelectedProduct(null);
   };
 
-  useEffect(() => {
-    let authenticate = async () => {
-      let result = await actions.authenticate();
-      if (result) {
-        setProfile(store.userProfile);
-      }else{navigate("/signin")}
-    };
-    authenticate();
-  }, []);
+  // useEffect(() => {
+  //   let authenticate = async () => {
+  //     let result = await actions.authenticate();
+  //     if (result) {
+  //       setProfile(store.userProfile);
+  //     }else{navigate("/signin")}
+  //   };
+  //   authenticate();
+  // }, []);
 
   return (
 
