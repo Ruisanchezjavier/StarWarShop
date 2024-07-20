@@ -29,13 +29,13 @@ export const Navbar = () => {
         <div className="navbar-center">
           <ul className="nav-links">
             <li>
-              <a href="/">Home</a>
+            <Link to="/">Home</Link> 
             </li>
             <li>
-              <a href="/about">About Us</a>
+            <Link to="/AboutUs">About Us</Link> 
             </li>
             <li>
-              <a href="/CardSet">Card Set</a>
+            <Link to="/CardSet">Card Set</Link> 
             </li>
           </ul>
         </div>

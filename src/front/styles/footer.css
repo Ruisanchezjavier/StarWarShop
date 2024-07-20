@@ -1,13 +1,9 @@
-body {
-  background-color: #000;
-  color: #fff;
-  font-family: 'Star Jedi', sans-serif;
-}
-
 .footer {
-  background-color: #111;
-  padding: 20px 0;
-  z-index: -1;
+  background-color: #111111d7;
+  padding: 10px 10;
+  z-index: 1000;
+  position:static;
+  width: 100%;
 }
 
 .footer a {
@@ -21,13 +17,4 @@ body {
 .footer .social-icons i {
   font-size: 24px;
   margin: 0 10px;
-}
-footer {
-  margin-top: 0px;
-}
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  
 }

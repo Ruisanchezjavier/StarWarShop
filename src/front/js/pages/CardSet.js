@@ -13,7 +13,15 @@ export const CardSet = () => {
   const { store, actions } = useContext(Context)
   const navigate = useNavigate();
   const [profile, setProfile] = useState("");
- 
+  useEffect(() => {
+    let authenticate = async () => {
+      let result = await actions.authenticate();
+      if (result) {
+        setProfile(store.userProfile);
+      }else{navigate("/signin")}
+    };
+    authenticate();
+  }, []);
  
   const scrollToTop = () => {
     window.scrollTo({
@@ -32,15 +40,7 @@ export const CardSet = () => {
     setSelectedProduct(null);
   };
 
-  useEffect(() => {
-    let authenticate = async () => {
-      let result = await actions.authenticate();
-      if (result) {
-        setProfile(store.userProfile);
-      }else{navigate("/signin")}
-    };
-    authenticate();
-  }, []);
+
 
 
   return (

@@ -9,9 +9,7 @@ export const Footer = () => {
           <div className="col-md-6 mb-4">
             <h5>Contact Information</h5>
             <p>Email: contact@starwars.com</p>
-            <p>Phone: +1 (123) 456-7890</p>
-            <p>Address: 123 Star Wars Street, Galaxy Far Far Away</p>
-          </div>
+            </div>
           <div className="col-md-6 mb-4">
             <h5>Follow Us</h5>
             <div className="social-icons">

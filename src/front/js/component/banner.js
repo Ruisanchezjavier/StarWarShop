@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from 'react';
+import { Context } from "../store/appContext"
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../styles/banner.css';
+import { useNavigate } from "react-router-dom";
 
 export const Banner = () => {
+  
+  const navigate = useNavigate();
+  const [profile, setProfile] = useState("");
+  useEffect(() => {
+    let authenticate = async () => {
+      let result = await actions.authenticate();
+      if (result) {
+        setProfile(store.userProfile);
+      }else{navigate("/signin")}
+    };
+    authenticate();
+  }, []);
+  
+  
   return (
     <div className="p-5 text-center bg-image rounded-3 jumbotron-bg">
 

@@ -4,13 +4,6 @@ import ReactDOM from "react-dom";
 import Modal from 'react-modal';
 
 
-
-//include your index.scss file into the bundle
-// import "../styles/index.css";
-
-
-
-
 //import your own components
 import Layout from "./layout";
 

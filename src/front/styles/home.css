@@ -82,11 +82,11 @@ text-align:justify;
 }
 
 .custom-modal .btn-secondary {
-  background-color: #b2dd278f; /* Color de fondo del botón personalizado */
+  background-color: #b2dd278f; 
   border-color: #f5f7f8;
 }
 
 .custom-modal .btn-secondary:hover {
-  background-color: #d12424d4; /* Color de fondo del botón al pasar el mouse */
+  background-color: #d12424d4;
   border-color: #f5f7f8;
 }

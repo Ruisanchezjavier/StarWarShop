@@ -1,71 +1,43 @@
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 -15px;
-}
-
-.image-container {
+.about-container {
   position: relative;
   width: 100%;
-  max-height: 320px;
+  height: 100vh;
+  overflow: hidden;
+  color: rgb(255, 187, 0);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-.name-circle {
-  font-size: 18px;
-  font-weight: bold;
-  padding: 10px;
-  background: black;
-  border-radius: 50%;
-  width: 60px; /* Adjust as needed */
-  text-align: center;
+.background-zoom {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  color: white;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.name-circle:hover {
-  color: red;
-}
-
-.column {
-  flex: 1 1 300px; 
-  max-width: 500px; 
-  margin: 15px;
-  box-sizing: border-box; 
-  background-color: #f9f9f9; 
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
-  text-align: center;
-  transition: box-shadow 0.3s ease; 
-}
-
-.column:hover {
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); 
-}
-
-.column img {
+  top: 0;
+  left: 0;
   width: 100%;
-  max-height: 320px;
-  object-fit: cover; 
-  border-radius: 8px;
-  margin-bottom: 15px;
+  height: 100%;
+  opacity: .8;
+  background-image: url('https://trello.com/1/cards/667d4dd852281e395554e3d6/attachments/669c3db691219b7fbf59432b/previews/669c3db791219b7fbf594334/download/Default_A_sleek_and_modern_TrinityCode_Lab_logo_every_element_0.jpg');
+  background-size: cover;
+  background-position: center;
+  animation: zoom 30s infinite;
 }
 
-.column p {
-  font-size: 16px;
-  line-height: 1.5;
-  color: #333; 
-  text-align: justify; 
-}
-
-@media (max-width: 768px) {
-  .column {
-    flex: 1 1 100%; 
-    max-width: 100%;
+@keyframes zoom {
+  0% {
+    transform: scale(1);
   }
+  /* 50% {
+    transform: scale(1.2);
+  } */
+  100% {
+    transform: scale(1.5);
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  max-width: 600px;
+  margin: 50px auto;
+  border-radius: 8px;
 }

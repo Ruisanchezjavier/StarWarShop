@@ -43,7 +43,7 @@ export const Profile = () => {
         body: JSON.stringify(profile), 
       });
       if (response.ok) {
-        console.log("Perfil actualizado correctamente");
+        
       } else {
         console.error("Error al actualizar perfil", response.status);
       }
@@ -65,39 +65,19 @@ export const Profile = () => {
   return (
     <div>
       <StarBackground />
-      {/* <button onClick={() => console.log(profile)}>click here</button> */}
-      <div className="container-xl px-4 mt-4">
+        <div className="container-xl px-4 mt-4">
         <nav className="nav nav-borders">
           <Link className="nav-link active" to="/profile">
             Profile
           </Link>
-          <Link className="nav-link" to="/billing">
+          {/* <Link className="nav-link" to="/billing">
             Billing
-          </Link>
+          </Link> */}
           <Link className="nav-link" to="/security">
             Security
           </Link>
         </nav>
-        <hr className="mt-0 mb-4" />
-        <div className="row">
-          <div className="col-xl-4">
-            <div className="card mb-4 mb-xl-0">
-              <div className="card-header">Profile Picture</div>
-              <div className="card-body text-center">
-                <img
-                  className="img-account-profile rounded-circle mb-2"
-                  src={profile.profile_picture}
-                  alt="Profile"
-                />
-                <div className="small font-italic text-muted mb-4">
-                  JPG or PNG no larger than 5 MB
-                </div>
-                <button className="btn btn-primary" type="button">
-                  Upload new image
-                </button>
-              </div>
-            </div>
-          </div>
+    
           <div className="col-xl-8">
             <div className="card mb-4">
               <div className="card-header">Account Details</div>
@@ -176,20 +156,7 @@ export const Profile = () => {
                       onChange={handleChange}
                     />
                   </div>
-                  {/* <div className="mb-3">
-                    <label className="small mb-1" htmlFor="password">
-                      Password
-                    </label>
-                    <input
-                      className="form-control"
-                      id="password"
-                      name="password"
-                      type="password"
-                      placeholder="Enter a new password"
-                      value={profile.password}
-                      onChange={handleChange}
-                    />
-                  </div> */}
+                  
                   <button className="btn btn-primary" type="submit">
                     Save changes
                   </button>
@@ -208,6 +175,6 @@ export const Profile = () => {
           </div>
         </div>
       </div>
-    </div>
+
   );
 };

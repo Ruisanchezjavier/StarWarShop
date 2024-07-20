@@ -1,43 +1,47 @@
 import React from 'react';
-import '../../styles/aboutus.css'; // Adjust the path to your CSS file
+import '../../styles/aboutus.css';
+import { StarBackground } from '../component/StarBackground';
 
 export const AboutUs = () => {
-  return (
-    <div className="row">
-      <div className="column">
-        <div className="image-container">
-          <img src="https://th.bing.com/th/id/OIP.1ILPEtXXYmvnPIHhh_YxAwHaEo?w=289&h=180&c=7&r=0&o=5&pid=1.7" alt="Profile 1" />
-          <div className="name-circle">Ali</div>
+  return (     
+     
+        <div className="about-container">
+            <StarBackground />
+          <div className="background-zoom"></div>
+          <div className="content">
+            <h1>About Us</h1>
+            <p>
+            Ali, Javier and Tony came together with a shared vision: "to create a revolutionary website that would transform the way people interact with technology".
+            </p>
+            <pre>
+{`Ali: As the front-end master, Ali is responsible for the look and feel 
+   of the website. His ability to design intuitive and attractive 
+   interfaces has been essential in capturing the attention of users. 
+   Ali ensures that every element on the site is visually pleasing and 
+   easy to use, providing a smooth and enjoyable experience to all 
+   visitors.
+ 
+Javier: with his dual competence in back-end and front-end, is
+   the technical driving force of the project. On the back-end side,
+   Javier has built a robust and secure architecture that ensures the 
+   site runs efficiently and without interruptions. On the front-end,
+   he works alongside Ali to implement advanced functionalities and 
+   ensure seamless integration between design and functionality.
+
+Tony: the project leader, is the strategist and coordinator of
+   the team. With a clear vision and exceptional management skills,
+   Tony ensures that all parts of the project move forward in harmony.
+   He is the link between the technical team and the needs of the 
+   market, guiding the development of the site to ensure that it meets
+   the expectations and requirements of the users. His leadership has
+   been crucial in keeping the team motivated and focused on 
+   their goals.
+    `}
+            </pre>
+          </div>
         </div>
-        <p>Steve Jobs was an American inventor, designer, and entrepreneur who was the cofounder, chief executive, and chairman of Apple Inc. 
-          Born in 1955 to two University of Wisconsin graduate students who gave him up for adoption, Jobs was smart but directionless, 
-          dropping out of college and experimenting with different pursuits before cofounding Apple with Steve Wozniak in 1976. 
-          Jobs left the company in 1985, launching Pixar Animation Studios, then returned to Apple more than a decade later. 
-          The tech giant’s revolutionary products, which include the iPhone, iPad, and iPod, have dictated the evolution of modern technology.
-        </p>
-      </div>
-      <div className="column">
-        <div className="image-container">
-          <img src="https://th.bing.com/th/id/OIP.eTAvLqZzSfCsyoVCYnw4tAHaGG?w=200&h=180&c=7&r=0&o=5&pid=1.7" alt="Profile 2" />
-          <div className="name-circle">Javier</div>
-        </div>
-        <p>Marie Curie was a physicist and chemist who conducted pioneering research on radioactivity. 
-          She was the first woman to win a Nobel Prize, the only woman to win in two fields, and the only person to win in multiple sciences. 
-          Her notable achievements include the development of the theory of radioactivity, techniques for isolating radioactive isotopes, 
-          and the discovery of two elements, polonium and radium. Her work not only contributed to the scientific field but also paved the way for future female scientists.
-        </p>
-      </div>
-      <div className="column">
-        <div className="image-container">
-          <img src="https://th.bing.com/th/id/OIP.krIkFaOpGNtzhpo0z4g16AAAAA?w=261&h=180&c=7&r=0&o=5&pid=1.7" alt="Profile 3" />
-          <div className="name-circle">Tony</div>
-        </div>
-        <p>Leonardo da Vinci was an Italian polymath of the Renaissance whose areas of interest included invention, drawing, painting, sculpture, architecture, 
-          science, music, mathematics, engineering, literature, anatomy, geology, astronomy, botany, writing, history, and cartography. 
-          He is widely considered one of the greatest painters of all time despite fewer than 25 of his paintings having survived. 
-          His most famous works include the Mona Lisa and The Last Supper. His scientific studies, particularly in anatomy, contributed significantly to the field.
-        </p>
-      </div>
-    </div>
-  );
-};
+      );
+    };
+    
+   
+    
