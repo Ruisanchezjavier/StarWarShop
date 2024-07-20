@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../../styles/groundCard.css'; 
 
-export const GroundCard = ({ pcard, addToCart, showDetails }) => {
+export const GroundCard = ({ pcard, showDetails }) => {
  
 
   return (    

@@ -1,22 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from 'react';
+import { Context } from "../store/appContext"
 import "../../styles/home.css";
 import { StarBackground } from '../component/StarBackground';
 import { Nav, Container } from 'react-bootstrap';
 import { Character } from "../component/Cards/characterCard";
 import { GroundCardList } from "../component/Cards/groundCardList";
-import { gCards } from "../component/Cards/gCards";
 import { SpaceCardList } from "../component/Cards/spaceCardList";
-import { sCards } from "../component/Cards/sCards";
 import { Modal, Button } from 'react-bootstrap';
-import { addToCart } from '../component/ShoppingCart/actions/CartActions';
 
 
 
 
 
 
-export const CardSet = (pcard) => {
- 
+
+export const CardSet = () => {
+  const { store, actions } = useContext(Context)
 
 
   const scrollToTop = () => {
@@ -25,8 +24,8 @@ export const CardSet = (pcard) => {
       behavior: 'smooth'
     });
   };
- 
- 
+
+
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const showDetails = (pcard) => {
@@ -48,23 +47,23 @@ export const CardSet = (pcard) => {
         </div>
       </div>
 
-      
+
 
       <div className="text-center mt-5">
         <StarBackground />
         {/* <Navbar id="navB" bg="light" expand="lg"> */}
-          <Container>
-            {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Container>
+          {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav"> */}
-              <Nav className="me-auto">
-                <Nav.Link href="#ground">Ground</Nav.Link>
-                <Nav.Link href="#space">Space</Nav.Link>
-                <Nav.Link href="#character">Character</Nav.Link>
-                <Nav.Link href="#battle">Battle</Nav.Link>
-                <Nav.Link href="#mission">Mission</Nav.Link>
-              </Nav>
-            {/* </Navbar.Collapse> */}
-          </Container>
+          <Nav className="me-auto">
+            <Nav.Link href="#ground">Ground</Nav.Link>
+            <Nav.Link href="#space">Space</Nav.Link>
+            <Nav.Link href="#character">Character</Nav.Link>
+            <Nav.Link href="#battle">Battle</Nav.Link>
+            <Nav.Link href="#mission">Mission</Nav.Link>
+          </Nav>
+          {/* </Navbar.Collapse> */}
+        </Container>
         {/* </Navbar> */}
 
       </div>
@@ -89,21 +88,21 @@ export const CardSet = (pcard) => {
               )}
             </Modal.Body>
             <Modal.Footer>
-            
-            <Button onClick={() => addToCart(pcard)}>Add to Cart</Button>
-            
-             {/* <Button onClick={() => addToCart()}> 
+
+              <Button onClick={() => actions.addToCart(selectedProduct)}>Add to Cart</Button>
+
+              {/* <Button onClick={() => addToCart()}> 
              add to cart
              </Button> */}
-            
+
               {/* <Button onClick={addToCart}>add to cart</Button>  */}
-              
-              
+
+
               <Button variant="secondary" onClick={closeModal}>
                 X
               </Button>
 
-              
+
 
             </Modal.Footer>
           </Modal>
@@ -111,25 +110,25 @@ export const CardSet = (pcard) => {
           <section id="ground">
 
             <h2>Ground Cards</h2>
-            <GroundCardList gCards={gCards} showDetails={showDetails} />
+            <GroundCardList showDetails={showDetails} />
 
           </section>
-         
+
           <div className="d-flex justify-content-center mt-4">
             <button className="btn-dark btn btn-primary" onClick={scrollToTop}>
-            <i className="fas fa-arrow-up"></i>
+              <i className="fas fa-arrow-up"></i>
             </button>
           </div>
-         
+
           <section id="space">
             <h2>Space Cards</h2>
-            <SpaceCardList sCards={sCards} showDetails={showDetails} />
+            <SpaceCardList showDetails={showDetails} />
 
             <div className="d-flex justify-content-center mt-4">
-            <button className="btn-dark btn btn-primary" onClick={scrollToTop}>
-            <i className="fas fa-arrow-up"></i>
-            </button>
-          </div>
+              <button className="btn-dark btn btn-primary" onClick={scrollToTop}>
+                <i className="fas fa-arrow-up"></i>
+              </button>
+            </div>
 
 
           </section>

@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../../styles/spaceCard.css'; 
 
-export const SpaceCard = ({ pcard, addToCart, showDetails }) => {
+export const SpaceCard = ({ pcard, showDetails }) => {
  
 
   return (    

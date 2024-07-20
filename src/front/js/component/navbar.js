@@ -1,20 +1,12 @@
-import React, { useState, useEffect }  from "react";
+import React, { useContext, useEffect, useState } from 'react';
+import { Context } from "../store/appContext"
 import { Link } from "react-router-dom";
 import logo from "../../img/webLogo.png";
 import "../../styles/navbar.css";
-import { CartStore } from './ShoppingCart/stores/CartStore';
+
 
 export const Navbar = () => {
-    const [cartCount, setCartCount] = useState(CartStore.getCart().reduce((count, item) => count + item.quantity, 0));
-  useEffect(() => {
-    const onChange = () => {
-      setCartCount(CartStore.getCart().reduce((count, item) => count + item.quantity, 0));
-    };
-    CartStore.addChangeListener(onChange);
-    return () => {
-      CartStore.removeChangeListener(onChange);
-    };
-  }, []);
+  const { store, actions } = useContext(Context)
 
   const [scroll, setScroll] = useState(false);
   useEffect(() => {
@@ -22,65 +14,66 @@ export const Navbar = () => {
       setScroll(window.scrollY > 7);
     });
   });
-     
-  
+
+
 
   return (
     <header className={`headerMain ${scroll ? "sticky" : ""}`}>
-   
-    <nav className="navbar" >
-  <div className="navbar-left">
-    <a href="/" className="logo">
-      <img src={logo} width="80" height="80" alt="Logo" />
-    </a>
-  </div>
-  <div className="navbar-center">
-    <ul className="nav-links">
-      <li>
-        <a href="/">Home</a>
-      </li>
-      <li>
-        <a href="/about">About Us</a>
-      </li>
-      <li>
-        <a href="/CardSet">Card Set</a>
-      </li>
-    </ul>
-  </div>
-    
-  
-  <div className="navbar-right">
-   <a href="/Cart" className="cart-icon" aria-label="Shopping Cart">
-     <i className="fas fa-shopping-cart"></i>
-     <span className="cart-count">
-     <span>{cartCount}</span>
-      </span>      
-  </a>
-  
-  <a href="/" className="user-icon" aria-label="User Account">
-  
-  <div className="btn-group dropstart">
-  <button
-  className="btn btn-secondary dropdown-toggle"
-              type="button"
-              id="dropdownMenuButton"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <SignInIcon />
-            </button>
-            <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
-              <li><Link className="dropdown-item" to="/signin">Sign In</Link></li>
-              <li><Link className="dropdown-item" to="/signup">Sign Up</Link></li>
-              <li><Link className="dropdown-item" to="/profile">User profile</Link></li>
-            </ul>
-          </div>
-    
-  </a> </div>
-</nav>
-  </header>
 
-);
+      <nav className="navbar" >
+        <div className="navbar-left">
+          <Link to="/"><a className="logo">
+            <img src={logo} width="80" height="80" alt="Logo" />
+          </a></Link>
+        </div>
+        <div className="navbar-center">
+          <ul className="nav-links">
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/about">About Us</a>
+            </li>
+            <li>
+              <a href="/CardSet">Card Set</a>
+            </li>
+          </ul>
+        </div>
+
+
+        <div className="navbar-right">
+          <Link to="/Cart"><a className="cart-icon" aria-label="Shopping Cart">
+            <i className="fas fa-shopping-cart"></i>
+            <span className="cart-count">
+              <span>{store.cartItems.length}</span>
+            </span>
+          </a></Link>
+
+
+          <a href="/" className="user-icon" aria-label="User Account">
+
+            <div className="btn-group dropstart">
+              <button
+                className="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <SignInIcon />
+              </button>
+              <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
+                <li><Link className="dropdown-item" to="/signin">Sign In</Link></li>
+                <li><Link className="dropdown-item" to="/signup">Sign Up</Link></li>
+                <li><Link className="dropdown-item" to="/profile">User profile</Link></li>
+              </ul>
+            </div>
+
+          </a> </div>
+      </nav>
+    </header>
+
+  );
 };
 
 const SignInIcon = () => (

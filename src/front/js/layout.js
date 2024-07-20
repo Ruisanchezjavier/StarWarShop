@@ -17,7 +17,7 @@ import { SignIn } from "./pages/signin";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { AboutUs } from "./pages/aboutus.js";
-import { Cart } from "./component/ShoppingCart/components/Cart.js";
+import { Cart } from "./component/ShoppingCart/Cart.js";
 
 
 
