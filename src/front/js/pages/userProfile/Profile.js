@@ -4,9 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 import "../../../styles/Profile.css";
 import { StarBackground } from "../../component/StarBackground";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { AddressAutocomplete } from "../../component/AddressAutocomplete";
 
 export const Profile = () => {
-  const { store, actions } = useContext(Context);
+  const { store, actions, setAddress } = useContext(Context);
   const navigate = useNavigate();
   const [profile, setProfile] = useState({
     username: "",
@@ -17,6 +18,7 @@ export const Profile = () => {
     address: "",
     profile_picture: "https://via.placeholder.com/150",
   });
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -70,9 +72,7 @@ export const Profile = () => {
           <Link className="nav-link active" to="/profile">
             Profile
           </Link>
-          {/* <Link className="nav-link" to="/billing">
-            Billing
-          </Link> */}
+         
           <Link className="nav-link" to="/security">
             Security
           </Link>
@@ -132,15 +132,8 @@ export const Profile = () => {
                     <label className="small mb-1" htmlFor="address">
                       Address
                     </label>
-                    <input
-                      className="form-control"
-                      id="address"
-                      name="address"
-                      type="text"
-                      placeholder="Enter your address"
-                      value={profile.address}
-                      onChange={handleChange}
-                    />
+                    <AddressAutocomplete onChange={setAddress} />
+                  
                   </div>
                   <div className="mb-3">
                     <label className="small mb-1" htmlFor="email">
