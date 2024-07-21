@@ -16,6 +16,7 @@ body {
   .auth-container h2 {
     text-align: center;
     margin-bottom: 20px;
+    color: #ffc107; 
   }
   
   .input-group {
@@ -26,6 +27,7 @@ body {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    color: #ffc107; 
   }
   
   .input-group input {

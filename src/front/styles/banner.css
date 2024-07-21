@@ -1,15 +1,13 @@
 .jumbotron-bg {
    
-  background-repeat: no-repeat;
-  margin: 10 auto; 
+  
+  margin: 1 auto; 
   display: flex;
-  height: 90vh; 
-  border-radius: 100px;
+  height: 95vh; 
   background-repeat: no-repeat;
-  background: #00000016;
-  opacity: .7;
+  opacity: .9;
   background-size: cover;
-  background-image: url('https://trello.com/1/cards/667f56e7076d4f7b73d0453c/attachments/6688834db62f14fc0c3d235f/previews/6688834eb62f14fc0c3d23a1/download/banner.jpg');
+  background-image: url('https://cdn.leonardo.ai/users/68dd55a0-0f93-44ce-b378-d0b6674366d9/generations/1a63ac21-6296-458a-9d35-913bd8ebe0df/Default_In_the_heart_of_the_bustling_marketplace_lies_a_futuri_0.jpg');
  
 }
 
