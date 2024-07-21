@@ -22,6 +22,20 @@ import ANH149 from '../../img/A New Hope/Category/space/ANH149_Rebel_Fighter_Win
 import ANH162 from '../../img/A New Hope/Category/space/ANH162_TIE_Fighter_DS-3-12.png';
 import ANH163 from '../../img/A New Hope/Category/space/ANH163_TIE_Fighter_DS-73-3.png';
 import ANH164 from '../../img/A New Hope/Category/space/ANH164_TIE_Fighter_DS-55-6.png';
+
+import ANH003 from '../../img/A New Hope/Category/battle/ANH003_Blaster_Barrage';
+import ANH012 from '../../img/A New Hope/Category/battle/ANH012_It_s_Not_Over_Yet.png';
+import ANH017 from '../../img/A New Hope/Category/battle/ANH017_Hold_Em_Off.png';
+import ANH024 from '../../img/A New Hope/Category/battle/ANH024_Leia_s_Kiss.png';
+import ANH030 from '../../img/A New Hope/Category/battle/ANH030_Most_Desperate_Hour.png';
+import ANH031 from '../../img/A New Hope/Category/battle/ANH031_No_Escape.png';
+import ANH033 from '../../img/A New Hope/Category/battle/ANH033_Obi-Wan_s_Prowess.png';
+import ANH039 from '../../img/A New Hope/Category/battle/ANH039_Protection_of_the_Master.png';
+import ANH045 from '../../img/A New Hope/Category/battle/ANH045_Starfighter_s_End.png';
+import ANH048 from '../../img/A New Hope/Category/battle/ANH048_Strike_Me_Down.png';
+import ANH051 from '../../img/A New Hope/Category/battle/ANH051_Tarkin_s_Stench.png';
+import ANH054 from '../../img/A New Hope/Category/battle/ANH054_Tractor_Beam.png';
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -169,40 +183,40 @@ const getState = ({ getStore, getActions, setStore }) => {
 				},
 				{
 					id: 13,
-					image: 'ANH028',
-					name: 'Elite Stormtrooper Squad',
-					rating: 4.5,
+					image: ANH028,
+					name: 'Luke X-Wing',
+					rating: 4.0,
 					side: 'Light',
 					rarity: 'Rare',
 					type: 'Space',
-					points: 10,
-					price: 99.99
+					points: 3,
+					price: 14.99
 				},
 				{
 					id: 14,
-					image: 'ANH050',
-					name: 'Product 2',
-					rating: 4.0,
-					side: 'Dark',
-					rarity: 'Common',
+					image: ANH050,
+					name: 'Tantive IV',
+					rating: 5.0,
+					side: 'Light',
+					rarity: 'Rare',
 					type: 'Space',
-					points: 20,
+					points: 3,
 					price: 49.99
 				},
 				{
 					id: 15,
-					image: 'ANH058',
-					name: 'Product 2',
+					image: ANH058,
+					name: 'Vader TIE Fighter',
 					rating: 4.0,
 					side: 'Dark',
-					rarity: 'Common',
+					rarity: 'Rare',
 					type: 'Space',
-					points: 20,
-					price: 49.99
+					points: 3,
+					price: 11.99
 				},
 				{
 					id: 16,
-					image: 'ANH074',
+					image: ANH074,
 					name: 'Product 2',
 					rating: 4.0,
 					side: 'Dark',
@@ -213,74 +227,97 @@ const getState = ({ getStore, getActions, setStore }) => {
 				},
 				{
 					id: 17,
-					image: 'ANH100',
-					name: 'Product 2',
+					image: ANH100,
+					name: 'Devastator',
 					rating: 4.0,
 					side: 'Dark',
-					rarity: 'Common',
+					rarity: 'Uncommon',
 					type: 'Space',
-					points: 20,
-					price: 49.99
+					points: 2,
+					price: 58.99
 				},
 				{
 					id: 18,
-					image: 'ANH119',
-					name: 'Product 2',
+					image: ANH119,
+					name: 'Rebel Blockade Runner',
 					rating: 4.0,
-					side: 'Dark',
-					rarity: 'Common',
+					side: 'Light',
+					rarity: 'Uncommon',
 					type: 'Space',
-					points: 20,
-					price: 49.99
+					points: 2,
+					price: 9.99
 				},
 				{
 					id: 19,
-					image: 'ANH124',
-					name: 'Product 2',
-					rating: 4.0,
+					image: ANH124,
+					name: 'Carrack Cruiser',
+					rating: 2.0,
 					side: 'Dark',
 					rarity: 'Common',
 					type: 'Space',
-					points: 20,
-					price: 49.99
+					points: 1,
+					price: 19.99
 				},
 				{
 					id: 20,
-					image: 'ANH132',
-					name: 'Product 2',
-					rating: 4.0,
+					image: ANH132,
+					name: 'Imperial Star Destroyer',
+					rating: 3.0,
 					side: 'Dark',
 					rarity: 'Common',
 					type: 'Space',
-					points: 20,
-					price: 49.99
+					points: 1,
+					price: 14.99
 				},
 				{
 					id: 21,
-					image: 'ANH149',
-					name: 'Product 2',
+					image: ANH149,
+					name: 'Rebel Fighter Wing',
 					rating: 4.0,
-					side: 'Dark',
+					side: 'Light',
 					rarity: 'Common',
 					type: 'Space',
-					points: 20,
-					price: 49.99
+					points: 1,
+					price: 11.99
 				},
 				{
 					id: 22,
-					image: 'ANH162',
-					name: 'Product 2',
+					image: ANH162,
+					name: 'TIE Fighter DS-3-12',
 					rating: 4.0,
 					side: 'Dark',
 					rarity: 'Common',
 					type: 'Space',
-					points: 20,
-					price: 49.99
+					points: 1,
+					price: 5.99
 				},
 				{
 					id: 23,
-					image: 'ANH163',
-					name: 'Product 2',
+					image: ANH163,
+					name: 'TIE Fighter DS-73-3',
+					rating: 5.0,
+					side: 'Dark',
+					rarity: 'Common',
+					type: 'Space',
+					points: 1,
+					price: 32.99
+				},
+				{
+					id: 24,
+					image: ANH164,
+					name: 'TIE Fighter DS-55-6',
+					rating: 4.0,
+					side: 'Dark',
+					rarity: 'Common',
+					type: 'Space',
+					points: 20,
+					price: 49.99
+				},
+
+				{
+					id: 25,
+					image: ANH165,
+					name: 'TIE Fighter DS-61-9',
 					rating: 4.0,
 					side: 'Dark',
 					rarity: 'Common',
@@ -289,16 +326,217 @@ const getState = ({ getStore, getActions, setStore }) => {
 					price: 49.99
 				},
 				{
-					id: 24,
-					image: 'ANH164',
-					name: 'Product 2',
+					id: 26,
+					image: ANH167,
+					name: 'TIE Fighter DS-73-3',
 					rating: 4.0,
 					side: 'Dark',
 					rarity: 'Common',
 					type: 'Space',
 					points: 20,
 					price: 49.99
-				}
+				},			
+				{
+					id: 27,
+					image: ANH168,
+					name: 'TIE Fighter DS-61-9',
+					rating: 4.0,
+					side: 'Dark',
+					rarity: 'Common',
+					type: 'Space',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 28,
+					image: ANH169,
+					name: 'TIE Fighter Squad',
+					rating: 4.0,
+					side: 'Dark',
+					rarity: 'Common',
+					type: 'Space',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 29,
+					image: ANH170,
+					name: 'Victory-Class Star Destroyer',
+					rating: 4.0,
+					side: 'Dark',
+					rarity: 'Common',
+					type: 'Space',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 30,
+					image: ANH172,
+					name: 'X-Wing Red One',
+					rating: 4.0,
+					side: 'Light',
+					rarity: 'Common',
+					type: 'Space',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 31,
+					image: ANH173,
+					name: 'X-Wing Red Three',
+					rating: 4.0,
+					side: 'Light',
+					rarity: 'Common',
+					type: 'Space',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 32,
+					image: ANH175,
+					name: 'X-Wing Attack Formation',
+					rating: 4.0,
+					side: 'Light',
+					rarity: 'Common',
+					type: 'Space',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 33,
+					image: ANH176,
+					name: 'Y-Wing Gold One',
+					rating: 4.0,
+					side: 'Light',
+					rarity: 'Common',
+					type: 'Space',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 34,
+					image: ANH177,
+					name: 'Y-Wing Gold Squadron',
+					rating: 4.0,
+					side: 'Light',
+					rarity: 'Common',
+					type: 'Space',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 35,
+					image: ANH178,
+					name: 'YT-1300_Transport',
+					rating: 4.0,
+					side: 'Light',
+					rarity: 'Common',
+					type: 'Space',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 36,
+					image: ANH179,
+					name: 'YV-664 Light Freighter',
+					rating: 4.0,
+					side: 'Neutral',
+					rarity: 'Common',
+					type: 'Space',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 37,
+					image: ANH180,
+					name: 'Z-95_Headhunter',
+					rating: 4.0,
+					side: 'Dark',
+					rarity: 'Neutral',
+					type: 'Space',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 38,
+					image: ANH003,
+					name: 'Blaster_Barrage',
+					rating: 4.0,
+					side: 'Dark',
+					rarity: 'Common',
+					type: 'Battle',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 39,
+					image: ANH012,
+					name: 'Its Not Over Yet',
+					rating: 4.0,
+					side: 'Neutra',
+					rarity: 'Rare',
+					type: 'Battle',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 40,
+					image: ANH017,
+					name: 'Hold Em Off',
+					rating: 4.0,
+					side: 'Dark',
+					rarity: 'Common',
+					type: 'Battle',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 41,
+					image: ANH024,
+					name: 'Leias Kiss',
+					rating: 4.0,
+					side: 'Light',
+					rarity: 'Common',
+					type: 'Battle',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 42,
+					image: ANH030,
+					name: 'Most Desperate Hour',
+					rating: 4.0,
+					side: 'Dark',
+					rarity: 'Common',
+					type: 'Battle',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 43,
+					image: ANH031,
+					name: 'No Escape',
+					rating: 4.0,
+					side: 'Dark',
+					rarity: 'Common',
+					type: 'Battle',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 44,
+					image: ANH033,
+					name: 'Obi-Wans Prowess',
+					rating: 4.0,
+					side: 'Light',
+					rarity: 'Common',
+					type: 'Battle',
+					points: 20,
+					price: 49.99
+				},
+
+
+
 			],			
 			
 			message: null
