@@ -1,7 +1,71 @@
-/* .bg-negro{
-    background-image: url(https://trello.com/1/cards/667f56e7076d4f7b73d0453c/attachments/6686087dea91b36c71c3ccde/download/space.webp);
-}
-
-.bg-blanco{
-    background-color: rgba(67, 54, 67, 0);
-} */
+  .auth-container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+  }
+  
+  .card1 {
+    background-color: #1e1e1e8c; 
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card1 h1 {
+    color: #ffc107; 
+  }
+  
+  .form-outline {
+    width: 100%;
+  }
+  
+  .input-group1 {
+    margin-bottom: 15px;
+  }
+  
+  .input-group1 input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: white;
+  }
+  
+  .input-group1 label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .btn-primary1 {
+    background-color: #ffc107;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary1:hover {
+    background-color: #e0a800;
+  }
+  
+  .text-warning {
+    color: #ffc107;
+  }
+  
+  .alert-danger {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+  
+  .mt-4-51 {
+    margin-top: 45px;
+  }
+  

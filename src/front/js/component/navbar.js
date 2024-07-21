@@ -23,19 +23,19 @@ export const Navbar = () => {
       <nav className="navbar" >
         <div className="navbar-left">
           <Link to="/"><a className="logo">
-            <img src={logo} width="80" height="80" alt="Logo" />
+            <img src={logo} width="60" height="60" />
           </a></Link>
         </div>
         <div className="navbar-center">
           <ul className="nav-links">
             <li>
-              <a href="/">Home</a>
+            <Link to="/">Home</Link> 
             </li>
             <li>
-              <a href="/about">About Us</a>
+            <Link to="/AboutUs">About Us</Link> 
             </li>
             <li>
-              <a href="/CardSet">Card Set</a>
+            <Link to="/CardSet">Card Set</Link> 
             </li>
           </ul>
         </div>

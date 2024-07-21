@@ -1,0 +1,113 @@
+.background {
+    background-color: black;
+    
+  } 
+.me-auto {
+
+  background-color: #d4edf8;
+  color: rgb(5, 5, 5);
+  border-radius: 12px;
+  box-shadow: 0 0 28px rgb(156, 170, 196);
+}
+
+  #basic-navbar-nav {
+  font-style: normal;
+  font-size: large;
+  text-align:justify;
+  }
+  
+  #navB {
+    border-radius: 20px;
+    padding: 1px;
+    margin: 1px;
+      
+    }
+    .content {
+      padding: 1rem;
+    }
+     
+  .container h2 {
+  
+    color: rgb(228, 228, 222);
+    
+  
+  }
+  .card-details {
+  
+    color: aliceblue;
+  }
+  
+  .custom-modal .modal-content {
+    background: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    height: auto;
+    border: 4px solid #5fb540c6;
+    padding: 1px;
+    margin: 1px;
+    border-radius: 8px;
+    width: 100%;
+   
+  }
+  
+  .custom-modal .modal-Header  {
+    border-top: solid;
+    color: #5fb540c6;
+  }
+  
+  .custom-modal .modal-body {
+    text-align: left;
+    color: aliceblue;
+    
+    
+  }
+  
+  .card-details p {
+    font-size: 1.2em;
+    color:#f5f7f8;
+  
+  }
+  
+  .custom-modal .modal-body img {
+    margin-bottom: 15px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    color: aliceblue;
+    border: 2px solid #726f6ff1;
+    float: left;
+    
+  
+  }
+  
+  .custom-modal .modal-footer {
+    border-top: solid;
+    color: #5fb540c6;
+    
+  }
+  
+  .modal-footer .btn-primary {
+    background-color: #0d6efd; 
+    border-color: #f5f7f8;
+    display:inline-block;
+    width:fit-content;
+    color: rgb(255, 255, 255);
+    border-radius: 12px;
+    
+  }
+  
+  .modal-footer .btn-primary:hover {
+    background-color: #c4d8f1;
+    color: rgb(5, 5, 5);
+    border-radius: 12px;
+    box-shadow: 0 0 22px rgb(156, 170, 196);
+  }
+
+  .modal-footer .btn-secondary {
+    background-color: #b2dd278f; 
+    border-color: #f5f7f8;
+  }
+  
+  .modal-footer .btn-secondary:hover {
+    background-color: #d12424d4;
+    border-color: #f5f7f8;
+  }

@@ -20,8 +20,7 @@ export const GroundCard = ({ pcard, addToCart, showDetails }) => {
     
     
     </div>
-     
-    
+        
     </div>
     
     

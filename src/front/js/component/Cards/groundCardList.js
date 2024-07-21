@@ -1,6 +1,5 @@
 import React, {useContext, useEffect, useState } from 'react';
 import{Context}from"../../store/appContext"
-
 import { GroundCard } from '../Cards/groundCard';
 
 export const GroundCardList = ({ showDetails}) => {

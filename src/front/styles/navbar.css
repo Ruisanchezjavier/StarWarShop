@@ -46,6 +46,7 @@
   position: relative;
   border-radius: 50%;
   margin-bottom: 10px;
+ 
   
 }
 
@@ -84,7 +85,7 @@
 }
 
 .navbar-right .cart-count {
-  background-color: #da2215;
+  background-color: #0d6efd;
   color: #fff;
   border-radius: 20%;
   padding: 0.1rem 0.4rem;
@@ -116,37 +117,3 @@
 .navbar-center .nav-links a:hover {
   color: rgb(218, 174, 14);
 }
-
-
-
-
-
-
-
-
-
-
-
-/* .logo {
-    height: 40px;
-    max-width: 100%; 
-   
-  }
-  
-  .navbar-nav .nav-item .nav-link {
-    margin-left: 20px; 
-    border-bottom: 10px;
-       
-  
-  }
-  
-  .dropdown-menu {
-    right: auto; 
-    left: auto;
-  }
-  
-  .btn-secondary.dropdown-toggle {
-    margin-right: 10px; 
-  } */
-
- 

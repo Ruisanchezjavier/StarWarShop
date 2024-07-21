@@ -58,7 +58,7 @@ export function Security() {
       if (response.ok) {
         setMessages([]);
 
-        alert("Password updated successfully"), navigate("/profile"); // Redirige al perfil u otra página
+        alert("Password updated successfully"), navigate("/profile"); 
       } else {
         const errorData = await response.json();
         setMessages(
@@ -86,9 +86,9 @@ export function Security() {
             <Link className="nav-link" to="/Profile">
               Profile
             </Link>
-            <Link className="nav-link" to="/billing">
+            {/* <Link className="nav-link" to="/billing">
               Billing
-            </Link>
+            </Link> */}
             <Link className="nav-link active" to="/security">
               Security
             </Link>
@@ -143,7 +143,7 @@ export function Security() {
                   </form>
                 </div>
               </div>
-              <div className="card mb-4">
+              {/* <div className="card mb-4">
                 <div className="card-header">Security Preferences</div>
                 <div className="card-body">
                   <h5 className="mb-1">Personal data management:</h5>
@@ -268,7 +268,7 @@ export function Security() {
                     </div>
                   </form>
                 </div>
-              </div>
+              </div> */}
               <div className="card mb-4">
                 <div className="card-header">Delete Account</div>
                 <div className="card-body">
@@ -281,7 +281,7 @@ export function Security() {
                     className="btn btn-danger-soft text-danger"
                     type="button"
                   >
-                    I understand, delete my account
+                  I understand, delete my account
                   </button>
                 </div>
               </div>
