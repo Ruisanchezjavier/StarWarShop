@@ -1,20 +1,49 @@
-.footer {
-  background-color: #111111d7;
-  padding: 10px 10;
-  z-index: 1000;
-  position:static;
-  width: 100%;
-}
-
-.footer a {
-  color: #f9d71c;
-}
-
-.footer a:hover {
+.star-wars-footer {
+  background-color: #000;
   color: #fff;
+  padding: 20px 0;
+  text-align: center;
 }
 
-.footer .social-icons i {
-  font-size: 24px;
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo img {
+  width: 150px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+  
+}
+
+.footer-links {
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-social a {
   margin: 0 10px;
+}
+
+.footer-social img {
+  width: 30px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #444;
+  padding-top: 10px;
+  margin-top: 20px;
 }

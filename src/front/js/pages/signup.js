@@ -71,7 +71,7 @@ export const Signup = () => {
              <div className="card-body1">
              <div className="signup-page text-center">
              <div className="text-center">
-              <h1>Sign Up</h1>
+              <h1>Create an Account</h1>
                </div>
 
                <div>
@@ -163,7 +163,7 @@ export const Signup = () => {
                               <button
                                 onClick={handleClick}
                                 className="btn-primary1 btn-lg"
-                              >Sign Up</button>
+                              >Sign up</button>
                             </div>
                           </div>
                         </div>

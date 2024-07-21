@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Context } from "../store/appContext"
-import "../../styles/home.css";
 import { StarBackground } from '../component/StarBackground';
 import { Nav, Container } from 'react-bootstrap';
 import { Character } from "../component/Cards/characterCard";
@@ -8,6 +7,7 @@ import { GroundCardList } from "../component/Cards/groundCardList";
 import { SpaceCardList } from "../component/Cards/spaceCardList";
 import { Modal, Button } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
+import "../../styles/cardset.css";
 
 export const CardSet = () => {
   const { store, actions } = useContext(Context)
@@ -90,11 +90,9 @@ export const CardSet = () => {
             </Modal.Body>
             <Modal.Footer>
 
-              <Button onClick={() => actions.addToCart(selectedProduct)}>Add to Cart</Button>
+              <Button className="primary" onClick={() => actions.addToCart(selectedProduct)}>Add to Cart</Button>
 
-              <Button variant="secondary" onClick={closeModal}>
-                X
-              </Button>
+              <Button variant="secondary" onClick={closeModal}>Close</Button>
 
             </Modal.Footer>
           </Modal>
@@ -107,17 +105,17 @@ export const CardSet = () => {
           </section>
 
           <div className="d-flex justify-content-center mt-4">
-            <button className="btn-dark btn btn-primary" onClick={scrollToTop}>
-              <i className="fas fa-arrow-up"></i>
-            </button>
-          </div>
+              <button className="btn btn-dark" onClick={scrollToTop}>
+                <i className="fas fa-arrow-up"></i>
+              </button>
+            </div>
 
           <section id="space">
             <h2>Space Cards</h2>
             <SpaceCardList showDetails={showDetails} />
 
             <div className="d-flex justify-content-center mt-4">
-              <button className="btn-dark btn btn-primary" onClick={scrollToTop}>
+              <button className="btn btn-dark" onClick={scrollToTop}>
                 <i className="fas fa-arrow-up"></i>
               </button>
             </div>

@@ -133,7 +133,6 @@ export const Profile = () => {
                       Address
                     </label>
                     <AddressAutocomplete onChange={setAddress} />
-                  
                   </div>
                   <div className="mb-3">
                     <label className="small mb-1" htmlFor="email">

@@ -23,7 +23,7 @@ export const Navbar = () => {
       <nav className="navbar" >
         <div className="navbar-left">
           <Link to="/"><a className="logo">
-            <img src={logo} width="80" height="80" alt="Logo" />
+            <img src={logo} width="60" height="60" />
           </a></Link>
         </div>
         <div className="navbar-center">

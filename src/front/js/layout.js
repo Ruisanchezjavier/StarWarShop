@@ -9,7 +9,6 @@ import { Billing } from "./pages/userProfile/Billing.js";
 import { Security } from "./pages/userProfile/Security.js";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
-import { Shipping } from "./pages/shipping";
 import { Payment } from "./pages/payment.js";
 import { CardSet } from "./pages/CardSet";
 import { Signup } from "./pages/signup";
@@ -41,7 +40,6 @@ const Layout = () => {
                         <Route element={<Billing />} path="/Billing" />
                         <Route element={<Security />} path="/Security" />
                         <Route element={<Payment />} path="/payment" />
-                        <Route element={<Shipping />} path="/shipping" />
                         <Route element={<CardSet />} path="/CardSet" />
                         <Route element={<AboutUs />} path="/aboutus" />
                         <Route element={<Cart />} path="/Cart" />

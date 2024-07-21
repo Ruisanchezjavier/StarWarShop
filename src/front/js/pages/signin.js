@@ -57,14 +57,14 @@ export const SignIn = () => {
 						/>
 					</div>
 					<div>
-						<button type="submit" className="btn-primary" onClick={handleClick}>Sign in</button>
+						<button type="submit" className="btn-primary" onClick={handleClick}>Log in</button>
 						</div>
 						
 						<div className="or">
 						--- OR ---
 						</div>
 						<div>
-						<Link to="/signup"><button type="submit" className="btn btn-success">Sign Up</button></Link>
+						<Link to="/signup"><button type="submit" className="btn btn-success">Create an Account</button></Link>
 					</div>
 				
 				
