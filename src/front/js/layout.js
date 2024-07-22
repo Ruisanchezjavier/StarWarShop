@@ -5,7 +5,6 @@ import injectContext from "./store/appContext";
 import { BackendURL } from "./component/backendURL";
 import { Home } from "./pages/home";
 import { Profile } from "./pages/userProfile/Profile.js";
-import { Billing } from "./pages/userProfile/Billing.js";
 import { Security } from "./pages/userProfile/Security.js";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
@@ -37,7 +36,6 @@ const Layout = () => {
                         <Route element={<SignIn />} path="/signin" />
                         <Route element={<Signup />} path="/signup" />
                         <Route element={<Profile />} path="/Profile" />
-                        <Route element={<Billing />} path="/Billing" />
                         <Route element={<Security />} path="/Security" />
                         <Route element={<Payment />} path="/payment" />
                         <Route element={<CardSet />} path="/CardSet" />

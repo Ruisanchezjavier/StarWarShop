@@ -3,8 +3,7 @@ import { Context } from "../../store/appContext";
 import { Link, useNavigate } from "react-router-dom";
 import "../../../styles/Profile.css";
 import { StarBackground } from "../../component/StarBackground";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { AddressAutocomplete } from "../../component/AddressAutocomplete";
+
 
 export const Profile = () => {
   const { store, actions, setAddress } = useContext(Context);
@@ -16,7 +15,7 @@ export const Profile = () => {
     email: "",
     password: "",
     address: "",
-    profile_picture: "https://via.placeholder.com/150",
+    // profile_picture: "https://via.placeholder.com/150",
   });
   
 
@@ -132,7 +131,15 @@ export const Profile = () => {
                     <label className="small mb-1" htmlFor="address">
                       Address
                     </label>
-                    <AddressAutocomplete onChange={setAddress} />
+                    <input
+                      className="form-control"
+                      id="address"
+                      name="address"
+                      type="text"
+                      placeholder="Enter your address"
+                      value={profile.address}
+                      onChange={handleChange}
+                    />
                   </div>
                   <div className="mb-3">
                     <label className="small mb-1" htmlFor="email">

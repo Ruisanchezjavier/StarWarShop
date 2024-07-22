@@ -22,8 +22,10 @@ import ANH149 from '../../img/A New Hope/Category/space/ANH149_Rebel_Fighter_Win
 import ANH162 from '../../img/A New Hope/Category/space/ANH162_TIE_Fighter_DS-3-12.png';
 import ANH163 from '../../img/A New Hope/Category/space/ANH163_TIE_Fighter_DS-73-3.png';
 import ANH164 from '../../img/A New Hope/Category/space/ANH164_TIE_Fighter_DS-55-6.png';
-
-import ANH003 from '../../img/A New Hope/Category/battle/ANH003_Blaster_Barrage';
+import ANH165 from '../../img/A New Hope/Category/space/ANH165_TIE_Fighter_DS-61-9.png';
+import ANH167 from '../../img/A New Hope/Category/space/ANH167_TIE_Fighter_Squad.png';
+import ANH170 from '../../img/A New Hope/Category/space/ANH170_Victory-Class_Star_Destroyer.png';
+import ANH003 from '../../img/A New Hope/Category/battle/ANH003_Blaster_Barrage.png';
 import ANH012 from '../../img/A New Hope/Category/battle/ANH012_It_s_Not_Over_Yet.png';
 import ANH017 from '../../img/A New Hope/Category/battle/ANH017_Hold_Em_Off.png';
 import ANH024 from '../../img/A New Hope/Category/battle/ANH024_Leia_s_Kiss.png';
@@ -35,6 +37,9 @@ import ANH045 from '../../img/A New Hope/Category/battle/ANH045_Starfighter_s_En
 import ANH048 from '../../img/A New Hope/Category/battle/ANH048_Strike_Me_Down.png';
 import ANH051 from '../../img/A New Hope/Category/battle/ANH051_Tarkin_s_Stench.png';
 import ANH054 from '../../img/A New Hope/Category/battle/ANH054_Tractor_Beam.png';
+import ANH057 from '../../img/A New Hope/Category/battle/ANH057_Vader_s_Leadership.png';
+import ANH061 from '../../img/A New Hope/Category/battle/ANH061_Astromech_Assistance.png';
+import ANH062 from '../../img/A New Hope/Category/battle/ANH062_Benefits_of_Training.png';
 
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
@@ -217,7 +222,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				{
 					id: 16,
 					image: ANH074,
-					name: 'Product 2',
+					name: 'Devastator',
 					rating: 4.0,
 					side: 'Dark',
 					rarity: 'Common',
@@ -228,9 +233,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				{
 					id: 17,
 					image: ANH100,
-					name: 'Devastator',
+					name: 'Rebel Blockade Runner',
 					rating: 4.0,
-					side: 'Dark',
+					side: 'Light',
 					rarity: 'Uncommon',
 					type: 'Space',
 					points: 2,
@@ -239,9 +244,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				{
 					id: 18,
 					image: ANH119,
-					name: 'Rebel Blockade Runner',
+					name: 'Vaders TIE Fighter',
 					rating: 4.0,
-					side: 'Light',
+					side: 'Dark',
 					rarity: 'Uncommon',
 					type: 'Space',
 					points: 2,
@@ -337,28 +342,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					price: 49.99
 				},			
 				{
-					id: 27,
-					image: ANH168,
-					name: 'TIE Fighter DS-61-9',
-					rating: 4.0,
-					side: 'Dark',
-					rarity: 'Common',
-					type: 'Space',
-					points: 20,
-					price: 49.99
-				},
-				{
-					id: 28,
-					image: ANH169,
-					name: 'TIE Fighter Squad',
-					rating: 4.0,
-					side: 'Dark',
-					rarity: 'Common',
-					type: 'Space',
-					points: 20,
-					price: 49.99
-				},
-				{
 					id: 29,
 					image: ANH170,
 					name: 'Victory-Class Star Destroyer',
@@ -369,94 +352,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					points: 20,
 					price: 49.99
 				},
-				{
-					id: 30,
-					image: ANH172,
-					name: 'X-Wing Red One',
-					rating: 4.0,
-					side: 'Light',
-					rarity: 'Common',
-					type: 'Space',
-					points: 20,
-					price: 49.99
-				},
-				{
-					id: 31,
-					image: ANH173,
-					name: 'X-Wing Red Three',
-					rating: 4.0,
-					side: 'Light',
-					rarity: 'Common',
-					type: 'Space',
-					points: 20,
-					price: 49.99
-				},
-				{
-					id: 32,
-					image: ANH175,
-					name: 'X-Wing Attack Formation',
-					rating: 4.0,
-					side: 'Light',
-					rarity: 'Common',
-					type: 'Space',
-					points: 20,
-					price: 49.99
-				},
-				{
-					id: 33,
-					image: ANH176,
-					name: 'Y-Wing Gold One',
-					rating: 4.0,
-					side: 'Light',
-					rarity: 'Common',
-					type: 'Space',
-					points: 20,
-					price: 49.99
-				},
-				{
-					id: 34,
-					image: ANH177,
-					name: 'Y-Wing Gold Squadron',
-					rating: 4.0,
-					side: 'Light',
-					rarity: 'Common',
-					type: 'Space',
-					points: 20,
-					price: 49.99
-				},
-				{
-					id: 35,
-					image: ANH178,
-					name: 'YT-1300_Transport',
-					rating: 4.0,
-					side: 'Light',
-					rarity: 'Common',
-					type: 'Space',
-					points: 20,
-					price: 49.99
-				},
-				{
-					id: 36,
-					image: ANH179,
-					name: 'YV-664 Light Freighter',
-					rating: 4.0,
-					side: 'Neutral',
-					rarity: 'Common',
-					type: 'Space',
-					points: 20,
-					price: 49.99
-				},
-				{
-					id: 37,
-					image: ANH180,
-					name: 'Z-95_Headhunter',
-					rating: 4.0,
-					side: 'Dark',
-					rarity: 'Neutral',
-					type: 'Space',
-					points: 20,
-					price: 49.99
-				},
+				
 				{
 					id: 38,
 					image: ANH003,
@@ -534,6 +430,96 @@ const getState = ({ getStore, getActions, setStore }) => {
 					points: 20,
 					price: 49.99
 				},
+				{
+					id: 45,
+					image: ANH039,
+					name: 'Protection of the Master',
+					rating: 4.0,
+					side: 'Light',
+					rarity: 'Common',
+					type: 'Battle',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 46,
+					image: ANH045,
+					name: 'Starfighter End',
+					rating: 4.0,
+					side: 'Light',
+					rarity: 'Rare',
+					type: 'Battle',
+					points: 3,
+					price: 49.99
+				},
+				{
+					id: 47,
+					image: ANH048,
+					name: 'Strike Me Down',
+					rating: 4.0,
+					side: 'Light',
+					rarity: 'Rare',
+					type: 'Battle',
+					points: 3,
+					price: 49.99
+				},
+				{
+					id: 48,
+					image: ANH051,
+					name: 'Tarkins Stench',
+					rating: 4.0,
+					side: 'Dark',
+					rarity: 'Rare',
+					type: 'Battle',
+					points: 3,
+					price: 49.99
+				},
+				{
+					id: 49,
+					image: ANH054,
+					name: 'Tractor Beam',
+					rating: 4.0,
+					side: 'Dark',
+					rarity: 'Rare',
+					type: 'Battle',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 50,
+					image: ANH057,
+					name: 'Vader Leadership',
+					rating: 4.0,
+					side: 'Dark',
+					rarity: 'Rare',
+					type: 'Battle',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 51,
+					image: ANH061,
+					name: 'Astromech Assistance',
+					rating: 4.0,
+					side: 'Light',
+					rarity: 'Uncommon',
+					type: 'Battle',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 52,
+					image: ANH062,
+					name: 'Benefits of Training',
+					rating: 4.0,
+					side: 'Light',
+					rarity: 'Common',
+					type: 'Battle',
+					points: 20,
+					price: 49.99
+				},
+				
+
 
 
 
