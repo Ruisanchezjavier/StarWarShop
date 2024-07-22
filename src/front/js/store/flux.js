@@ -12,6 +12,22 @@ const getState = ({ getStore, getActions, setStore }) => {
       message: null,
     },
     actions: {
+      deleteAccount: async () => {
+        const options = {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+          },
+        }
+        let response = await fetch(`${process.env.BACKEND_URL}api/user`, options);
+        if(response.status == 200) {
+          console.log(response.json())
+          return true
+        } else {
+          return false
+        }
+      },
+
       verifyPassword: async (password) => {
         const options = {
           method: "POST",

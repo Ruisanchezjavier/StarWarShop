@@ -73,6 +73,18 @@ def get_user_profile():
     }
     return jsonify(response), 200
 
+@api.route("/user", methods=['DELETE'])
+@jwt_required()
+def delete_user():
+    user_id = get_jwt_identity()
+    user = User.query.filter_by(id = user_id).first()
+    db.session.delete(user)
+    db.session.commit()
+    response = {
+        "msg": f"Your user was successfully deleted",
+    }
+    return jsonify(response), 200
+
 @api.route("/profile", methods=['PUT'])
 @jwt_required()
 def update_user_profile():
