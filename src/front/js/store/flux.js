@@ -63,7 +63,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					rarity: 'Rare',
 					type: 'Ground',
 					points: 3,
-					price: 12.99
+					price: 2.99
 				},
 				{
 					id: 2,

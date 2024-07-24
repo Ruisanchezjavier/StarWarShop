@@ -15,7 +15,7 @@ export const Profile = () => {
     email: "",
     password: "",
     address: "",
-    // profile_picture: "https://via.placeholder.com/150",
+  
   });
   
 

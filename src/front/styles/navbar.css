@@ -6,7 +6,7 @@
   border-radius: 1px;
   color: #fff;
   padding: 1rem;
-  background: rgba(34, 34, 34, 0.877);
+  background: rgba(34, 34, 34, 0.675);
   margin-left: 0rem;
   margin-right: 0rem;
   
@@ -44,8 +44,10 @@
 
 .navbar-left .logo {
   position: relative;
-  border-radius: 50%;
+  border-radius: 10%;
   margin-bottom: 10px;
+  
+  
  
   
 }
