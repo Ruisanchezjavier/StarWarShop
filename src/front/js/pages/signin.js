@@ -14,7 +14,7 @@ export const SignIn = () => {
 	const handleClick = async () => {
 		let result = await actions.login(email, password)
 		if (result) {
-			navigate("/profile")
+			navigate("/CardSet")
 		}
 	}
 

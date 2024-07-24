@@ -22,6 +22,25 @@ import ANH149 from '../../img/A New Hope/Category/space/ANH149_Rebel_Fighter_Win
 import ANH162 from '../../img/A New Hope/Category/space/ANH162_TIE_Fighter_DS-3-12.png';
 import ANH163 from '../../img/A New Hope/Category/space/ANH163_TIE_Fighter_DS-73-3.png';
 import ANH164 from '../../img/A New Hope/Category/space/ANH164_TIE_Fighter_DS-55-6.png';
+import ANH165 from '../../img/A New Hope/Category/space/ANH165_TIE_Fighter_DS-61-9.png';
+import ANH167 from '../../img/A New Hope/Category/space/ANH167_TIE_Fighter_Squad.png';
+import ANH170 from '../../img/A New Hope/Category/space/ANH170_Victory-Class_Star_Destroyer.png';
+import ANH003 from '../../img/A New Hope/Category/battle/ANH003_Blaster_Barrage.png';
+import ANH012 from '../../img/A New Hope/Category/battle/ANH012_It_s_Not_Over_Yet.png';
+import ANH017 from '../../img/A New Hope/Category/battle/ANH017_Hold_Em_Off.png';
+import ANH024 from '../../img/A New Hope/Category/battle/ANH024_Leia_s_Kiss.png';
+import ANH030 from '../../img/A New Hope/Category/battle/ANH030_Most_Desperate_Hour.png';
+import ANH031 from '../../img/A New Hope/Category/battle/ANH031_No_Escape.png';
+import ANH033 from '../../img/A New Hope/Category/battle/ANH033_Obi-Wan_s_Prowess.png';
+import ANH039 from '../../img/A New Hope/Category/battle/ANH039_Protection_of_the_Master.png';
+import ANH045 from '../../img/A New Hope/Category/battle/ANH045_Starfighter_s_End.png';
+import ANH048 from '../../img/A New Hope/Category/battle/ANH048_Strike_Me_Down.png';
+import ANH051 from '../../img/A New Hope/Category/battle/ANH051_Tarkin_s_Stench.png';
+import ANH054 from '../../img/A New Hope/Category/battle/ANH054_Tractor_Beam.png';
+import ANH057 from '../../img/A New Hope/Category/battle/ANH057_Vader_s_Leadership.png';
+import ANH061 from '../../img/A New Hope/Category/battle/ANH061_Astromech_Assistance.png';
+import ANH062 from '../../img/A New Hope/Category/battle/ANH062_Benefits_of_Training.png';
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -44,7 +63,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					rarity: 'Rare',
 					type: 'Ground',
 					points: 3,
-					price: 12.99
+					price: 2.99
 				},
 				{
 					id: 2,
@@ -169,41 +188,41 @@ const getState = ({ getStore, getActions, setStore }) => {
 				},
 				{
 					id: 13,
-					image: 'ANH028',
-					name: 'Elite Stormtrooper Squad',
-					rating: 4.5,
+					image: ANH028,
+					name: 'Luke X-Wing',
+					rating: 4.0,
 					side: 'Light',
 					rarity: 'Rare',
 					type: 'Space',
-					points: 10,
-					price: 99.99
+					points: 3,
+					price: 14.99
 				},
 				{
 					id: 14,
-					image: 'ANH050',
-					name: 'Product 2',
-					rating: 4.0,
-					side: 'Dark',
-					rarity: 'Common',
+					image: ANH050,
+					name: 'Tantive IV',
+					rating: 5.0,
+					side: 'Light',
+					rarity: 'Rare',
 					type: 'Space',
-					points: 20,
+					points: 3,
 					price: 49.99
 				},
 				{
 					id: 15,
-					image: 'ANH058',
-					name: 'Product 2',
+					image: ANH058,
+					name: 'Vader TIE Fighter',
 					rating: 4.0,
 					side: 'Dark',
-					rarity: 'Common',
+					rarity: 'Rare',
 					type: 'Space',
-					points: 20,
-					price: 49.99
+					points: 3,
+					price: 11.99
 				},
 				{
 					id: 16,
-					image: 'ANH074',
-					name: 'Product 2',
+					image: ANH074,
+					name: 'Devastator',
 					rating: 4.0,
 					side: 'Dark',
 					rarity: 'Common',
@@ -213,74 +232,97 @@ const getState = ({ getStore, getActions, setStore }) => {
 				},
 				{
 					id: 17,
-					image: 'ANH100',
-					name: 'Product 2',
+					image: ANH100,
+					name: 'Rebel Blockade Runner',
 					rating: 4.0,
-					side: 'Dark',
-					rarity: 'Common',
+					side: 'Light',
+					rarity: 'Uncommon',
 					type: 'Space',
-					points: 20,
-					price: 49.99
+					points: 2,
+					price: 58.99
 				},
 				{
 					id: 18,
-					image: 'ANH119',
-					name: 'Product 2',
+					image: ANH119,
+					name: 'Vaders TIE Fighter',
 					rating: 4.0,
 					side: 'Dark',
-					rarity: 'Common',
+					rarity: 'Uncommon',
 					type: 'Space',
-					points: 20,
-					price: 49.99
+					points: 2,
+					price: 9.99
 				},
 				{
 					id: 19,
-					image: 'ANH124',
-					name: 'Product 2',
-					rating: 4.0,
+					image: ANH124,
+					name: 'Carrack Cruiser',
+					rating: 2.0,
 					side: 'Dark',
 					rarity: 'Common',
 					type: 'Space',
-					points: 20,
-					price: 49.99
+					points: 1,
+					price: 19.99
 				},
 				{
 					id: 20,
-					image: 'ANH132',
-					name: 'Product 2',
-					rating: 4.0,
+					image: ANH132,
+					name: 'Imperial Star Destroyer',
+					rating: 3.0,
 					side: 'Dark',
 					rarity: 'Common',
 					type: 'Space',
-					points: 20,
-					price: 49.99
+					points: 1,
+					price: 14.99
 				},
 				{
 					id: 21,
-					image: 'ANH149',
-					name: 'Product 2',
+					image: ANH149,
+					name: 'Rebel Fighter Wing',
 					rating: 4.0,
-					side: 'Dark',
+					side: 'Light',
 					rarity: 'Common',
 					type: 'Space',
-					points: 20,
-					price: 49.99
+					points: 1,
+					price: 11.99
 				},
 				{
 					id: 22,
-					image: 'ANH162',
-					name: 'Product 2',
+					image: ANH162,
+					name: 'TIE Fighter DS-3-12',
 					rating: 4.0,
 					side: 'Dark',
 					rarity: 'Common',
 					type: 'Space',
-					points: 20,
-					price: 49.99
+					points: 1,
+					price: 5.99
 				},
 				{
 					id: 23,
-					image: 'ANH163',
-					name: 'Product 2',
+					image: ANH163,
+					name: 'TIE Fighter DS-73-3',
+					rating: 5.0,
+					side: 'Dark',
+					rarity: 'Common',
+					type: 'Space',
+					points: 1,
+					price: 32.99
+				},
+				{
+					id: 24,
+					image: ANH164,
+					name: 'TIE Fighter DS-55-6',
+					rating: 4.0,
+					side: 'Dark',
+					rarity: 'Common',
+					type: 'Space',
+					points: 20,
+					price: 49.99
+				},
+
+				{
+					id: 25,
+					image: ANH165,
+					name: 'TIE Fighter DS-61-9',
 					rating: 4.0,
 					side: 'Dark',
 					rarity: 'Common',
@@ -289,22 +331,222 @@ const getState = ({ getStore, getActions, setStore }) => {
 					price: 49.99
 				},
 				{
-					id: 24,
-					image: 'ANH164',
-					name: 'Product 2',
+					id: 26,
+					image: ANH167,
+					name: 'TIE Fighter DS-73-3',
 					rating: 4.0,
 					side: 'Dark',
 					rarity: 'Common',
 					type: 'Space',
 					points: 20,
 					price: 49.99
-				}
+				},			
+				{
+					id: 29,
+					image: ANH170,
+					name: 'Victory-Class Star Destroyer',
+					rating: 4.0,
+					side: 'Dark',
+					rarity: 'Common',
+					type: 'Space',
+					points: 20,
+					price: 49.99
+				},
+				
+				{
+					id: 38,
+					image: ANH003,
+					name: 'Blaster_Barrage',
+					rating: 4.0,
+					side: 'Dark',
+					rarity: 'Common',
+					type: 'Battle',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 39,
+					image: ANH012,
+					name: 'Its Not Over Yet',
+					rating: 4.0,
+					side: 'Neutra',
+					rarity: 'Rare',
+					type: 'Battle',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 40,
+					image: ANH017,
+					name: 'Hold Em Off',
+					rating: 4.0,
+					side: 'Dark',
+					rarity: 'Common',
+					type: 'Battle',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 41,
+					image: ANH024,
+					name: 'Leias Kiss',
+					rating: 4.0,
+					side: 'Light',
+					rarity: 'Common',
+					type: 'Battle',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 42,
+					image: ANH030,
+					name: 'Most Desperate Hour',
+					rating: 4.0,
+					side: 'Dark',
+					rarity: 'Common',
+					type: 'Battle',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 43,
+					image: ANH031,
+					name: 'No Escape',
+					rating: 4.0,
+					side: 'Dark',
+					rarity: 'Common',
+					type: 'Battle',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 44,
+					image: ANH033,
+					name: 'Obi-Wans Prowess',
+					rating: 4.0,
+					side: 'Light',
+					rarity: 'Common',
+					type: 'Battle',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 45,
+					image: ANH039,
+					name: 'Protection of the Master',
+					rating: 4.0,
+					side: 'Light',
+					rarity: 'Common',
+					type: 'Battle',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 46,
+					image: ANH045,
+					name: 'Starfighter End',
+					rating: 4.0,
+					side: 'Light',
+					rarity: 'Rare',
+					type: 'Battle',
+					points: 3,
+					price: 49.99
+				},
+				{
+					id: 47,
+					image: ANH048,
+					name: 'Strike Me Down',
+					rating: 4.0,
+					side: 'Light',
+					rarity: 'Rare',
+					type: 'Battle',
+					points: 3,
+					price: 49.99
+				},
+				{
+					id: 48,
+					image: ANH051,
+					name: 'Tarkins Stench',
+					rating: 4.0,
+					side: 'Dark',
+					rarity: 'Rare',
+					type: 'Battle',
+					points: 3,
+					price: 49.99
+				},
+				{
+					id: 49,
+					image: ANH054,
+					name: 'Tractor Beam',
+					rating: 4.0,
+					side: 'Dark',
+					rarity: 'Rare',
+					type: 'Battle',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 50,
+					image: ANH057,
+					name: 'Vader Leadership',
+					rating: 4.0,
+					side: 'Dark',
+					rarity: 'Rare',
+					type: 'Battle',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 51,
+					image: ANH061,
+					name: 'Astromech Assistance',
+					rating: 4.0,
+					side: 'Light',
+					rarity: 'Uncommon',
+					type: 'Battle',
+					points: 20,
+					price: 49.99
+				},
+				{
+					id: 52,
+					image: ANH062,
+					name: 'Benefits of Training',
+					rating: 4.0,
+					side: 'Light',
+					rarity: 'Common',
+					type: 'Battle',
+					points: 20,
+					price: 49.99
+				},
+				
+
+
+
+
 			],			
 			
 			message: null
 
 		},
 		actions: {
+			
+			deleteAccount: async () => {
+				const options = {
+				  method: "DELETE",
+				  headers: {
+					Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+				  },
+				}
+				let response = await fetch(`${process.env.BACKEND_URL}api/user`, options);
+				if(response.status == 200) {
+				  console.log(response.json())
+				  return true
+				} else {
+				  return false
+				}
+			  },
+			
+					
 			verifyPassword: async (password) => {
 			  const options = {
 				method: "POST",

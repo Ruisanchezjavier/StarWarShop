@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useLoadScript, StandaloneSearchBox } from "@react-google-maps/api";
-
+import "../../styles/signup.css";
 
 const libraries = ["places"];
 const apiKey = "AIzaSyC1ZzQ1Lmrl2paWI4oO9KYhfzLyPDaGhBA"; 
@@ -32,20 +32,20 @@ export const AddressAutocomplete = ({ onChange }) => {
 
   return (
     
+                          
     <StandaloneSearchBox onLoad={onLoad} onPlacesChanged={onPlacesChanged}>
-               
+                                  
     <input 
-     className="form-control"
-     type="address"
+    type="address"
      placeholder="Enter your address"
      size="30"
      value={address}
      onChange={(e) => setAddress(e.target.value)}
      required
       />
- 
+
     </StandaloneSearchBox>
-    
+ 
 
   );
 };

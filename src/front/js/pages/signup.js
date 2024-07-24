@@ -52,7 +52,7 @@ export const Signup = () => {
 
       let result = await actions.authenticate()
       if (result) {
-        navigate("/profile")
+        navigate("/CardSet")
       }
     }
     authenticate()

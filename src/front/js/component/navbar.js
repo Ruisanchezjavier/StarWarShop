@@ -15,15 +15,13 @@ export const Navbar = () => {
     });
   });
 
-
-
   return (
     <header className={`headerMain ${scroll ? "sticky" : ""}`}>
 
       <nav className="navbar" >
         <div className="navbar-left">
           <Link to="/"><a className="logo">
-            <img src={logo} width="60" height="60" />
+            <img src={logo} width="150" height="90" />
           </a></Link>
         </div>
         <div className="navbar-center">
@@ -66,7 +64,9 @@ export const Navbar = () => {
                 <li><Link className="dropdown-item" to="/signin">Sign In</Link></li>
                 <li><Link className="dropdown-item" to="/signup">Sign Up</Link></li>
                 <li><Link className="dropdown-item" to="/profile">User profile</Link></li>
-              </ul>
+                </ul>
+
+             
             </div>
 
           </a> </div>

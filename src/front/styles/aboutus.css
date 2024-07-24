@@ -14,10 +14,11 @@
   width: 100%;
   height: 100%;
   opacity: .8;
-  background-image: url('https://trello.com/1/cards/667d4dd852281e395554e3d6/attachments/669c3db691219b7fbf59432b/previews/669c3db791219b7fbf594334/download/Default_A_sleek_and_modern_TrinityCode_Lab_logo_every_element_0.jpg');
   background-size: cover;
+  background-image: url('https://trello.com/1/cards/667d4dd852281e395554e3d6/attachments/66a1118b1fc69c657a8ce29c/previews/66a1118c1fc69c657a8ce2e7/download/Default_A_mesmerizing_collection_of_Star_Wars_themed_cards_ea_3.jpg');
   background-position: center;
   animation: zoom 30s infinite;
+  
 }
 
 @keyframes zoom {

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Context } from "../store/appContext"
 import { StarBackground } from '../component/StarBackground';
 import { Nav, Container } from 'react-bootstrap';
-import { Character } from "../component/Cards/characterCard";
+import { BattleCardList } from "../component/Cards/battleCardList";
 import { GroundCardList } from "../component/Cards/groundCardList";
 import { SpaceCardList } from "../component/Cards/spaceCardList";
 import { Modal, Button } from 'react-bootstrap';
@@ -60,9 +60,9 @@ export const CardSet = () => {
           <Nav className="me-auto">
             <Nav.Link href="#ground">Ground</Nav.Link>
             <Nav.Link href="#space">Space</Nav.Link>
-            <Nav.Link href="#character">Character</Nav.Link>
+            {/* <Nav.Link href="#character">Character</Nav.Link> */}
             <Nav.Link href="#battle">Battle</Nav.Link>
-            <Nav.Link href="#mission">Mission</Nav.Link>
+            {/* <Nav.Link href="#mission">Mission</Nav.Link> */}
           </Nav>
           
         </Container>
@@ -122,19 +122,18 @@ export const CardSet = () => {
 
           </section>
 
-          <section id="character">
-            <h2>Character Cards</h2>
-            <Character />
-
-          </section>
           <section id="battle">
             <h2>Battle Cards</h2>
+            <BattleCardList showDetails={showDetails} />
+
+            <div className="d-flex justify-content-center mt-4">
+              <button className="btn btn-dark" onClick={scrollToTop}>
+                <i className="fas fa-arrow-up"></i>
+              </button>
+            </div>
 
           </section>
-          <section id="mission">
-            <h2>Mission Cards</h2>
-
-          </section>
+      
         </div>
       </div>
     </div>
